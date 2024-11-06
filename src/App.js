@@ -17,6 +17,7 @@ import SupportAdmin from "./support/SupportAdmin";
 import SupportEngine from "./support/SupportEngine";
 import Peer from "peerjs";
 import CallModal from "./support/SupportEngine/SupportWindow/CallModal";
+import DeleteAccount from "./pages/DeleteAccount";
 
 function App() {
   const auth = false; // Replace with your actual authentication logic
@@ -55,6 +56,7 @@ function App() {
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/terms" component={Terms} />
+        <Route exact path="/delete-account" component={DeleteAccount} />
 
         <div style={{}}>
           <PrivateRouter exact path="/login/:page" component={PageRender} />
