@@ -62,6 +62,7 @@ function App() {
           <PrivateRouter exact path="/login/:page" component={PageRender} />
           <PrivateRouter exact path="/login/:page/:id" component={PageRender} />
         </div>
+        <Route path="*" component={() => <div>Page Not Found</div>} />
         <div className={auth === true ? "hidden" : "visible"}>
           <Footer />
         </div>
