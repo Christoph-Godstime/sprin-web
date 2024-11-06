@@ -30,7 +30,7 @@ const DeleteAccount = () => {
       </div>
 
       <div className="flex justify-center">
-        <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[30px] md:w-[400px]">
+        <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[12px] rounded-full font-[500] md:mt-[30px] mt-[30px] md:w-[400px] w-full">
           Send request
         </button>
       </div>
