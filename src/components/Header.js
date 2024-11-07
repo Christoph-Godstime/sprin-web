@@ -103,7 +103,7 @@ const Header = ({ show, setShow }) => {
               <div className="cursor-pointer">
                 <div>
                   <Link exact to="/">
-                    <Logo width="w-[15px]" text="text-[18px]" />
+                    <Logo width="w-[70px]" text="text-[18px]" />
                   </Link>
                 </div>
               </div>
@@ -184,7 +184,7 @@ const Header = ({ show, setShow }) => {
                 </NavLink>
               </h4>
             </div>
-            <div className="mt-auto pt-[40px] pb-[28px] grid grid-cols-1 gap-[20px]">
+            <div className="mt-auto pt-[40px] pb-[60px] grid grid-cols-1 gap-[20px]">
               <button className="flex items-center justify-center space-x-[10px]  rounded-[8px] bg-orange-100 w-[250px] h-[40px]">
                 <div>
                   <img className="w-[22px]" src={playstore} />
