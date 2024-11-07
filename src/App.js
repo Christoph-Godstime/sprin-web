@@ -18,6 +18,7 @@ import SupportEngine from "./support/SupportEngine";
 import Peer from "peerjs";
 import CallModal from "./support/SupportEngine/SupportWindow/CallModal";
 import DeleteAccount from "./pages/DeleteAccount";
+import Contact from "./pages/Contact";
 
 function App() {
   const auth = false; // Replace with your actual authentication logic
@@ -26,20 +27,20 @@ function App() {
   const { call, support } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const socket = io();
-    // console.log(socket);
-    dispatch({ type: GLOBALTYPES.SOCKET, payload: socket });
-    return () => socket.close();
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const socket = io();
+  //   // console.log(socket);
+  //   dispatch({ type: GLOBALTYPES.SOCKET, payload: socket });
+  //   return () => socket.close();
+  // }, [dispatch]);
 
-  useEffect(() => {
-    const newPeer = new Peer(undefined, {
-      path: "/",
-      secure: true,
-    });
-    dispatch({ type: GLOBALTYPES.PEER, payload: newPeer });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const newPeer = new Peer(undefined, {
+  //     path: "/",
+  //     secure: true,
+  //   });
+  //   dispatch({ type: GLOBALTYPES.PEER, payload: newPeer });
+  // }, [dispatch]);
   return (
     <Router>
       <div className="font-sans">
@@ -50,14 +51,14 @@ function App() {
           <Navbar />
         </div>
 
-        {support?.support && <SocketClient />}
-        {call && <CallModal />}
+        {/* {support?.support && <SocketClient />}
+        {call && <CallModal />} */}
         <Route exact path="/" component={Home} />
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/terms" component={Terms} />
         <Route exact path="/delete-account" component={DeleteAccount} />
-
+        <Route exact path="/contact" component={Contact} />
         <div style={{}}>
           <PrivateRouter exact path="/login/:page" component={PageRender} />
           <PrivateRouter exact path="/login/:page/:id" component={PageRender} />
@@ -65,9 +66,9 @@ function App() {
         <div className={auth === true ? "hidden" : "visible"}>
           <Footer />
         </div>
-        <div className={auth === true ? "hidden" : "visible"}>
+        {/* <div className={auth === true ? "hidden" : "visible"}>
           <SupportEngine />
-        </div>
+        </div> */}
       </div>
     </Router>
   );

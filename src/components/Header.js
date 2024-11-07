@@ -53,12 +53,12 @@ const Header = ({ show, setShow }) => {
               <div className="cursor-pointer">
                 <div className={fix ? "flex" : "hidden"}>
                   <Link exact to="/">
-                    <img className="w-[15px]" src={logo} />
+                    <Logo width="w-[70px]" text="text-[18px]" />
                   </Link>
                 </div>
                 <div className={fix ? "hidden" : "flex"}>
                   <Link exact to="/">
-                    <Logo width="w-[15px]" text="text-[18px]" />
+                    <Logo width="w-[70px]" text="text-[18px]" />
                   </Link>
                 </div>
               </div>

@@ -103,7 +103,7 @@ const Home = () => {
           </div>
           <div className="flex justify-center">
             <h4 className="text-white font-[500]  mt-[40px] text-[16px] text-semibold lg:text-[24px] text-center tracking-[1px] md:w-[70%] bg-primary p-[20px] rounded-full ">
-              At SprinFare, our passion lies in crafting inventive solutions for
+              At Sprin, our passion lies in crafting inventive solutions for
               food delivery that have the potential to influence the future of
               our world.
             </h4>
@@ -186,11 +186,11 @@ const Home = () => {
           </div>
           <div className="order-1">
             <h4 className="text-[24px] lg:text-[38px] font-semibold mb-[15px]">
-              Expand your business with SprinFare.
+              Expand your business with Sprin.
             </h4>
 
             <h4 className="lg:text-[22px] text-[12px]">
-              Companies of all sizes collaborate with SprinFare to attract new
+              Companies of all sizes collaborate with Sprin to attract new
               customers, boost their order volumes, and enhance sales.
             </h4>
             <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
