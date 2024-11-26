@@ -66,7 +66,7 @@ const Contact = () => {
           <h4 className="md:text-[28px] text-[20px] xl:text-[36px] font-[600] text-text text-center">
             Tell Us How We Can Help
           </h4>
-          <form className="mt-[24px] lg:mt-[48px] grid grid-cols-1 gap-[24px]">
+          <div className="mt-[24px] lg:mt-[48px] grid grid-cols-1 gap-[24px]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] md:gap-[17px]">
               <div className="w-full">
                 <h4 className="text-[14px] font-[500]">
@@ -150,7 +150,7 @@ const Contact = () => {
             >
               {loading ? "Sending..." : "Submit Message"}
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
