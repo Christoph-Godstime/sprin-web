@@ -3,6 +3,8 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import feature1 from "../assets/feature1.png";
 import feature2 from "../assets/feature2.png";
 import feature3 from "../assets/feature3.png";
+import feature5 from "../assets/feature5.png";
+import feature7 from "../assets/feature7.png";
 
 const Slides = () => {
   const slides = [
@@ -22,7 +24,7 @@ const Slides = () => {
     </div>,
     <div key={2} className="md:flex md:gap-[25px] md:mr-[24px]">
       <div className="md:w-[33%] ">
-        <img src={feature3} />
+        <img src={feature5} />
       </div>
       <div className="bg-orange-100 md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
         <h4 className="text-text font-[700] text-[24px] leading-[32px]">
@@ -51,7 +53,7 @@ const Slides = () => {
     </div>,
     <div key={4} className="md:flex md:gap-[25px] md:mr-[24px]">
       <div className="md:w-[33%] ">
-        <img src={feature2} />
+        <img src={feature7} />
       </div>
       <div className="bg-[#bef264] md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
         <h4 className="text-text font-[700] text-[24px] leading-[32px]">
@@ -65,7 +67,7 @@ const Slides = () => {
     </div>,
     <div key={5} className="md:flex md:gap-[25px] md:mr-[24px]">
       <div className="md:w-[33%] ">
-        <img src={feature2} />
+        <img src={feature3} />
       </div>
       <div className="bg-[#e879f9] md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
         <h4 className="text-text font-[700] text-[24px] leading-[32px]">
