@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { faqs } from "../utils/data";
+import { terms } from "../utils/data";
 import leftnav from "../assets/leftnav.png";
 import rightnav from "../assets/rightnav.png";
+import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
 
 const Terms = () => {
   const [activeHeadingIndex, setActiveHeadingIndex] = useState(0);
@@ -9,8 +10,8 @@ const Terms = () => {
 
   const handleNextSlide = () => {
     setActiveSlideIndex((prevIndex) => {
-      if (prevIndex === faqs[activeHeadingIndex].slides.length - 1) {
-        if (activeHeadingIndex === faqs.length - 1) {
+      if (prevIndex === terms[activeHeadingIndex].slides.length - 1) {
+        if (activeHeadingIndex === terms.length - 1) {
           return prevIndex;
         } else {
           setActiveHeadingIndex((prevIndex) => prevIndex + 1);
@@ -31,7 +32,7 @@ const Terms = () => {
       } else if (prevIndex === 0) {
         setActiveHeadingIndex((prevIndex) => prevIndex - 1);
         // Fixed potential issue with accessing activeHeadingIndex immediately after setting it
-        return faqs[activeHeadingIndex - 1].slides.length - 1;
+        return terms[activeHeadingIndex - 1].slides.length - 1;
       } else {
         return prevIndex - 1;
       }
@@ -47,16 +48,22 @@ const Terms = () => {
   const isPreviousButtonVisible =
     activeHeadingIndex !== 0 || activeSlideIndex !== 0;
   const isNextButtonVisible =
-    activeHeadingIndex !== faqs.length - 1 ||
-    activeSlideIndex !== faqs[activeHeadingIndex].slides.length - 1;
+    activeHeadingIndex !== terms.length - 1 ||
+    activeSlideIndex !== terms[activeHeadingIndex].slides.length - 1;
   return (
-    <div className="bg-orange-100 -mt-[70px] lg:-mt-[100px] 2xl:-mt-[200px]">
-      <div className=" px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[90px] lg:pt-[150px] 2xl:pt-[250px]  pb-[50px] ">
+    <div className=" -mt-[70px] ">
+      <ScrollToTopOnMount />
+      <div className="bg-secondary pt-[90px] lg:pt-[150px]  pb-[50px] 2xl:pb-[80px] px-[3%]">
+        <h4 className="text-center text-6xl leading-relaxed lg:text-[112px] font-bold text-white">
+          TERMS OF USE
+        </h4>
+      </div>
+      <div className="bg-orange-100 px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[90px]  pb-[50px] ">
         <div className="h-full ">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-[25px]">
             <div className="lg:pr-[20px]">
               <div className="border-b-[1px] lg:border-b-[0px] border-black pb-[10px] ">
-                {faqs.map((heading, index) => (
+                {terms.map((heading, index) => (
                   <div key={index}>
                     <ul
                       className={`tex-[16px] font-[700] ml-[20px] w-fit mb-[16px] md:mb-[24px] ${
@@ -73,7 +80,7 @@ const Terms = () => {
               </div>
             </div>
             <div className="bg-rgba-6ab5d2-16 px-[24px] py-[36px] rounded-[24px]  flex flex-col">
-              {faqs.map((faqs, index) => (
+              {terms.map((terms, index) => (
                 <div key={index}>
                   <div>
                     <div
@@ -84,16 +91,16 @@ const Terms = () => {
                       }
                     >
                       <h4 className="text-black text-[22px] md:text-[24px] font-[700] leading-[28px] md:leading-[30.6px]">
-                        {faqs.title}
+                        {terms.title}
                       </h4>
                       <h4 className="text-black text-[16px] md:text-[18px] md:leading-[27px] font-[400] mt-[16px]">
-                        {faqs.description}
+                        {terms.description}
                       </h4>
                     </div>
 
                     <div className="max-h-[300px] overflow-y-auto sm:scrollbar sm:scrollbar-w-[6px] sm:scrollbar-thumb-primary sm:scrollbar-track-transparent sm:scrollbar-thumb-rounded-full sm:scrollbar-track-rounded-full">
                       {activeHeadingIndex === index &&
-                        faqs.slides.map((slide, slideIndex) => (
+                        terms.slides.map((slide, slideIndex) => (
                           <div key={slideIndex}>
                             {activeSlideIndex === slideIndex &&
                               slide.sections.map((section, sectionIndex) => (
@@ -151,7 +158,7 @@ const Terms = () => {
                 </div>
                 <div className="order-1 mt-[20px] md:mt-[0px]">
                   <h4 className="text-black font-[400] text-[12px] text-center">
-                    Last updated: July 2024
+                    Last updated: November 2024
                   </h4>
                 </div>
               </div>

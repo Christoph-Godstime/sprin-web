@@ -19,6 +19,8 @@ import Peer from "peerjs";
 import CallModal from "./support/SupportEngine/SupportWindow/CallModal";
 import DeleteAccount from "./pages/DeleteAccount";
 import Contact from "./pages/Contact";
+import Rider from "./pages/Rider";
+import Vendor from "./pages/Vendor";
 
 function App() {
   const auth = false; // Replace with your actual authentication logic
@@ -58,6 +60,8 @@ function App() {
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/terms" component={Terms} />
         <Route exact path="/delete-account" component={DeleteAccount} />
+        <Route exact path="/riders" component={Rider} />
+        <Route exact path="/vendors" component={Vendor} />
         <Route exact path="/contact" component={Contact} />
         <div style={{}}>
           <PrivateRouter exact path="/login/:page" component={PageRender} />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { faqs } from "../utils/data";
 import leftnav from "../assets/leftnav.png";
 import rightnav from "../assets/rightnav.png";
+import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
 
 const Faqs = () => {
   const [activeHeadingIndex, setActiveHeadingIndex] = useState(0);
@@ -50,13 +51,14 @@ const Faqs = () => {
     activeHeadingIndex !== faqs.length - 1 ||
     activeSlideIndex !== faqs[activeHeadingIndex].slides.length - 1;
   return (
-    <div className=" -mt-[70px] lg:-mt-[100px] 2xl:-mt-[200px]">
-      <div className="bg-secondary pt-[90px] lg:pt-[150px] 2xl:pt-[250px] pb-[50px] 2xl:pb-[80px]">
+    <div className=" -mt-[70px] ">
+      <ScrollToTopOnMount />
+      <div className="bg-secondary pt-[90px] lg:pt-[150px]  pb-[50px] 2xl:pb-[80px] px-[3%]">
         <h4 className="text-center text-6xl leading-relaxed lg:text-[112px] font-bold text-white">
           FAQs
         </h4>
       </div>
-      <div className="bg-orange-100 px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[70px]   pb-[50px] ">
+      <div className="bg-orange-100 px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[90px]  pb-[50px] ">
         <div className="h-full ">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-[25px]">
             <div className="lg:pr-[20px]">
@@ -156,7 +158,7 @@ const Faqs = () => {
                 </div>
                 <div className="order-1 mt-[20px] md:mt-[0px]">
                   <h4 className="text-black font-[400] text-[12px] text-center">
-                    Last updated: July 2024
+                    Last updated: November 2024
                   </h4>
                 </div>
               </div>

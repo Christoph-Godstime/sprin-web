@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import pointdown from "../assets/pointdown.gif";
 import { RiArrowRightLine } from "react-icons/ri";
-import home1 from "../assets/home1.jpg";
+import chef from "../assets/chef.png";
 import playstore from "../assets/playstore.webp";
 import applestore from "../assets/applestore.png";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
+import hero from "../assets/hero.png";
+import rider from "../assets/rider.webp";
+import Slides from "../components/Slides";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(1);
@@ -77,8 +82,9 @@ const Home = () => {
   };
 
   return (
-    <div className=" -mt-[70px] lg:-mt-[100px] 2xl:-mt-[200px] ">
-      <div
+    <div className="  ">
+      <ScrollToTopOnMount />
+      {/* <div
         className={`bg-no-repeat z-10 w-full bg-cover bg-center h-full pt-[100px] pb-[200px] md:py-[150px] lg:py-[180px] 2xl:py-[300px] px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] relative `}
         style={{
           backgroundImage: `url(${getImageUrl()})`,
@@ -116,14 +122,46 @@ const Home = () => {
           </div>
           <img className="w-[250px]" src={pointdown} />
         </div>
+      </div> */}
+
+      <div
+        className={`bg-no-repeat z-10 -mt-[70px] w-full bg-cover bg-center h-screen  relative flex justify-center items-center`}
+        style={{
+          backgroundImage: `url(${hero})`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          backdropFilter: "",
+        }}
+      >
+        <div className="px-[3%] lg:px-[0px]">
+          <div className="flex justify-center">
+            <h4 className="text-white text-[25px]  lg:text-[40px] font-[600]  text-center md:w-[60%] bg-secondary p-[20px] rounded-full px-[15px]">
+              Discover restaurants and more near you.
+            </h4>
+          </div>
+
+          <div className="flex justify-center">
+            <h4 className="text-white font-[500]  mt-[40px] text-[16px] text-semibold lg:text-[24px] text-center tracking-[1px] md:w-[70%] bg-primary p-[20px] rounded-full ">
+              At Sprin, our passion lies in crafting inventive solutions for
+              food delivery that have the potential to influence the future of
+              our world.
+            </h4>
+          </div>
+        </div>
+        <div className="absolute xl:bottom-[10px] md:-bottom-[15px] bottom-[20px]  left-1/2 transform -translate-x-1/2 ">
+          <div className="text-white text-[12px] lg:text-[16px]  text-center bg-secondary w-[100px] lg:w-[120px] h-[40px] flex justify-center items-center mx-auto">
+            Keep scrolling
+          </div>
+          <img className="w-[250px]" src={pointdown} />
+        </div>
       </div>
 
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] xl:py-[88px] py-[24px] md:py-[70px] ">
-        <h4 className="text-[22px] lg:text-[30px] font-normal  text-gray-900 leading-[35px] lg:leading-[50px] transform -skew-y-12 text-shadow-lg">
+        {/* <h4 className="text-[22px] lg:text-[30px] font-normal  text-gray-900 leading-[35px] lg:leading-[50px] transform -skew-y-12 text-shadow-lg">
           Food serves as our shared foundation, a universal encounter.
-        </h4>
+        </h4> */}
 
-        <div className="mt-[50px] md:mt-[80px]">
+        <div className="">
           <div className="">
             <div
               className={`w-[115px] h-[40px] flex justify-center items-center rounded-full mx-auto ${
@@ -149,9 +187,9 @@ const Home = () => {
             <button className="bg-secondary flex justify-center items-center w-[48px] h-[48px] rounded-full">
               <img className="w-[15px]" src={playstore} />
             </button>
-            <button className="bg-secondary flex justify-center items-center w-[48px] h-[48px] rounded-full">
+            {/* <button className="bg-secondary flex justify-center items-center w-[48px] h-[48px] rounded-full">
               <img className="w-[15px]" src={applestore} />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -159,22 +197,26 @@ const Home = () => {
       <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-[50px] xl:gap-[70px] gap-[33px] py-[12px] md:pb-[20px] xl:pb-[40px] items-center px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%]">
         <div className="">
           {" "}
-          <img src={home1} />
+          <img src={rider} />
         </div>
         <div className="">
-          <h4 className="text-[24px] lg:text-[38px] font-semibold mb-[15px]">
-            Satisfy all your cravings with convenient delivery.
+          <h4 className="text-[18px] lg:text-[28px] font-semibold mb-[15px]">
+            Experience the freedom of flexible earning as a rider! Deliver meals
+            from popular local spots straight to customers' doors.
           </h4>
-          <h4 className="text-[20px] lg:text-[28px] font-semibold mb-[10px]">
-            Enjoy dishes from your favorite neighborhood eateries
+          <h4 className="text-[18px] lg:text-[28px] font-semibold mb-[10px]">
+            Looking for flexibility? Become a rider, set your own schedule, and
+            make deliveries that fit around your life.
           </h4>
-          <h4 className="lg:text-[22px] text-[12px]">
-            Short on time? Have fresh food delivered to your doorstep with just
-            a click.
+          <h4 className="lg:text-[16px] text-[12px]">
+            Join us, hit the road, and earn while bringing delicious food to
+            doorsteps with ease.
           </h4>
-          <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
-            Find restaurants
-          </button>
+          <NavLink exact to="/riders" activeStyle={{ color: "#f97316" }}>
+            <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
+              Become a Rider
+            </button>
+          </NavLink>
         </div>
       </div>
 
@@ -182,20 +224,25 @@ const Home = () => {
         <div className="md:grid grid-cols-2 lg:gap-[50px] xl:gap-[70px] gap-[33px] items-center">
           <div className="order-2">
             {" "}
-            <img src={home1} />
+            <img src={chef} />
           </div>
-          <div className="order-1">
-            <h4 className="text-[24px] lg:text-[38px] font-semibold mb-[15px]">
-              Expand your business with Sprin.
+          <div className="order-1 mt-[10px] md:mt-[0px]">
+            <h4 className="text-[18px] lg:text-[28px] font-semibold mb-[15px]">
+              Join our platform and showcase your dishes to a wider audience.
+              Whether it's breakfast, lunch, or dinner, connect with food lovers
+              in your neighborhood and beyond.
             </h4>
 
-            <h4 className="lg:text-[22px] text-[12px]">
-              Companies of all sizes collaborate with Sprin to attract new
-              customers, boost their order volumes, and enhance sales.
+            <h4 className="lg:text-[16px] text-[12px]">
+              Ready to expand your reach? Partner with us to streamline orders,
+              boost visibility, and increase revenue—all while focusing on what
+              you do best: creating amazing food.
             </h4>
-            <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
-              Become a Partner
-            </button>
+            <NavLink exact to="/vendors" activeStyle={{ color: "#f97316" }}>
+              <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
+                Partner with Us
+              </button>
+            </NavLink>
           </div>
         </div>
 
@@ -228,52 +275,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 xl:gap-[80px] md:gap-[50px] gap-[15px] py-[50px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%]">
-        <div className="flex flex-col">
-          <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
-            Become a Rider
-          </h4>
-          <h4 className="mt-auto text-[12px] lg:text-[18px] text-center md:leading-[30px] pt-[10px] font-[500]">
-            As a delivery driver, you'll make reliable money—working anytime,
-            anywhere.
-          </h4>
-          <button className="flex items-center gap-[15px] justify-center mt-[20px]">
-            <h4 className="text-[18px] font-[600] text-primary hover:text-orange-600">
-              SEE MORE
-            </h4>{" "}
-            <HiArrowNarrowRight className="text-primary text-[25px]" />
-          </button>
-        </div>
-
-        <div className="flex flex-col">
-          <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
-            Become a Partner
-          </h4>
-          <h4 className="mt-auto text-[12px] lg:text-[18px] text-center md:leading-[30px] pt-[10px] font-[500]">
-            Grow your business and reach new customers by partnering with us.
-          </h4>
-          <button className="flex items-center gap-[15px] justify-center mt-[20px]">
-            <h4 className="text-[18px] font-[600] text-primary hover:text-orange-600">
-              SEE MORE
-            </h4>{" "}
-            <HiArrowNarrowRight className="text-primary text-[25px]" />
-          </button>
-        </div>
-
-        <div className="flex flex-col">
-          <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
-            Springfare experience
-          </h4>
-          <h4 className="mt-auto text-[12px] lg:text-[18px] text-center md:leading-[30px] pt-[10px] font-[500]">
-            Sign up to experience the best your neighborhood has to offer.
-          </h4>
-          <button className="flex items-center gap-[15px] justify-center mt-[20px]">
-            <h4 className="text-[18px] font-[600] text-primary hover:text-orange-600">
-              SEE MORE
-            </h4>{" "}
-            <HiArrowNarrowRight className="text-primary text-[25px]" />
-          </button>
-        </div>
+      <div className=" py-[50px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%]">
+        <Slides />
       </div>
     </div>
   );

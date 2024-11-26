@@ -37,44 +37,24 @@ const Header = ({ show, setShow }) => {
       <div
         className={
           fix
-            ? "fixed w-full 2xl:mt-[200px] lg:mt-[100px]  z-40 mt-[70px] bg-orange-100 shadow-xl ease-in-out duration-500"
+            ? "fixed w-full   z-40 mt-[70px] bg-orange-100 shadow-xl ease-in-out duration-500"
             : "sticky z-40 "
         }
       >
         <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%]">
           <div className="flex justify-between items-center h-[70px]">
-            <div className="flex items-center space-x-[30px]">
-              <div
-                onClick={() => setShow(!show)}
-                className="w-[48px] h-[48px] rounded-full flex justify-center items-center bg-secondary"
-              >
-                <FiMenu className="text-[24px] cursor-pointer text-white" />
-              </div>
-              <div className="cursor-pointer">
-                <div className={fix ? "flex" : "hidden"}>
-                  <Link exact to="/">
-                    <Logo width="w-[70px]" text="text-[18px]" />
-                  </Link>
+            <div className="cursor-pointer">
+              <Link exact to="/">
+                <div className="w-[90px] h-[48px] rounded-full flex justify-center items-center bg-secondary">
+                  <Logo width="w-[50px]" text="text-[18px]" />
                 </div>
-                <div className={fix ? "hidden" : "flex"}>
-                  <Link exact to="/">
-                    <Logo width="w-[70px]" text="text-[18px]" />
-                  </Link>
-                </div>
-              </div>
+              </Link>
             </div>
             <div
-              className={
-                fix
-                  ? "flex relative justify-end  w-[60%] md:w-[400px]"
-                  : "hidden"
-              }
+              onClick={() => setShow(!show)}
+              className="w-[48px] h-[48px] rounded-full flex justify-center items-center bg-secondary"
             >
-              <input
-                className="pr-[14px] pl-[40px] py-[12px] w-full focus:outline-none  focus:border-orange-300  focus:border-b-2 rounded-t-[6px] text-gray-900 text-[12px]"
-                placeholder="Enter delivery address"
-              />
-              <FaLocationDot className="absolute top-1/2 left-[14px] transform  -translate-y-1/2" />
+              <FiMenu className="text-[24px] cursor-pointer text-white" />
             </div>
           </div>
         </div>
@@ -100,10 +80,10 @@ const Header = ({ show, setShow }) => {
         >
           <div className="px-[4%] xl:px-[60px] 2xl:px-[15%] flex flex-col h-full">
             <div className="flex items-center justify-between">
-              <div className="cursor-pointer">
+              <div onClick={() => setShow(!show)} className="cursor-pointer">
                 <div>
                   <Link exact to="/">
-                    <Logo width="w-[70px]" text="text-[18px]" />
+                    <Logo width="w-[50px]" text="text-[18px]" />
                   </Link>
                 </div>
               </div>
@@ -122,7 +102,7 @@ const Header = ({ show, setShow }) => {
                   Home
                 </NavLink>
               </h4>
-              <h4
+              {/* <h4
                 onClick={() => setShow(!show)}
                 className="text-[16px] font-[500] md:font-[400] text-white"
               >
@@ -133,7 +113,7 @@ const Header = ({ show, setShow }) => {
                 >
                   Customers
                 </NavLink>
-              </h4>
+              </h4> */}
 
               <h4
                 onClick={() => setShow(!show)}
@@ -193,14 +173,14 @@ const Header = ({ show, setShow }) => {
                   Download on Google Play
                 </h4>
               </button>
-              <button className="flex items-center justify-center space-x-[10px] rounded-[8px] bg-orange-100 w-[250px] h-[40px]">
+              {/* <button className="flex items-center justify-center space-x-[10px] rounded-[8px] bg-orange-100 w-[250px] h-[40px]">
                 <div>
                   <img className="w-[22px]" src={applestore} />
                 </div>
                 <h4 className="text-[14px] md:text-[16px] text-black">
                   Download on App Store
                 </h4>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

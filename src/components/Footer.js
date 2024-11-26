@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "./Logo";
+import { NavLink, Link, useHistory } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,70 +15,69 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-[40px] sm:grid-cols-3  w-full">
           <div>
             <h4 className="text-[18px] text-gray-400 mb-[25px]">Company</h4>
-            <a href="about.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+            {/* <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/customers" activeStyle={{ color: "#f97316" }}>
                 Customers
-              </h3>
-            </a>
-            <a href="pricing.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </NavLink>
+            </h3> */}
+
+            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/vendors" activeStyle={{ color: "#f97316" }}>
                 Vendors
-              </h3>
-            </a>
-            <a href="blog.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </NavLink>
+            </h3>
+
+            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/riders" activeStyle={{ color: "#f97316" }}>
                 Riders
-              </h3>
-            </a>
-            <a href="contact.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </NavLink>
+            </h3>
+
+            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/contact" activeStyle={{ color: "#f97316" }}>
                 Contact
-              </h3>
-            </a>
-            <a href="use-cases.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </NavLink>
+            </h3>
+
+            {/* <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
                 About
-              </h3>
-            </a>
+              </h3> */}
           </div>
 
           <div>
             <h4 className="text-[18px] text-gray-400 mb-[25px]">Support</h4>
-            <a href="faq.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+
+            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/faqs" activeStyle={{ color: "#f97316" }}>
                 FAQs
-              </h3>
-            </a>
-            <a href="terms.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </NavLink>
+            </h3>
+
+            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/terms" activeStyle={{ color: "#f97316" }}>
                 Terms of services
-              </h3>
-            </a>
-            <a href="cookie-policy.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </NavLink>
+            </h3>
+
+            {/* <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
                 Cookies Policy
-              </h3>
-            </a>
-            <a href="privacy-policy.html" className="nav-link">
-              <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              </h3> */}
+
+            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/privacy" activeStyle={{ color: "#f97316" }}>
                 Privacy Policy
-              </h3>
-            </a>
+              </NavLink>
+            </h3>
           </div>
 
           <div>
             <h4 className="text-[18px] text-gray-400 mb-[25px]">Follow Us</h4>
             <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
-              Facebook
-            </h3>
-            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
-              Twitter
-            </h3>
-            <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
               Instagram
             </h3>
+
             <h3 className="text-[12px] md:text-[14px] font-[300] text-white mb-[10px]">
-              LinkedIn
+              Twitter
             </h3>
           </div>
         </div>

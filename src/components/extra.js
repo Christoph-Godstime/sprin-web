@@ -629,7 +629,7 @@ const Header = ({ show, setShow }) => {
                         Privacy Policy
                       </span>
                     </Link>
-                    {" of SpringFare"}
+                    {" of Sprin"}
                   </span>
                 </div>
               </div>
