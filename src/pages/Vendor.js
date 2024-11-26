@@ -102,7 +102,8 @@ const Vendor = () => {
           email,
           phoneNumber,
           deviceType,
-        }
+        },
+        { withCredentials: true }
       );
       setSuccessMessage(response.data.message || "Request sent successfully");
       setRestaurantName("");

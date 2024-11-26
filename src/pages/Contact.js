@@ -35,7 +35,8 @@ const Contact = () => {
           email,
           phoneNumber,
           message,
-        }
+        },
+        { withCredentials: true }
       );
       setSuccessMessage(response.data.message || "Request sent successfully");
       setEmail("");

@@ -124,7 +124,8 @@ const Rider = () => {
           email,
           phoneNumber,
           deviceType,
-        }
+        },
+        { withCredentials: true }
       );
       setSuccessMessage(response.data.message || "Request sent successfully");
       setEmail("");
