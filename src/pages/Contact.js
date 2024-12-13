@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import feature1 from "../assets/feature1.png";
-import feature2 from "../assets/feature2.png";
-import feature3 from "../assets/feature3.png";
-import feature4 from "../assets/feature4.png";
+import vendor1 from "../assets/vendor1.png";
+import vendor2 from "../assets/vendor2.png";
+import vendor3 from "../assets/vendor3.png";
+import vendor4 from "../assets/vendor4.png";
 import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
 
 const Contact = () => {
@@ -53,17 +53,35 @@ const Contact = () => {
     }
   };
   return (
-    <div className=" -mt-[70px]">
+    <div className="-mt-[70px]">
       <ScrollToTopOnMount />
-      {/* <div className="bg-secondary w-[1100px] h-[550px] flex justify-center items-center">
-        <img className="h-[460px]" src={feature1} />
-        <img className="h-[460px]" src={feature2} />
-        <img className="h-[460px]" src={feature3} />
-        <img className="h-[460px]" src={feature4} />
+      {/* <div className="bg-secondary w-[1100px] h-[550px] flex justify-center items-center mt-[50px]">
+        <img className="h-[460px]" src={vendor1} />
+        <img className="h-[460px]" src={vendor2} />
+        <img className="h-[460px]" src={vendor3} />
+        <img className="h-[460px]" src={vendor4} />
       </div> */}
-      <div className="bg-gray-200 px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[90px]  pb-[50px] ">
+      <div className="bg-gray-200 px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[90px] pb-[50px]">
         <div className="border-[#F2F2F2] border-[1px] rounded-[20px] p-[24px] bg-white max-w-[800px] mx-auto">
           <h4 className="md:text-[28px] text-[20px] xl:text-[36px] font-[600] text-text text-center">
+            Contact Us
+          </h4>
+          <div className="mt-[16px] text-center">
+            <p className="text-[16px] text-gray-600">
+              Phone:{" "}
+              <span className="font-bold text-black">+234 813 528 9984</span>
+            </p>
+            <p className="text-[16px] text-gray-600">
+              Email:{" "}
+              <a
+                href="mailto:sprinapp@gmail.com"
+                className="font-bold text-primary hover:underline"
+              >
+                sprinapp@gmail.com
+              </a>
+            </p>
+          </div>
+          <h4 className="mt-[40px] md:text-[28px] text-[20px] xl:text-[36px] font-[600] text-text text-center">
             Tell Us How We Can Help
           </h4>
           <div className="mt-[24px] lg:mt-[48px] grid grid-cols-1 gap-[24px]">
@@ -73,7 +91,7 @@ const Contact = () => {
                   First Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter first name"
                   type="text"
                   name="firstName"
@@ -86,7 +104,7 @@ const Contact = () => {
                   Last Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter last name"
                   type="text"
                   name="lastName"
@@ -100,7 +118,7 @@ const Contact = () => {
                 Email address <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Enter email address"
                 type="email"
                 name="email"
@@ -108,13 +126,12 @@ const Contact = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-
             <div className="w-full">
               <h4 className="text-[14px] font-[500]">
                 Phone Number <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="08012345678"
                 type="tel"
                 name="phoneNumber"
@@ -125,7 +142,7 @@ const Contact = () => {
             <div className="w-full">
               <h4 className="text-[14px] font-[500]">Message</h4>
               <textarea
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Type a message..."
                 rows="5"
                 value={message}
