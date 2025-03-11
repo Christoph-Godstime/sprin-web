@@ -17,7 +17,7 @@ const Orders = () => {
     <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[100px] ">
       <ScrollToTopOnMount />
       <div className="w-full max-w-2xl flex justify-start items-center h-[60px] sticky top-0  z-40 px-[12px] bg-white shadow-lg">
-        <h2 className="text-black  text-[12px] md: text-[14px] font-[500]">
+        <h2 className="text-black  text-[12px] md:text-[14px] font-[500]">
           Orders
         </h2>
       </div>
@@ -30,12 +30,12 @@ const Orders = () => {
           <div>
             {!orderDetails || Object.keys(orderDetails).length === 0 ? (
               <div className="fixed inset-0 flex flex-col items-center justify-center">
-                <p className=" text-[12px] md: text-[14px] font-[400]">
+                <p className=" text-[12px] md:text-[14px] font-[400]">
                   No Past or Ongoing Order
                 </p>
                 <button
                   onClick={() => navigate("/home")}
-                  className="mt-6 bg-primary text-white  text-[12px] md: text-[14px] font-[500] py-3 px-6 rounded-lg"
+                  className="mt-6 bg-primary text-white  text-[12px] md:text-[14px] font-[500] py-3 px-6 rounded-lg"
                 >
                   Make your first order
                 </button>

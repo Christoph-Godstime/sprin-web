@@ -86,7 +86,7 @@ const ResetPassword = () => {
           }) => (
             <Form className="space-y-[30px]">
               <div>
-                <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
+                <label className="block text-gray-700 font-[500] text-end  text-[10px] md:text-[12px]">
                   New Password
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-white">
@@ -95,7 +95,7 @@ const ResetPassword = () => {
                     type={obsecureText1 ? "password" : "text"}
                     name="password"
                     placeholder="Enter new password"
-                    className="w-full outline-none  bg-white placeholder: text-[10px]   text-[10px] md: text-[12px] "
+                    className="w-full outline-none  bg-white placeholder:text-[10px]   text-[10px] md:text-[12px] "
                     onFocus={() => setFieldTouched("password")}
                     onBlur={() => setFieldTouched("password", "")}
                     value={values.password}
@@ -115,14 +115,14 @@ const ResetPassword = () => {
                   </button>
                 </div>
                 {touched.password && errors.password && (
-                  <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
+                  <p className="text-red-400  text-[10px] md:text-[12px] mt-1">
                     {errors.password}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
+                <label className="block text-gray-700 font-[500] text-end  text-[10px] md:text-[12px]">
                   Confirm Password
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-white">
@@ -131,7 +131,7 @@ const ResetPassword = () => {
                     type={obsecureText2 ? "password" : "text"}
                     name="confirmPassword"
                     placeholder="Confirm new password"
-                    className="w-full outline-none  bg-white placeholder: text-[10px]   text-[10px] md: text-[12px] "
+                    className="w-full outline-none  bg-white placeholder:text-[10px]   text-[10px] md:text-[12px] "
                     onFocus={() => setFieldTouched("confirmPassword")}
                     onBlur={() => setFieldTouched("confirmPassword", "")}
                     value={values.confirmPassword}
@@ -151,7 +151,7 @@ const ResetPassword = () => {
                   </button>
                 </div>
                 {touched.confirmPassword && errors.confirmPassword && (
-                  <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
+                  <p className="text-red-400  text-[10px] md:text-[12px] mt-1">
                     {errors.confirmPassword}
                   </p>
                 )}

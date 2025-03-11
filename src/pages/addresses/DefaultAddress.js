@@ -79,11 +79,11 @@ const DefaultAddress = () => {
       <Header text="Edit Profile Details" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">
         <div className="w-full  p-6 bg-gray-100 rounded-lg shadow-md">
-          <h2 className=" text-[12px] md: text-[14px] font-medium text-black mb-2">
+          <h2 className=" text-[12px] md:text-[14px] font-medium text-black mb-2">
             Set this address as default
           </h2>
 
-          <p className=" text-[10px] md: text-[12px] text-gray-600 mb-4">
+          <p className=" text-[10px] md:text-[12px] text-gray-600 mb-4">
             {data?.addressLine1}
           </p>
           <div className="flex justify-center mt-[20px]">

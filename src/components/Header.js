@@ -9,7 +9,7 @@ const Header = ({ text }) => {
       <button onClick={() => navigate(-1)} className="text-white text-xl  ">
         <BsArrowLeft />
       </button>
-      <h2 className="text-white  text-[12px] md: text-[14px] font-[500] ml-[30px]">
+      <h2 className="text-white  text-[12px] md:text-[14px] font-[500] ml-[30px]">
         {text}
       </h2>
     </div>

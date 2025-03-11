@@ -17,14 +17,14 @@ const AddressTile = ({ onClick, item, onDelete }) => {
           </div>
           <div className="ml-3">
             <p
-              className={` text-[10px] md: text-[12px] ${
+              className={` text-[10px] md:text-[12px] ${
                 item.default ? "text-primary" : "text-gray-700"
               }`}
             >
               {item.addressLine1}
             </p>
             <p
-              className={` text-[10px] md: text-[12px] ${
+              className={` text-[10px] md:text-[12px] ${
                 item.default ? "text-primary" : "text-gray-700"
               }`}
             >

@@ -90,10 +90,10 @@ const Privacy = () => {
                           : "hidden"
                       }
                     >
-                      <h4 className="text-black  text-[20px] md: text-[22px] font-[700] leading-[28px] md:leading-[30.6px]">
+                      <h4 className="text-black  text-[20px] md:text-[22px] font-[700] leading-[28px] md:leading-[30.6px]">
                         {privacy.title}
                       </h4>
-                      <h4 className="text-black  text-[14px] md: text-[16px] md:leading-[27px] font-[400] mt-[16px]">
+                      <h4 className="text-black  text-[14px] md:text-[16px] md:leading-[27px] font-[400] mt-[16px]">
                         {privacy.description}
                       </h4>
                     </div>
@@ -110,17 +110,17 @@ const Privacy = () => {
                                 >
                                   <div className="flex">
                                     <div className="w-[15px] flex justify-end mr-[10px]">
-                                      <h4 className="  text-[12px] md: text-[14px] font-[400] text-black leading-[21px] md:leading-[28px]">
+                                      <h4 className="  text-[12px] md:text-[14px] font-[400] text-black leading-[21px] md:leading-[28px]">
                                         {section.number}
                                       </h4>
                                     </div>
                                     <div className="w-full">
-                                      <h3 className=" text-[12px] md: text-[14px] font-[400] text-black leading-[21px] md:leading-[28px]">
+                                      <h3 className=" text-[12px] md:text-[14px] font-[400] text-black leading-[21px] md:leading-[28px]">
                                         {section.title}
                                       </h3>
                                       {section.texts.map((text, textIndex) => (
                                         <ul
-                                          className="list-disc mt-[10px] text-black font-[400]  text-[12px] md: text-[14px] leading-[21px] md:leading-[28px] -ml-[10px] md:ml-[20px]"
+                                          className="list-disc mt-[10px] text-black font-[400]  text-[12px] md:text-[14px] leading-[21px] md:leading-[28px] -ml-[10px] md:ml-[20px]"
                                           key={textIndex}
                                         >
                                           <li>{text}</li>

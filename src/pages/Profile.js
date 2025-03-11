@@ -48,7 +48,7 @@ const Profile = () => {
                   height={45}
                   radius={99}
                 />
-                <div className="ml-3  text-[10px] md: text-[12px]">
+                <div className="ml-3  text-[10px] md:text-[12px]">
                   <p className="font-medium text-black">
                     {profileDetails
                       ? `${profileDetails.firstName} ${profileDetails.lastName}`

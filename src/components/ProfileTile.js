@@ -18,18 +18,18 @@ import { BsArrowRight } from "react-icons/bs";
 import { FaAngleRight } from "react-icons/fa6";
 
 const iconMap = {
-  person: <FaUserCircle size={24} className="text-gray-500" />,
-  setting: <AiOutlineSetting size={24} className="text-gray-500" />,
-  location: <MdLocationOn size={24} className="text-gray-500" />,
-  privacy: <MdPrivacyTip size={24} className="text-gray-500" />,
-  bulb: <FaLightbulb size={24} className="text-gray-500" />,
-  questioncircle: <FaQuestionCircle size={24} className="text-gray-500" />,
+  person: <FaUserCircle size={20} className="text-gray-500" />,
+  setting: <AiOutlineSetting size={20} className="text-gray-500" />,
+  location: <MdLocationOn size={20} className="text-gray-500" />,
+  privacy: <MdPrivacyTip size={20} className="text-gray-500" />,
+  bulb: <FaLightbulb size={20} className="text-gray-500" />,
+  questioncircle: <FaQuestionCircle size={20} className="text-gray-500" />,
   customerservice: (
-    <AiOutlineCustomerService size={24} className="text-gray-500" />
+    <AiOutlineCustomerService size={20} className="text-gray-500" />
   ),
-  gift: <FaGift size={24} className="text-gray-500" />,
-  wallet: <AiOutlineWallet size={24} className="text-gray-500" />,
-  delete: <FaTrash size={24} className="text-red-500" />,
+  gift: <FaGift size={20} className="text-gray-500" />,
+  wallet: <AiOutlineWallet size={20} className="text-gray-500" />,
+  delete: <FaTrash size={20} className="text-red-500" />,
 };
 
 const ProfileTile = ({ onPress, title, icon }) => {
@@ -38,9 +38,9 @@ const ProfileTile = ({ onPress, title, icon }) => {
       <div className="flex justify-between items-center py-2">
         <div className="flex items-center space-x-3">
           {iconMap[icon] || (
-            <FaUserCircle size={24} className="text-gray-500" />
+            <FaUserCircle size={20} className="text-gray-500" />
           )}
-          <span className=" text-[10px] md: text-[12px] text-gray-500 font-regular">
+          <span className=" text-[10px] md:text-[12px] text-gray-500 font-regular">
             {title}
           </span>
         </div>

@@ -91,7 +91,7 @@ const Contact = () => {
                   First Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter first name"
                   type="text"
                   name="firstName"
@@ -104,7 +104,7 @@ const Contact = () => {
                   Last Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter last name"
                   type="text"
                   name="lastName"
@@ -118,7 +118,7 @@ const Contact = () => {
                 Email address <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Enter email address"
                 type="email"
                 name="email"
@@ -131,7 +131,7 @@ const Contact = () => {
                 Phone Number <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="08012345678"
                 type="tel"
                 name="phoneNumber"
@@ -142,7 +142,7 @@ const Contact = () => {
             <div className="w-full">
               <h4 className=" text-[12px] font-[500]">Message</h4>
               <textarea
-                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Type a message..."
                 rows="5"
                 value={message}

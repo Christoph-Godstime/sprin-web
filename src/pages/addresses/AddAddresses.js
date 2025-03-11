@@ -304,7 +304,7 @@ const AddAddresses = () => {
             />
           </GoogleMap>
           <div className="absolute bottom-10  max-w-lg py-[12px] bg-[#FFA50040] p-4 rounded-[30px] shadow-lg text-center mx-4">
-            <p className="mb-4 text-secondary  text-[10px] md: text-[12px]">
+            <p className="mb-4 text-secondary  text-[10px] md:text-[12px]">
               Hold and drag the map marker or type the address to select your
               desired location.
             </p>
@@ -324,34 +324,34 @@ const AddAddresses = () => {
             <button onClick={goToPrevious} className="text-white text-xl  ">
               <BsArrowLeft />
             </button>
-            <h2 className="text-white  text-[12px] md: text-[14px] font-[500] ml-[30px]">
+            <h2 className="text-white  text-[12px] md:text-[14px] font-[500] ml-[30px]">
               Add Address
             </h2>
           </div>
           <div className="flex flex-col items-center justify-center w-full max-w-2xl pt-[20px] px-[12px] space-y-4">
             <input
-              className="w-full p-2 border-b border-gray-400 focus:outline-none  text-[10px] md: text-[12px] placeholder: text-[10px]"
+              className="w-full p-2 border-b border-gray-400 focus:outline-none  text-[10px] md:text-[12px] placeholder:text-[10px]"
               type="text"
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
               placeholder="Postal Code"
             />
             <input
-              className="w-full p-2 border-b border-gray-400 focus:outline-none  text-[10px] md: text-[12px] placeholder: text-[10px]"
+              className="w-full p-2 border-b border-gray-400 focus:outline-none  text-[10px] md:text-[12px] placeholder:text-[10px]"
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Address"
             />
             <input
-              className="w-full p-2 border-b border-gray-400 focus:outline-none  text-[10px] md: text-[12px] placeholder: text-[10px]"
+              className="w-full p-2 border-b border-gray-400 focus:outline-none  text-[10px] md:text-[12px] placeholder:text-[10px]"
               type="text"
               value={deliveryInstructions}
               onChange={(e) => setDeliveryInstructions(e.target.value)}
               placeholder="Rider Delivery Instructions"
             />
             <div className="flex items-center justify-between w-full px-2">
-              <h2 className=" text-[10px] md: text-[12px]">
+              <h2 className=" text-[10px] md:text-[12px]">
                 Set this address as default
               </h2>
               <label className="text-gray-700 cursor-pointer">

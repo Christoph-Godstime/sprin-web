@@ -90,10 +90,10 @@ const Faqs = () => {
                           : "hidden"
                       }
                     >
-                      <h4 className="text-black  text-[20px] md: text-[22px] font-[700] leading-[28px] md:leading-[30.6px]">
+                      <h4 className="text-black  text-[20px] md:text-[22px] font-[700] leading-[28px] md:leading-[30.6px]">
                         {faqs.title}
                       </h4>
-                      <h4 className="text-black  text-[14px] md: text-[16px] md:leading-[27px] font-[400] mt-[16px]">
+                      <h4 className="text-black  text-[14px] md:text-[16px] md:leading-[27px] font-[400] mt-[16px]">
                         {faqs.description}
                       </h4>
                     </div>

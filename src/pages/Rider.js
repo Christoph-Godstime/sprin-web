@@ -157,7 +157,7 @@ const Rider = () => {
 
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] ">
         <div className="md:max-w-[700px] mx-auto rounded-[8px] bg-white -mt-[170px]  shadow-lg px-[16px] py-[20px]">
-          <h4 className=" md: text-[22px]  text-[18px] font-[500]  leading-[24px] md:leading-[45px]  text-[#101828]   text-start lg:w-[800px] mx-auto tracking-tight mb-[25px]">
+          <h4 className=" md:text-[22px]  text-[18px] font-[500]  leading-[24px] md:leading-[45px]  text-[#101828]   text-start lg:w-[800px] mx-auto tracking-tight mb-[25px]">
             Get Started
           </h4>
 
@@ -167,7 +167,7 @@ const Rider = () => {
                 Email Address <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="johndoe@gmail.com"
                 type="email"
                 name="email"
@@ -182,7 +182,7 @@ const Rider = () => {
                   First Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter first name"
                   type="text"
                   name="firstName"
@@ -195,7 +195,7 @@ const Rider = () => {
                   Last Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter last name"
                   type="text"
                   name="lastName"
@@ -210,7 +210,7 @@ const Rider = () => {
                 Phone Number<span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="08012345678"
                 type="tel"
                 name="phoneNumber"
@@ -224,7 +224,7 @@ const Rider = () => {
                 Mobile Device Type <span className="text-red-500">*</span>
               </h4>
               <select
-                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder:text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 value={deviceType}
                 onChange={(e) => setDeviceType(e.target.value)}
               >
@@ -257,10 +257,10 @@ const Rider = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 xl:gap-[80px] md:gap-[50px] gap-[15px] py-[50px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%]">
         <div className="flex flex-col">
           <BsPeopleFill className="mx-auto text-[30px] text-primary" />
-          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
+          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg:text-[22px] font-[600] text-center">
             Work when you want
           </h4>
-          <h4 className="mt-auto  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
+          <h4 className="mt-auto  text-[12px] lg:text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
             You decide when, where, and how much you work. Work on your schedule
             and forget about reporting to an office — or a boss.
           </h4>
@@ -268,10 +268,10 @@ const Rider = () => {
 
         <div className="flex flex-col">
           <IoBagCheck className="mx-auto text-[30px] text-primary" />
-          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
+          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg:text-[22px] font-[600] text-center">
             Set your own course
           </h4>
-          <h4 className="mt-auto  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
+          <h4 className="mt-auto  text-[12px] lg:text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
             Choose whether or not to accept offers, find demand near you, and
             earn more instantly with promotions like Challenges and Peak Pay in
             the Sprin app.
@@ -280,10 +280,10 @@ const Rider = () => {
 
         <div className="flex flex-col">
           <MdAccessTimeFilled className="mx-auto text-[30px] text-primary" />
-          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
+          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg:text-[22px] font-[600] text-center">
             Start earning quickly
           </h4>
-          <h4 className="mt-auto  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
+          <h4 className="mt-auto  text-[12px] lg:text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
             Sign up in minutes and start earning within days. Once your
             application is approved, you can start delivering right away and
             cash out instantly*.
@@ -351,7 +351,7 @@ const Rider = () => {
         <div className="max-w-[1480px] mx-auto">
           <ol className="list-decimal list-inside flex justify-between space-x-[40px] items-center px-[3%] lg:px-[0px] overflow-x-auto scrollbar-none">
             <li
-              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl:text-[22px] 2xl:text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "request" ? "text-primary" : "text-[#F2F2F2]"
               }`}
               onClick={() => handleSectionClick("request")}
@@ -359,7 +359,7 @@ const Rider = () => {
               Receive orders
             </li>
             <li
-              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl:text-[22px] 2xl:text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "shortlist"
                   ? "text-primary"
                   : "text-[#F2F2F2]"
@@ -369,7 +369,7 @@ const Rider = () => {
               Pick up the order
             </li>
             <li
-              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl:text-[22px] 2xl:text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "interview"
                   ? "text-primary"
                   : "text-[#F2F2F2]"
@@ -379,7 +379,7 @@ const Rider = () => {
               Deliver
             </li>
             <li
-              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl:text-[22px] 2xl:text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "choose" ? "text-primary" : "text-[#F2F2F2]"
               }`}
               onClick={() => handleSectionClick("choose")}
@@ -403,7 +403,7 @@ const Rider = () => {
                 <h4 className="text-[30px] font-[700] leading-[44px] tracking-tight text-text">
                   Manage Incoming Orders
                 </h4>
-                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md:text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Stay alerted to new orders as they come in. Review each
                   order’s details carefully, including items and specific
                   customer instructions, so you’re ready to start your delivery
@@ -426,7 +426,7 @@ const Rider = () => {
                 <h4 className="text-[30px] font-[700] leading-[44px] tracking-tight text-text">
                   Collect the Order
                 </h4>
-                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md:text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Once assigned an order, head to the restaurant or store to
                   pick it up. You’ll have clear pickup details and directions,
                   ensuring a smooth handoff to keep the process quick and
@@ -449,7 +449,7 @@ const Rider = () => {
                 <h4 className="text-[30px] font-[700] leading-[44px] tracking-tight text-text">
                   Complete the Delivery
                 </h4>
-                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md:text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   After collecting the order, proceed to the delivery location
                   promptly and safely. With navigation support and accurate
                   customer information, you’ll be equipped to complete
@@ -473,7 +473,7 @@ const Rider = () => {
                 <h4 className="text-[30px] font-[700] leading-[44px] tracking-tight text-text">
                   Monitor Your Earnings
                 </h4>
-                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md:text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Track your earnings and delivery progress in real-time. The
                   earnings dashboard lets you easily review completed orders and
                   income, keeping you informed about your accomplishments as you
@@ -497,10 +497,10 @@ const Rider = () => {
             <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center  text-[16px] text-white font-[500] bg-primary mx-auto">
               1
             </div>
-            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
+            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg:text-[22px] font-[600] text-center">
               Age Requirement
             </h4>
-            <h4 className="  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
+            <h4 className="  text-[12px] lg:text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
               To become a Sprin rider, applicants must be at least 18 years old.
               This age threshold ensures that riders are mature enough to handle
               the responsibilities of delivery work.
@@ -511,10 +511,10 @@ const Rider = () => {
             <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center  text-[16px] text-white font-[500] bg-primary mx-auto">
               2
             </div>
-            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
+            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg:text-[22px] font-[600] text-center">
               Vehicle Options
             </h4>
-            <h4 className="  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
+            <h4 className="  text-[12px] lg:text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
               Sprin riders have flexible transportation options based on the
               city in which they operate. You can deliver using any car,
               scooter, motorcycle or, in certain cities, a bicycle. This range
@@ -528,10 +528,10 @@ const Rider = () => {
             <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center  text-[16px] text-white font-[500] bg-primary mx-auto">
               3
             </div>
-            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
+            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg:text-[22px] font-[600] text-center">
               Required Documentation
             </h4>
-            <h4 className="  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
+            <h4 className="  text-[12px] lg:text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
               To complete the application, riders must provide a valid form of
               identification (national ID, voters card or driver’s license).
               This documentation helps ensure that all riders meet safety and
@@ -553,7 +553,7 @@ const Rider = () => {
                   onClick={handleClick(i)}
                   className="py-[16px] flex justify-between items-center "
                 >
-                  <h4 className=" text-[14px] lg: text-[22px] cursor-pointer font-[600]">
+                  <h4 className=" text-[14px] lg:text-[22px] cursor-pointer font-[600]">
                     {drop.title}
                   </h4>
                   <div
@@ -566,7 +566,7 @@ const Rider = () => {
                   </div>
                 </div>
                 {clickedIndex[i] ? (
-                  <h4 className=" text-[12px] lg: text-[14px] py-[20px] pr-[38px] font-light -mt-[20px] mb-[28px]">
+                  <h4 className=" text-[12px] lg:text-[14px] py-[20px] pr-[38px] font-light -mt-[20px] mb-[28px]">
                     {drop.content}
                   </h4>
                 ) : null}

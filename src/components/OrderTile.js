@@ -35,10 +35,10 @@ const OrderTile = ({ onClick, item }) => {
               className="w-16 h-16 rounded-lg object-cover"
             />
             <div>
-              <h2 className=" text-[12px] md: text-[14px] font-semibold text-black">
+              <h2 className=" text-[12px] md:text-[14px] font-semibold text-black">
                 {item.storeId?.title}
               </h2>
-              <div className="flex items-center space-x-3 text-gray-500  text-[10px] md: text-[12px]">
+              <div className="flex items-center space-x-3 text-gray-500  text-[10px] md:text-[12px]">
                 <span>
                   {item.orderItems.length} Item
                   {item.orderItems.length > 1 && "s"}
@@ -52,7 +52,7 @@ const OrderTile = ({ onClick, item }) => {
                   })}
                 </span>
               </div>
-              <div className="flex space-x-2  text-[10px] md: text-[12px] mt-1">
+              <div className="flex space-x-2  text-[10px] md:text-[12px] mt-1">
                 <span
                   className={
                     item.orderStatus === "Cancelled"
@@ -69,7 +69,7 @@ const OrderTile = ({ onClick, item }) => {
             </div>
           </div>
 
-          <div className="flex justify-between mt-4  text-[12px] md: text-[14px] ">
+          <div className="flex justify-between mt-4  text-[12px] md:text-[14px] ">
             <button
               onClick={onClick}
               className="w-1/2 border border-gray-300 bg-white text-black py-2 rounded-md mr-2"

@@ -88,7 +88,7 @@ const VerificationPage = () => {
         <h2 className=" text-[22px] font-[600] text-primary mb-2 text-center">
           Verify Your Account
         </h2>
-        <p className=" text-[10px] md: text-[12px] text-gray-600 text-center mb-5">
+        <p className=" text-[10px] md:text-[12px] text-gray-600 text-center mb-5">
           Verification email has been sent to {email}. If the email is
           incorrect, please delete this account and create a new one with the
           correct email.
