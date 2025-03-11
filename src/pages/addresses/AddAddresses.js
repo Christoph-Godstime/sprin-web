@@ -261,9 +261,9 @@ const AddAddresses = () => {
   return (
     <div
       className="h-screen w-full overflow-hidden"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      // onTouchStart={handleTouchStart}
+      // onTouchMove={handleTouchMove}
+      // onTouchEnd={handleTouchEnd}
     >
       {currentPage === 0 && (
         <div className="relative flex flex-col items-center h-screen  ">
@@ -354,7 +354,7 @@ const AddAddresses = () => {
               <h2 className="text-[12px] md:text-[14px]">
                 Set this address as default
               </h2>
-              <label className="text-gray-700">
+              <label className="text-gray-700 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={isDefaultAddress}
