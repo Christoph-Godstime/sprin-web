@@ -254,7 +254,7 @@ const Grocery = () => {
           {/* Grocery Details */}
           <div className=" flex flex-col space-y-4">
             <div className="flex justify-between items-start px-[12px]">
-              <h1 className="text-[22px] font-medium w-4/5 pr-[20px]">
+              <h1 className=" text-[20px] font-medium w-4/5 pr-[20px]">
                 {grocery.title} {grocery?.quantity || ""}
               </h1>
               <span className="text-lg font-medium text-primary">

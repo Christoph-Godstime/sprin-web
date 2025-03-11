@@ -31,10 +31,12 @@ const InstallBanner = () => {
   return (
     <div className="w-full px-[12px] fixed bottom-[70px] flex justify-center z-40">
       <div className="max-w-lg w-full py-3 text-white font-bold rounded-lg flex  items-center bg-primary  space-x-[10px] justify-between px-[12px] shadow-lg">
-        <p className="text-[12px]">Install SprinApp for a better experience!</p>
+        <p className=" text-[10px]">
+          Install SprinApp for a better experience!
+        </p>
         <button
           onClick={handleInstall}
-          className="bg-white text-orange-500 px-3 py-1 rounded-md font-semibold text-[12px]"
+          className="bg-white text-orange-500 px-3 py-1 rounded-md font-semibold  text-[10px]"
         >
           Install
         </button>

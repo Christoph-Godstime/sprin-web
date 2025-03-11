@@ -93,22 +93,22 @@ const Home = () => {
       >
         <div className="">
           <div className="flex justify-center">
-            <h4 className="text-white text-[25px]  lg:text-[40px] font-[600]  text-center md:w-[60%] bg-secondary p-[20px] rounded-full px-[15px]">
+            <h4 className="text-white  text-[22px]  lg:text-[40px] font-[600]  text-center md:w-[60%] bg-secondary p-[20px] rounded-full px-[15px]">
               Discover restaurants and more near you.
             </h4>
           </div>
           <div className="mx-auto mt-[30px] relative w-full sm:w-[400px]">
-            <IoLocationOutline className="absolute top-1/2 transform -translate-y-1/2 left-[14px] text-[20px]" />
+            <IoLocationOutline className="absolute top-1/2 transform -translate-y-1/2 left-[14px]  text-[18px]" />
             <input
-              className="bg-white rounded-full w-full sm:w-[400px] py-[14px] px-[40px] focus:outline-none  focus:border-orange-500  focus:border-2 placeholder:text-gray-800 placeholder:text-[12px] text-[12px]"
+              className="bg-white rounded-full w-full sm:w-[400px] py-[14px] px-[40px] focus:outline-none  focus:border-orange-500  focus:border-2 placeholder:text-gray-800 placeholder: text-[10px]  text-[10px]"
               placeholder="Enter delivery address"
             />
             <button className="flex justify-center items-center absolute bg-primary hover:bg-orange-600 w-[35px] h-[35px] rounded-full right-[8px] top-1/2 transform -translate-y-1/2">
-              <RiArrowRightLine className="text-white text-[20px]" />
+              <RiArrowRightLine className="text-white  text-[18px]" />
             </button>
           </div>
           <div className="flex justify-center">
-            <h4 className="text-white font-[500]  mt-[40px] text-[16px] text-semibold lg:text-[24px] text-center tracking-[1px] md:w-[70%] bg-primary p-[20px] rounded-full ">
+            <h4 className="text-white font-[500]  mt-[40px]  text-[14px] text-semibold lg: text-[22px] text-center tracking-[1px] md:w-[70%] bg-primary p-[20px] rounded-full ">
               At Sprin, our passion lies in crafting inventive solutions for
               food delivery that have the potential to influence the future of
               our world.
@@ -117,7 +117,7 @@ const Home = () => {
         </div>
 
         <div className="absolute xl:bottom-[10px] md:-bottom-[15px] bottom-[20px]  left-1/2 transform -translate-x-1/2 ">
-          <div className="text-white text-[12px] lg:text-[16px]  text-center bg-secondary w-[100px] lg:w-[120px] h-[40px] flex justify-center items-center mx-auto">
+          <div className="text-white  text-[10px] lg: text-[14px]  text-center bg-secondary w-[100px] lg:w-[120px] h-[40px] flex justify-center items-center mx-auto">
             Keep scrolling
           </div>
           <img className="w-[250px]" src={pointdown} />
@@ -135,13 +135,13 @@ const Home = () => {
       >
         <div className="px-[3%] lg:px-[0px]">
           <div className="flex justify-center">
-            <h4 className="text-white text-[25px]  lg:text-[40px] font-[600]  text-center md:w-[60%] bg-secondary p-[20px] rounded-full px-[15px]">
+            <h4 className="text-white  text-[22px]  lg:text-[40px] font-[600]  text-center md:w-[60%] bg-secondary p-[20px] rounded-full px-[15px]">
               Discover restaurants and more near you.
             </h4>
           </div>
 
           <div className="flex justify-center">
-            <h4 className="text-white font-[500]  mt-[40px] text-[16px] text-semibold lg:text-[24px] text-center tracking-[1px] md:w-[70%] bg-primary p-[20px] rounded-full ">
+            <h4 className="text-white font-[500]  mt-[40px]  text-[14px] text-semibold lg: text-[22px] text-center tracking-[1px] md:w-[70%] bg-primary p-[20px] rounded-full ">
               At Sprin, our passion lies in crafting inventive solutions for
               food delivery that have the potential to influence the future of
               our world.
@@ -149,7 +149,7 @@ const Home = () => {
           </div>
         </div>
         <div className="absolute xl:bottom-[10px] md:-bottom-[15px] bottom-[20px]  left-1/2 transform -translate-x-1/2 ">
-          <div className="text-white text-[12px] lg:text-[16px]  text-center bg-secondary w-[100px] lg:w-[120px] h-[40px] flex justify-center items-center mx-auto">
+          <div className="text-white  text-[10px] lg: text-[14px]  text-center bg-secondary w-[100px] lg:w-[120px] h-[40px] flex justify-center items-center mx-auto">
             Keep scrolling
           </div>
           <img className="w-[250px]" src={pointdown} />
@@ -157,7 +157,7 @@ const Home = () => {
       </div>
 
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] xl:py-[88px] py-[24px] md:py-[70px] ">
-        {/* <h4 className="text-[22px] lg:text-[30px] font-normal  text-gray-900 leading-[35px] lg:leading-[50px] transform -skew-y-12 text-shadow-lg">
+        {/* <h4 className=" text-[20px] lg:text-[30px] font-normal  text-gray-900 leading-[35px] lg:leading-[50px] transform -skew-y-12 text-shadow-lg">
           Food serves as our shared foundation, a universal encounter.
         </h4> */}
 
@@ -170,7 +170,7 @@ const Home = () => {
                   : backgroundColor === "#1e1b4b"
                   ? "bg-[#1e1b4b] text-white "
                   : "bg-orange-100 text-black "
-              } text-[16px] font-[500] lg:text-[18px] transition-all duration-700 ease-in-out`}
+              }  text-[14px] font-[500] lg: text-[16px] transition-all duration-700 ease-in-out`}
             >
               {accountType}
             </div>
@@ -200,20 +200,20 @@ const Home = () => {
           <img src={rider} />
         </div>
         <div className="">
-          <h4 className="text-[18px] lg:text-[28px] font-semibold mb-[15px]">
+          <h4 className=" text-[16px] lg:text-[28px] font-semibold mb-[15px]">
             Experience the freedom of flexible earning as a rider! Deliver meals
             from popular local spots straight to customers' doors.
           </h4>
-          <h4 className="text-[18px] lg:text-[28px] font-semibold mb-[10px]">
+          <h4 className=" text-[16px] lg:text-[28px] font-semibold mb-[10px]">
             Looking for flexibility? Become a rider, set your own schedule, and
             make deliveries that fit around your life.
           </h4>
-          <h4 className="lg:text-[16px] text-[12px]">
+          <h4 className="lg: text-[14px]  text-[10px]">
             Join us, hit the road, and earn while bringing delicious food to
             doorsteps with ease.
           </h4>
           <NavLink exact to="/riders" activeStyle={{ color: "#f97316" }}>
-            <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
+            <button className=" text-[10px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
               Become a Rider
             </button>
           </NavLink>
@@ -227,19 +227,19 @@ const Home = () => {
             <img src={chef} />
           </div>
           <div className="order-1 mt-[10px] md:mt-[0px]">
-            <h4 className="text-[18px] lg:text-[28px] font-semibold mb-[15px]">
+            <h4 className=" text-[16px] lg:text-[28px] font-semibold mb-[15px]">
               Join our platform and showcase your dishes to a wider audience.
               Whether it's breakfast, lunch, or dinner, connect with food lovers
               in your neighborhood and beyond.
             </h4>
 
-            <h4 className="lg:text-[16px] text-[12px]">
+            <h4 className="lg: text-[14px]  text-[10px]">
               Ready to expand your reach? Partner with us to streamline orders,
               boost visibility, and increase revenue—all while focusing on what
               you do best: creating amazing food.
             </h4>
             <NavLink exact to="/vendors" activeStyle={{ color: "#f97316" }}>
-              <button className="text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
+              <button className=" text-[10px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[8px] rounded-full font-[500] md:mt-[30px] mt-[15px]">
                 Partner with Us
               </button>
             </NavLink>
@@ -251,7 +251,7 @@ const Home = () => {
             <h4 className=" text-[40px] font-medium lg:text-[60px] 2xl:text-[100px] md:border-r-[2px] md:border-gray-200 md:flex justify-center">
               99.9%
             </h4>
-            <h4 className="text-[12px] lg:text-[18px] 2xl:text-[22px]  font-medium md:flex justify-center  md:text-center">
+            <h4 className=" text-[10px] lg: text-[16px] 2xl: text-[20px]  font-medium md:flex justify-center  md:text-center">
               Punctuality Guarantee: No excuses, just on-time delivery. Speedy
               service is our forte.
             </h4>
@@ -260,7 +260,7 @@ const Home = () => {
             <h4 className=" text-[40px] font-medium lg:text-[60px] 2xl:text-[100px] md:border-r-[2px] md:border-gray-200 md:flex justify-center">
               100+
             </h4>
-            <h4 className="text-[12px] lg:text-[18px] 2xl:text-[22px]  font-medium md:flex justify-center  md:text-center">
+            <h4 className=" text-[10px] lg: text-[16px] 2xl: text-[20px]  font-medium md:flex justify-center  md:text-center">
               Over 100 delicious options to brighten your day.
             </h4>
           </div>
@@ -268,7 +268,7 @@ const Home = () => {
             <h4 className=" text-[40px] font-medium lg:text-[60px] 2xl:text-[100px]  md:flex justify-center">
               #1
             </h4>
-            <h4 className="text-[12px] lg:text-[18px] 2xl:text-[22px]  font-medium md:flex justify-center md:text-center">
+            <h4 className=" text-[10px] lg: text-[16px] 2xl: text-[20px]  font-medium md:flex justify-center md:text-center">
               Top-ranked: Consistently surpassing your expectations.
             </h4>
           </div>

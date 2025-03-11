@@ -81,7 +81,7 @@ const SearchGrocery = () => {
           </div>
           <input
             ref={textInputRef}
-            className="flex-1 h-full px-[8px] bg-transparent outline-none placeholder:text-[12px] text-[12px] md:text-[14px] placeholder:md:text-[14px]"
+            className="flex-1 h-full px-[8px] bg-transparent outline-none placeholder: text-[10px]  text-[10px] md: text-[12px] placeholder:md: text-[12px]"
             value={searchKey}
             onChange={(e) => setSearchKey(e.target.value)}
             placeholder="What are you searching for?"
@@ -103,7 +103,7 @@ const SearchGrocery = () => {
           </div>
         ) : searchResults.length === 0 && !searchKey ? (
           <div className="flex flex-col items-center pt-4 px-[12px]">
-            <p className=" text-[14px] md:text-[14px] font-medium text-start w-full">
+            <p className="  text-[12px] md: text-[12px] font-medium text-start w-full">
               Popular searches
             </p>
             <div className="flex flex-wrap mt-2 ">
@@ -124,7 +124,7 @@ const SearchGrocery = () => {
                 <button
                   key={item}
                   onClick={() => setSearchKey(item)}
-                  className="bg-gray-200 px-4 py-1 rounded-full m-[6px] text-black font-light text-[12px] md:text-[14px]"
+                  className="bg-gray-200 px-4 py-1 rounded-full m-[6px] text-black font-light  text-[10px] md: text-[12px]"
                 >
                   {item}
                 </button>
@@ -139,10 +139,10 @@ const SearchGrocery = () => {
               className="w-48 h-48 object-contain"
             />
             <div className="mt-5 text-center">
-              <p className="text-[16px] font-light text-black">
+              <p className=" text-[14px] font-light text-black">
                 No results found for
               </p>
-              <p className="text-[14px] font-bold text-black">
+              <p className=" text-[12px] font-bold text-black">
                 "{searchQuery}"
               </p>
               <p className="text-sm text-gray-500 mt-3">

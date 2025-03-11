@@ -16,12 +16,12 @@ const Counter = ({ count, setCount }) => {
   return (
     <div className="flex items-center space-x-2">
       <AiOutlineMinusCircle
-        className="text-primary text-[26px] cursor-pointer"
+        className="text-primary  text-[22px] cursor-pointer"
         onClick={decrement}
       />
       <span className="text-[19px] font-[400]">{count}</span>
       <AiOutlinePlusCircle
-        className="text-primary text-[26px] cursor-pointer"
+        className="text-primary  text-[22px] cursor-pointer"
         onClick={increment}
       />
     </div>

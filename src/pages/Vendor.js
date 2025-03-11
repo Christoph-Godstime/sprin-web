@@ -125,10 +125,10 @@ const Vendor = () => {
       <ScrollToTopOnMount />
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pb-[220px] pt-[100px] lg:pt-[150px] overflow-hidden bg-orange-100">
         <div className="max-w-[1480px] mx-auto">
-          <h4 className=" md:text-[40px] text-[26px] font-[600] md:font-[700] leading-[30px] md:leading-[45px]  text-[#101828]   text-center lg:w-[800px] mx-auto tracking-tight mb-[32px]">
+          <h4 className=" md:text-[40px]  text-[22px] font-[600] md:font-[700] leading-[30px] md:leading-[45px]  text-[#101828]   text-center lg:w-[800px] mx-auto tracking-tight mb-[32px]">
             Join Our Growing Network of Restaurants and Reach More Customers!
           </h4>
-          <h4 className="text-primary font-[400] text-[20px] leading-[30px] text-center max-w-[650px] mx-auto">
+          <h4 className="text-primary font-[400]  text-[18px] leading-[30px] text-center max-w-[650px] mx-auto">
             Partner with us and bring your delicious dishes to new customers in
             your area! With our platform, your restaurant can increase
             visibility, reach new audiences, and boost sales—all with the
@@ -141,17 +141,17 @@ const Vendor = () => {
 
       <div className="px-[3%] md: lg:px-[5%] xl:px-[15%] 2xl:px-[20%] ">
         <div className="md:max-w-[700px] mx-auto rounded-[8px] bg-white -mt-[170px]  shadow-lg px-[16px] py-[20px]">
-          <h4 className=" md:text-[25px] text-[20px] font-[500]  leading-[24px] md:leading-[45px]  text-[#101828]   text-start lg:w-[800px] mx-auto tracking-tight mb-[25px]">
+          <h4 className=" md: text-[22px]  text-[18px] font-[500]  leading-[24px] md:leading-[45px]  text-[#101828]   text-start lg:w-[800px] mx-auto tracking-tight mb-[25px]">
             Get Started
           </h4>
 
           <div className="grid grid-cols-1 gap-[20px]">
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">
+              <h4 className=" text-[12px] font-[500]">
                 Restaurant Name<span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Enter restaurant name"
                 type="text"
                 name="restaurantName"
@@ -160,11 +160,11 @@ const Vendor = () => {
               />
             </div>
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">
+              <h4 className=" text-[12px] font-[500]">
                 Email Address <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="johndoe@gmail.com"
                 type="email"
                 name="email"
@@ -175,11 +175,11 @@ const Vendor = () => {
 
             <div className="flex  space-x-[20px]">
               <div className="w-full">
-                <h4 className="text-[14px] font-[500]">
+                <h4 className=" text-[12px] font-[500]">
                   First Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter first name"
                   type="text"
                   name="firstName"
@@ -188,11 +188,11 @@ const Vendor = () => {
                 />
               </div>
               <div className="w-full">
-                <h4 className="text-[14px] font-[500]">
+                <h4 className=" text-[12px] font-[500]">
                   Last Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter last name"
                   type="text"
                   name="lastName"
@@ -203,11 +203,11 @@ const Vendor = () => {
             </div>
 
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">
+              <h4 className=" text-[12px] font-[500]">
                 Phone Number<span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200  focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="08012345678"
                 type="tel"
                 name="phoneNumber"
@@ -217,11 +217,11 @@ const Vendor = () => {
             </div>
 
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">
+              <h4 className=" text-[12px] font-[500]">
                 Mobile Device Type <span className="text-red-500">*</span>
               </h4>
               <select
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 value={deviceType}
                 onChange={(e) => setDeviceType(e.target.value)}
               >
@@ -241,7 +241,7 @@ const Vendor = () => {
             <p className="text-green-600 text-center my-2">{successMessage}</p>
           )}
           <button
-            className={`text-[14px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[12px] rounded-[8px] font-[500] md:mt-[30px] mt-[30px] w-full ${
+            className={` text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[12px] rounded-[8px] font-[500] md:mt-[30px] mt-[30px] w-full ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handleSubmit}
@@ -255,10 +255,10 @@ const Vendor = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 xl:gap-[80px] md:gap-[50px] gap-[15px] py-[50px] md:py-[80px] px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%]">
         <div className="flex flex-col">
           <BsPeopleFill className="mx-auto text-[30px] text-primary" />
-          <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
+          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
             Expand Your Customer Base
           </h4>
-          <h4 className="mt-auto text-[14px] lg:text-[18px] text-center md:leading-[25px] pt-[10px] font-[400]">
+          <h4 className="mt-auto  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
             Tap into a vast pool of potential customers who are actively
             searching for great food delivered to their doorsteps. By partnering
             with us, your restaurant will be visible to customers eager to
@@ -268,10 +268,10 @@ const Vendor = () => {
 
         <div className="flex flex-col">
           <IoBagCheck className="mx-auto text-[30px] text-primary" />
-          <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
+          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
             Boost Sales & Increase Revenue
           </h4>
-          <h4 className="mt-auto text-[14px] lg:text-[18px] text-center md:leading-[25px] pt-[10px] font-[400]">
+          <h4 className="mt-auto  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
             Our platform is designed to increase your order volume and help grow
             your business. With access to new audiences and targeted promotions,
             you can maximize your revenue while providing customers with a
@@ -281,10 +281,10 @@ const Vendor = () => {
 
         <div className="flex flex-col">
           <MdAccessTimeFilled className="mx-auto text-[30px] text-primary" />
-          <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
+          <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
             Easy-to-Use Dashboard
           </h4>
-          <h4 className="mt-auto text-[14px] lg:text-[18px] text-center md:leading-[25px] pt-[10px] font-[400]">
+          <h4 className="mt-auto  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
             Manage your orders, update your menu, track sales, and monitor your
             business's performance all from one dashboard. Our user-friendly
             tools make it simple for you to stay on top of your restaurant’s
@@ -299,7 +299,7 @@ const Vendor = () => {
             <h4 className="text-[36px] font-[700] leading-[44px] tracking-tight text-text text-center">
               How the Sprin Vendor app works
             </h4>
-            <h4 className="text-[18px] font-[500] leading-[28px] text-[#56575C] text-center">
+            <h4 className=" text-[16px] font-[500] leading-[28px] text-[#56575C] text-center">
               Joining our network is easy and straightforward. Here’s how it
               works.
             </h4>
@@ -353,7 +353,7 @@ const Vendor = () => {
         <div className="max-w-[1480px] mx-auto">
           <ol className="list-decimal list-inside flex justify-between space-x-[40px] items-center px-[3%] lg:px-[0px] overflow-x-auto scrollbar-none">
             <li
-              className={`text-[16px] xl:text-[25px] 2xl:text-[20px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "request" ? "text-primary" : "text-[#F2F2F2]"
               }`}
               onClick={() => handleSectionClick("request")}
@@ -361,7 +361,7 @@ const Vendor = () => {
               Easy Sign-Up and Verification
             </li>
             <li
-              className={`text-[16px] xl:text-[25px] 2xl:text-[20px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "shortlist"
                   ? "text-primary"
                   : "text-[#F2F2F2]"
@@ -371,7 +371,7 @@ const Vendor = () => {
               Build Your Menu
             </li>
             <li
-              className={`text-[16px] xl:text-[25px] 2xl:text-[20px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "interview"
                   ? "text-primary"
                   : "text-[#F2F2F2]"
@@ -381,7 +381,7 @@ const Vendor = () => {
               Receive and Manage Orders Instantly
             </li>
             <li
-              className={`text-[16px] xl:text-[25px] 2xl:text-[20px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "choose" ? "text-primary" : "text-[#F2F2F2]"
               }`}
               onClick={() => handleSectionClick("choose")}
@@ -389,7 +389,7 @@ const Vendor = () => {
               Monitor Sales and Performance
             </li>
             <li
-              className={`text-[16px] xl:text-[25px] 2xl:text-[20px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "earnings" ? "text-primary" : "text-[#F2F2F2]"
               }`}
               onClick={() => handleSectionClick("earnings")}
@@ -397,7 +397,7 @@ const Vendor = () => {
               View Earnings in Real-Time
             </li>
             <li
-              className={`text-[16px] xl:text-[25px] 2xl:text-[20px] font-[700] whitespace-nowrap hover:cursor-pointer ${
+              className={` text-[14px] xl: text-[22px] 2xl: text-[18px] font-[700] whitespace-nowrap hover:cursor-pointer ${
                 activeSection === "access" ? "text-primary" : "text-[#F2F2F2]"
               }`}
               onClick={() => handleSectionClick("access")}
@@ -418,7 +418,7 @@ const Vendor = () => {
           >
             <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-x-[20%] gap-y-[40px]">
               <div className="grid grid-cols-1 gap-[16px] md:gap-[24px] h-fit lg:w-[476px]">
-                <h4 className="md:text-[18px] text-[16px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   The registration process is quick and straightforward,
                   requiring basic business details and documentation for
                   verification. Once approved, you’re ready to set up your
@@ -438,7 +438,7 @@ const Vendor = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-x-[20%] gap-y-[40px]">
               <div className="grid grid-cols-1 gap-[16px] md:gap-[24px] h-fit lg:w-[476px] md:order-2">
-                <h4 className="md:text-[18px] text-[16px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Use the intuitive menu setup to add all your restaurant’s
                   offerings with item descriptions, prices, and attractive
                   photos. Organize items into categories, highlight popular
@@ -459,7 +459,7 @@ const Vendor = () => {
           >
             <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-x-[20%] gap-y-[40px]">
               <div className="grid grid-cols-1 gap-[16px] md:gap-[24px] h-fit lg:w-[476px]">
-                <h4 className="md:text-[18px] text-[16px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   When an order comes in, you’ll receive a notification with all
                   the details, including any special instructions. The app lets
                   you view orders in real-time, mark them as “In Progress,” and
@@ -480,7 +480,7 @@ const Vendor = () => {
           >
             <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-x-[20%] gap-y-[40px]">
               <div className="grid grid-cols-1 gap-[16px] md:gap-[24px] h-fit lg:w-[476px] md:order-2">
-                <h4 className="md:text-[18px] text-[16px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Access valuable insights on your sales performance and
                   customer feedback. The app provides analytics to help you
                   understand order trends, peak hours, and customer preferences,
@@ -501,7 +501,7 @@ const Vendor = () => {
           >
             <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-x-[20%] gap-y-[40px]">
               <div className="grid grid-cols-1 gap-[16px] md:gap-[24px] h-fit lg:w-[476px]">
-                <h4 className="md:text-[18px] text-[16px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Stay up-to-date on your earnings as each order is completed.
                   The app shows a detailed earnings breakdown, allowing you to
                   track income by day, week, or month, and stay on top of your
@@ -522,7 +522,7 @@ const Vendor = () => {
           >
             <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-x-[20%] gap-y-[40px]">
               <div className="grid grid-cols-1 gap-[16px] md:gap-[24px] h-fit lg:w-[476px] md:order-2">
-                <h4 className="md:text-[18px] text-[16px] font-[400] leading-[28px] text-[#9EA0A3]">
+                <h4 className="md: text-[16px]  text-[14px] font-[400] leading-[28px] text-[#9EA0A3]">
                   Need help? The vendor app has a support chefpage that connects
                   you with assistance for technical issues, order inquiries, or
                   general questions. Our support team is dedicated to helping
@@ -543,39 +543,39 @@ const Vendor = () => {
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-3 xl:gap-[80px] md:gap-[50px] gap-[15px] ">
           <div className="flex flex-col">
-            <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center text-[18px] text-white font-[500] bg-primary mx-auto">
+            <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center  text-[16px] text-white font-[500] bg-primary mx-auto">
               1
             </div>
-            <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
+            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
               Smart Device
             </h4>
-            <h4 className=" text-[14px] lg:text-[18px] text-center md:leading-[25px] pt-[10px] font-[400]">
+            <h4 className="  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
               A smartphone compatible with the vendor app to manage orders and
               notifications.
             </h4>
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center text-[18px] text-white font-[500] bg-primary mx-auto">
+            <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center  text-[16px] text-white font-[500] bg-primary mx-auto">
               2
             </div>
-            <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
+            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
               Business Registration Document
             </h4>
-            <h4 className=" text-[14px] lg:text-[18px] text-center md:leading-[25px] pt-[10px] font-[400]">
+            <h4 className="  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
               Proof of official business registration (such as a business
               license or certificate of incorporation).
             </h4>
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center text-[18px] text-white font-[500] bg-primary mx-auto">
+            <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center  text-[16px] text-white font-[500] bg-primary mx-auto">
               3
             </div>
-            <h4 className="mt-[12px] text-[20px] xl:text-[30px] lg:text-[24px] font-[600] text-center">
+            <h4 className="mt-[12px]  text-[18px] xl:text-[30px] lg: text-[22px] font-[600] text-center">
               Food Packaging Supplies
             </h4>
-            <h4 className=" text-[14px] lg:text-[18px] text-center md:leading-[25px] pt-[10px] font-[400]">
+            <h4 className="  text-[12px] lg: text-[16px] text-center md:leading-[25px] pt-[10px] font-[400]">
               Food-safe packaging, containers, and utensils that maintain food
               quality during transit.
             </h4>
@@ -595,7 +595,7 @@ const Vendor = () => {
                   onClick={handleClick(i)}
                   className="py-[16px] flex justify-between items-center "
                 >
-                  <h4 className="text-[16px] lg:text-[24px] cursor-pointer font-[600]">
+                  <h4 className=" text-[14px] lg: text-[22px] cursor-pointer font-[600]">
                     {drop.title}
                   </h4>
                   <div
@@ -608,7 +608,7 @@ const Vendor = () => {
                   </div>
                 </div>
                 {clickedIndex[i] ? (
-                  <h4 className="text-[14px] lg:text-[16px] py-[20px] pr-[38px] font-light -mt-[20px] mb-[28px]">
+                  <h4 className=" text-[12px] lg: text-[14px] py-[20px] pr-[38px] font-light -mt-[20px] mb-[28px]">
                     {drop.content}
                   </h4>
                 ) : null}

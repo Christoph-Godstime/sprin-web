@@ -80,7 +80,7 @@ const NavItem = ({
         onClick={() => navigate(route)}
       >
         <div className="text-xl">{isActive ? iconFilled : iconOutline}</div>
-        <div className="text-[12px] mt-[5px]">{label}</div>
+        <div className=" text-[10px] mt-[5px]">{label}</div>
       </button>
     </div>
   );

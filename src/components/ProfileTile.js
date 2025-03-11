@@ -40,7 +40,7 @@ const ProfileTile = ({ onPress, title, icon }) => {
           {iconMap[icon] || (
             <FaUserCircle size={24} className="text-gray-500" />
           )}
-          <span className="text-[12px] md:text-[14px] text-gray-500 font-regular">
+          <span className=" text-[10px] md: text-[12px] text-gray-500 font-regular">
             {title}
           </span>
         </div>

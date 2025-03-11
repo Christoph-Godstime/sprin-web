@@ -33,11 +33,11 @@ const CartButton = () => {
         className="bg-primary px-4 py-2 rounded-full w-[90%] flex justify-center items-center"
       >
         <div className="flex items-center">
-          <span className="text-white text-[14px] md:text-[16px] font-[400]">
+          <span className="text-white  text-[12px] md: text-[14px] font-[400]">
             View cart
           </span>
           <span className="mx-2 text-white text-xl">•</span>
-          <span className="text-white ext-[14px] md:text-[16px] font-[400]">
+          <span className="text-white ext-[14px] md: text-[14px] font-[400]">
             {calculateTotalPrice(cart?.items).toLocaleString("en-NG", {
               style: "currency",
               currency: "NGN",

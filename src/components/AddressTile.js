@@ -13,18 +13,18 @@ const AddressTile = ({ onClick, item, onDelete }) => {
       <div className="flex justify-between items-center px-3 py-2 border-b border-gray-300">
         <div className="flex items-start w-4/5 ">
           <div className="w-fit">
-            <BsGeoAlt className="text-primary mt-1 text-[20px]" />
+            <BsGeoAlt className="text-primary mt-1  text-[18px]" />
           </div>
           <div className="ml-3">
             <p
-              className={`text-[12px] md:text-[14px] ${
+              className={` text-[10px] md: text-[12px] ${
                 item.default ? "text-primary" : "text-gray-700"
               }`}
             >
               {item.addressLine1}
             </p>
             <p
-              className={`text-[12px] md:text-[14px] ${
+              className={` text-[10px] md: text-[12px] ${
                 item.default ? "text-primary" : "text-gray-700"
               }`}
             >

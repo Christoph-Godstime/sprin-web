@@ -75,13 +75,13 @@ const Search = () => {
           className="w-24 h-24 rounded-lg object-cover"
         />
         <div className="mx-4 flex-1 overflow-hidden w-full">
-          <h2 className="text-[14px] md:text-[16px] font-semibold text-gray-900 truncate">
+          <h2 className=" text-[12px] md: text-[14px] font-semibold text-gray-900 truncate">
             {item.title}
           </h2>
-          <p className="text-gray-600 text-[12px] md:text-[14px] truncate">
+          <p className="text-gray-600  text-[10px] md: text-[12px] truncate">
             {item.description}
           </p>
-          <p className="text-gray-500 text-[12px] md:text-[14px] truncate">
+          <p className="text-gray-500  text-[10px] md: text-[12px] truncate">
             Preparation time - {item.time} mins
           </p>
           <div className="flex items-center text-gray-800 text-sm">
@@ -91,7 +91,7 @@ const Search = () => {
           </div>
         </div>
         <div className="text-right w-[30%]">
-          <p className="text-[14px] ms:text-[16px] font-bold text-gray-900">
+          <p className=" text-[12px] ms: text-[14px] font-bold text-gray-900">
             {item.price.toLocaleString("en-NG", {
               style: "currency",
               currency: "NGN",
@@ -113,7 +113,7 @@ const Search = () => {
           </div>
           <input
             ref={textInputRef}
-            className="flex-1 h-full px-[8px] bg-transparent outline-none placeholder:text-[12px] text-[12px] md:text-[14px] placeholder:md:text-[14px]"
+            className="flex-1 h-full px-[8px] bg-transparent outline-none placeholder: text-[10px]  text-[10px] md: text-[12px] placeholder:md: text-[12px]"
             value={searchKey}
             onChange={(e) => setSearchKey(e.target.value)}
             placeholder="What would you like to eat?"
@@ -135,7 +135,7 @@ const Search = () => {
           </div>
         ) : searchResults.length === 0 && !searchKey ? (
           <div className="flex flex-col items-center pt-4 px-[12px]">
-            <p className=" text-[14px] md:text-[14px] font-medium text-start w-full">
+            <p className="  text-[12px] md: text-[12px] font-medium text-start w-full">
               Popular searches
             </p>
             <div className="flex flex-wrap mt-2 ">
@@ -155,7 +155,7 @@ const Search = () => {
                 <button
                   key={item}
                   onClick={() => setSearchKey(item)}
-                  className="bg-gray-200 px-4 py-1 rounded-full m-[6px] text-black font-light text-[12px] md:text-[14px]"
+                  className="bg-gray-200 px-4 py-1 rounded-full m-[6px] text-black font-light  text-[10px] md: text-[12px]"
                 >
                   {item}
                 </button>
@@ -178,10 +178,10 @@ const Search = () => {
               className="w-48 h-48 object-contain"
             />
             <div className="mt-5 text-center">
-              <p className="text-[16px] font-light text-black">
+              <p className=" text-[14px] font-light text-black">
                 No results found for
               </p>
-              <p className="text-[14px] font-bold text-black">
+              <p className=" text-[12px] font-bold text-black">
                 "{searchQuery}"
               </p>
               <p className="text-sm text-gray-500 mt-3">

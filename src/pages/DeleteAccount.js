@@ -44,11 +44,11 @@ const DeleteAccount = () => {
     <div className=" -mt-[70px] lg:-mt-[100px] 2xl:-mt-[200px]">
       <ScrollToTopOnMount />
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pb-[100px] bg-orange-100 pt-[100px]">
-        <h4 className="lg:text-[18px] text-[12px] text-black md:w-[600px] mx-auto text-center">
+        <h4 className="lg: text-[16px]  text-[10px] text-black md:w-[600px] mx-auto text-center">
           In accordance with our privacy policy, deleting your account and data
           can't be undone, so we need to check it's you before going ahead.
         </h4>
-        <h4 className="lg:text-[18px] text-[12px] text-black md:w-[600px] mx-auto text-center mt-[20px]">
+        <h4 className="lg: text-[16px]  text-[10px] text-black md:w-[600px] mx-auto text-center mt-[20px]">
           Send us a request and we'll confirm via email after we've reviewed it.
         </h4>
 
@@ -80,7 +80,7 @@ const DeleteAccount = () => {
         )}
         <div className="flex justify-center">
           <button
-            className={`text-[12px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[12px] rounded-full font-[500] md:mt-[30px] mt-[30px] md:w-[400px] w-full ${
+            className={` text-[10px] text-white bg-primary hover:bg-orange-600 px-[14px] py-[12px] rounded-full font-[500] md:mt-[30px] mt-[30px] md:w-[400px] w-full ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handleDeleteRequest}

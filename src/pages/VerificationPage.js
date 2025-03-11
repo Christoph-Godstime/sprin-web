@@ -85,10 +85,10 @@ const VerificationPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
       <div className="w-full max-w-lg py-[30px]">
-        <h2 className="text-[26px] font-[600] text-primary mb-2 text-center">
+        <h2 className=" text-[22px] font-[600] text-primary mb-2 text-center">
           Verify Your Account
         </h2>
-        <p className="text-[12px] md:text-[14px] text-gray-600 text-center mb-5">
+        <p className=" text-[10px] md: text-[12px] text-gray-600 text-center mb-5">
           Verification email has been sent to {email}. If the email is
           incorrect, please delete this account and create a new one with the
           correct email.
@@ -100,7 +100,7 @@ const VerificationPage = () => {
             numInputs={6}
             isInputNum={true}
             containerStyle="flex justify-center gap-3 "
-            inputStyle="!w-[40px] !h-[60px] !text-[14px] !font-[500] !border-2 !border-primary !rounded-lg !text-center !outline-none focus:ring-[1px] focus:ring-primary focus:border-transparent  !transition-all !duration-200 !shadow-sm"
+            inputStyle="!w-[40px] !h-[60px] ! text-[12px] !font-[500] !border-2 !border-primary !rounded-lg !text-center !outline-none focus:ring-[1px] focus:ring-primary focus:border-transparent  !transition-all !duration-200 !shadow-sm"
             renderInput={(props) => (
               <input
                 {...props}

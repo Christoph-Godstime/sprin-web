@@ -39,11 +39,11 @@ const ContactTile = ({ title, icon }) => {
       <div className="flex justify-between items-center py-3 ">
         <div className="flex items-center space-x-4">
           {getIcon()}
-          <span className="text-gray-800 text-[12px] md:text-[14px] font-medium">
+          <span className="text-gray-800  text-[10px] md: text-[12px] font-medium">
             {title}
           </span>
         </div>
-        <BsArrowRight className="text-gray-400 text-[14px]" />
+        <BsArrowRight className="text-gray-400  text-[12px]" />
       </div>
       <hr className="border-gray-300 opacity-70 ml-[30px]" />
     </div>

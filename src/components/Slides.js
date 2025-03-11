@@ -13,10 +13,10 @@ const Slides = () => {
         <img src={feature1} />
       </div>
       <div className="bg-secondary md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
-        <h4 className="text-[#F2F2F2] font-[700] text-[24px] leading-[32px]">
+        <h4 className="text-[#F2F2F2] font-[700]  text-[22px] leading-[32px]">
           Download the App
         </h4>
-        <h4 className="text-[16px] font-[500] leading-[24px] text-[#F2F2F2] mt-[24px] md:mt-auto">
+        <h4 className=" text-[14px] font-[500] leading-[24px] text-[#F2F2F2] mt-[24px] md:mt-auto">
           Start by downloading our app from Google Play. It's quick, free, and
           the first step to unlocking delicious meals at your fingertips.
         </h4>
@@ -27,10 +27,10 @@ const Slides = () => {
         <img src={feature5} />
       </div>
       <div className="bg-orange-100 md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
-        <h4 className="text-text font-[700] text-[24px] leading-[32px]">
+        <h4 className="text-text font-[700]  text-[22px] leading-[32px]">
           Browse Your Favorites
         </h4>
-        <h4 className="text-[16px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
+        <h4 className=" text-[14px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
           Discover a wide range of dishes from your favorite local eateries.
           Whether you're in the mood for something new or craving a classic, the
           choice is yours.
@@ -42,10 +42,10 @@ const Slides = () => {
         <img src={feature2} />
       </div>
       <div className="bg-[#6EC1FC] md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
-        <h4 className="text-text font-[700] text-[24px] leading-[32px]">
+        <h4 className="text-text font-[700]  text-[22px] leading-[32px]">
           Add to Cart
         </h4>
-        <h4 className="text-[16px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
+        <h4 className=" text-[14px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
           Select your preferred dishes and customize your order to suit your
           taste. Add everything you want to the cart with just a few taps.
         </h4>
@@ -56,10 +56,10 @@ const Slides = () => {
         <img src={feature7} />
       </div>
       <div className="bg-[#bef264] md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
-        <h4 className="text-text font-[700] text-[24px] leading-[32px]">
+        <h4 className="text-text font-[700]  text-[22px] leading-[32px]">
           Place Your Order
         </h4>
-        <h4 className="text-[16px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
+        <h4 className=" text-[14px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
           Proceed to checkout, confirm your delivery details, and place your
           order effortlessly.
         </h4>
@@ -70,10 +70,10 @@ const Slides = () => {
         <img src={feature3} />
       </div>
       <div className="bg-[#e879f9] md:w-[66%] w-[100%] flex flex-col p-[24px] rounded-[16px] md:h-auto">
-        <h4 className="text-text font-[700] text-[24px] leading-[32px]">
+        <h4 className="text-text font-[700]  text-[22px] leading-[32px]">
           Enjoy Fast Delivery
         </h4>
-        <h4 className="text-[16px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
+        <h4 className=" text-[14px] font-[500] leading-[24px] text-text mt-[24px] md:mt-auto">
           Relax and let us handle the rest. Your freshly prepared food will be
           delivered straight to your doorstep in no time!
         </h4>
@@ -101,7 +101,7 @@ const Slides = () => {
           <h4 className="text-text md:font-[700] font-[600] md:leading-[60px] tracking-tighter md:text-[48px] text-[38px]">
             Discover How Easy Food Delivery Can Be
           </h4>
-          <h4 className="text-text font-[500] leading-[28px]  text-[18px] md:w-[600px] xl:w-[698px] mt-[10px]">
+          <h4 className="text-text font-[500] leading-[28px]   text-[16px] md:w-[600px] xl:w-[698px] mt-[10px]">
             From satisfying your cravings to delivering your favorite meals,
             we've made every step of the food ordering process simple, fast, and
             hassle-free. Enjoy delicious dishes brought straight to your door

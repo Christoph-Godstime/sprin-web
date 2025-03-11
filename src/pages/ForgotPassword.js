@@ -68,7 +68,7 @@ const ForgotPassword = () => {
           }) => (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-gray-700 font-[500] text-end text-[12px] md:text-[14px]">
+                <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
                   Email
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-gray-100">
@@ -81,7 +81,7 @@ const ForgotPassword = () => {
                   />
                 </div>
                 {touched.email && errors.email && (
-                  <p className="text-red-400 text-[12px] md:text-[14px] mt-1">
+                  <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
                     {errors.email}
                   </p>
                 )}

@@ -63,15 +63,15 @@ const Contact = () => {
       </div> */}
       <div className="bg-gray-200 px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pt-[90px] pb-[50px]">
         <div className="border-[#F2F2F2] border-[1px] rounded-[20px] p-[24px] bg-white max-w-[800px] mx-auto">
-          <h4 className="md:text-[28px] text-[20px] xl:text-[36px] font-[600] text-text text-center">
+          <h4 className="md:text-[28px]  text-[18px] xl:text-[36px] font-[600] text-text text-center">
             Contact Us
           </h4>
           <div className="mt-[16px] text-center">
-            <p className="text-[16px] text-gray-600">
+            <p className=" text-[14px] text-gray-600">
               Phone:{" "}
               <span className="font-bold text-black">+234 813 528 9984</span>
             </p>
-            <p className="text-[16px] text-gray-600">
+            <p className=" text-[14px] text-gray-600">
               Email:{" "}
               <a
                 href="mailto:sprinapp@gmail.com"
@@ -81,17 +81,17 @@ const Contact = () => {
               </a>
             </p>
           </div>
-          <h4 className="mt-[40px] md:text-[28px] text-[20px] xl:text-[36px] font-[600] text-text text-center">
+          <h4 className="mt-[40px] md:text-[28px]  text-[18px] xl:text-[36px] font-[600] text-text text-center">
             Tell Us How We Can Help
           </h4>
           <div className="mt-[24px] lg:mt-[48px] grid grid-cols-1 gap-[24px]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] md:gap-[17px]">
               <div className="w-full">
-                <h4 className="text-[14px] font-[500]">
+                <h4 className=" text-[12px] font-[500]">
                   First Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter first name"
                   type="text"
                   name="firstName"
@@ -100,11 +100,11 @@ const Contact = () => {
                 />
               </div>
               <div className="w-full">
-                <h4 className="text-[14px] font-[500]">
+                <h4 className=" text-[12px] font-[500]">
                   Last Name <span className="text-red-500">*</span>
                 </h4>
                 <input
-                  className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                  className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                   placeholder="Enter last name"
                   type="text"
                   name="lastName"
@@ -114,11 +114,11 @@ const Contact = () => {
               </div>
             </div>
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">
+              <h4 className=" text-[12px] font-[500]">
                 Email address <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Enter email address"
                 type="email"
                 name="email"
@@ -127,11 +127,11 @@ const Contact = () => {
               />
             </div>
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">
+              <h4 className=" text-[12px] font-[500]">
                 Phone Number <span className="text-red-500">*</span>
               </h4>
               <input
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="08012345678"
                 type="tel"
                 name="phoneNumber"
@@ -140,9 +140,9 @@ const Contact = () => {
               />
             </div>
             <div className="w-full">
-              <h4 className="text-[14px] font-[500]">Message</h4>
+              <h4 className=" text-[12px] font-[500]">Message</h4>
               <textarea
-                className="placeholder:text-[14px] lg:placeholder:text-[16px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
+                className="placeholder: text-[12px] lg:placeholder: text-[14px] py-[10px] px-[14px] rounded-[8px] border-[1px] border-gray-200 focus:outline-none focus:border-orange-300 focus:border-[1px] w-full mt-[8px]"
                 placeholder="Type a message..."
                 rows="5"
                 value={message}
@@ -159,9 +159,9 @@ const Contact = () => {
             )}
             <button
               className={`w-full px-[20px] py-[12px] 
-            text-[14px] text-white bg-primary hover:bg-orange-600 rounded-[8px] ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+             text-[12px] text-white bg-primary hover:bg-orange-600 rounded-[8px] ${
+               loading ? "opacity-50 cursor-not-allowed" : ""
+             }`}
               onClick={handleSubmit}
               disabled={loading}
             >

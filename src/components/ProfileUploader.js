@@ -83,7 +83,7 @@ const ProfileUploader = ({ selectedImage, setSelectedImage, currentImage }) => {
           )}{" "}
           {selectedImage === currentImage && (
             <div className="w-[50px] h-[50px] rounded-full bg-[#FFA50040] flex justify-center items-center absolute">
-              <FaCamera className="text-primary text-[18px]" />
+              <FaCamera className="text-primary  text-[16px]" />
             </div>
           )}
         </div>

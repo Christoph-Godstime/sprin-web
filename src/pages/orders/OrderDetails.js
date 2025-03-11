@@ -180,7 +180,7 @@ const OrderDetails = () => {
           <button onClick={() => navigate(-1)} className="text-black text-xl  ">
             <BsArrowLeft />
           </button>
-          <h2 className="text-black text-[14px] md:text-[16px] font-[500] ml-[30px]">
+          <h2 className="text-black  text-[12px] md: text-[14px] font-[500] ml-[30px]">
             Order Details
           </h2>
         </div>
@@ -196,10 +196,10 @@ const OrderDetails = () => {
             className="w-[40px] h-[40px] rounded-full object-cover"
           />
           <div className="ml-4">
-            <h2 className="text-[14px] md:text-[16px] font-semibold">
+            <h2 className=" text-[12px] md: text-[14px] font-semibold">
               {storeId.title}
             </h2>
-            <p className="text-gray-600 text-[12px] md:text-[14px]">
+            <p className="text-gray-600  text-[10px] md: text-[12px]">
               {orderItems.length} Items • ₦{data.orderTotal.toLocaleString()}
             </p>
           </div>
@@ -221,10 +221,10 @@ const OrderDetails = () => {
                       <PiStarFourFill className="text-primary" />
                     </div>
                     <div className="mx-[10px]">
-                      <h3 className="text-[14px] font-[400] text-gray-900">
+                      <h3 className=" text-[12px] font-[400] text-gray-900">
                         {item.title}
                       </h3>
-                      <p className="text-[12px] md:text-[14px] text-gray-500 mt-1">
+                      <p className=" text-[10px] md: text-[12px] text-gray-500 mt-1">
                         {item.price.toLocaleString("en-NG", {
                           style: "currency",
                           currency: "NGN",
@@ -233,7 +233,7 @@ const OrderDetails = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-[12px] md:text-[14px] text-gray-700 mt-1">
+                  <p className=" text-[10px] md: text-[12px] text-gray-700 mt-1">
                     Quantity: {item.quantity}
                   </p>
                 </div>
@@ -245,14 +245,14 @@ const OrderDetails = () => {
               </div>
               {item.additives.length > 0 && (
                 <div className="bg-gray-100 p-3 rounded-lg mt-3">
-                  <h4 className="font-medium text-[12px] md:text-[14px]">
+                  <h4 className="font-medium  text-[10px] md: text-[12px]">
                     Additives and Toppings
                   </h4>
                   <div className="mt-2">
                     {item.additives.map((additive) => (
                       <div
                         key={additive.id}
-                        className="flex justify-between text-[12px] md:text-[14px]"
+                        className="flex justify-between  text-[10px] md: text-[12px]"
                       >
                         <span className="text-gray-700">{additive.title}</span>
                         <span className="text-gray-700">
@@ -269,10 +269,10 @@ const OrderDetails = () => {
               )}
               {item.instructions && (
                 <div className="bg-gray-100 p-3 rounded-lg mt-3">
-                  <h4 className="font-medium text-[12px] md:text-[14px] mb-1">
+                  <h4 className="font-medium  text-[10px] md: text-[12px] mb-1">
                     Instructions
                   </h4>
-                  <p className="text-[12px] md:text-[14px] text-gray-700">
+                  <p className=" text-[10px] md: text-[12px] text-gray-700">
                     {item.instructions}
                   </p>
                 </div>
@@ -282,7 +282,7 @@ const OrderDetails = () => {
               storeType === "Restaurant" ? (
                 <div className="flex justify-center mx-3 mt-4">
                   <button
-                    className="bg-primary text-[14px] md:text-[16px] text-white px-4 py-2 rounded-lg"
+                    className="bg-primary  text-[12px] md: text-[14px] text-white px-4 py-2 rounded-lg"
                     onClick={() =>
                       navigate("/order-rating", {
                         state: {
@@ -307,13 +307,13 @@ const OrderDetails = () => {
         <div>
           {updatedData.orderStatus !== "Delivered" && (
             <div className="mt-[30px] px-[12px] flex flex-col items-center bg-white rounded-lg py-3">
-              <h3 className="text-[16px] font-bold">
+              <h3 className=" text-[14px] font-bold">
                 Delivery Confirmation Code
               </h3>
-              <p className="text-[20px] font-bold text-primary">
+              <p className=" text-[18px] font-bold text-primary">
                 {updatedData.riderSecretCode || "Not Available"}
               </p>
-              <p className="text-[14px] text-gray-500 mt-1">
+              <p className=" text-[12px] text-gray-500 mt-1">
                 Show this code to your rider
               </p>
             </div>
@@ -378,7 +378,7 @@ const OrderDetails = () => {
               updatedData?.riderRated === false ? (
                 <div className="flex justify-center my-3 mx-3">
                   <button
-                    className="bg-primary text-[14px] md:text-[16px] text-white px-4 py-2 rounded-lg"
+                    className="bg-primary  text-[12px] md: text-[14px] text-white px-4 py-2 rounded-lg"
                     onClick={() =>
                       navigate("/rider-rating", {
                         state: {
@@ -398,17 +398,17 @@ const OrderDetails = () => {
                 </div>
               ) : null}
 
-              <h2 className="text-[14px] md:text-[16px] font-semibold mb-4">
+              <h2 className=" text-[12px] md: text-[14px] font-semibold mb-4">
                 Delivery Rider Details
               </h2>
 
               <div className="flex justify-between items-center mb-4">
-                <p className="text-[12px] md:text-[14px] font-medium">
+                <p className=" text-[10px] md: text-[12px] font-medium">
                   {updatedData?.assignedRider?.vehicleType}, {"  "}
                   {updatedData?.assignedRider?.vehicleBrand}
                 </p>
                 {updatedData?.assignedRider?.plateNumber && (
-                  <span className="text-[12px] md:text-[14px] bg-gray-200 px-2 py-1 uppercase tracking-wide rounded">
+                  <span className=" text-[10px] md: text-[12px] bg-gray-200 px-2 py-1 uppercase tracking-wide rounded">
                     {updatedData?.assignedRider?.plateNumber}
                   </span>
                 )}
@@ -422,14 +422,14 @@ const OrderDetails = () => {
                   alt="Rider"
                   className="w-12 h-12 rounded-full"
                 />
-                <p className="text-[12px] md:text-[14px] text-blue-500 w-1/2 text-right truncate">
+                <p className=" text-[10px] md: text-[12px] text-blue-500 w-1/2 text-right truncate">
                   {updatedData?.assignedRider?.riderProfile?.firstName} {"   "}
                   {updatedData?.assignedRider?.riderProfile?.lastName}
                 </p>
               </div>
 
               <div className="flex justify-between items-center mb-4">
-                <p className="text-[12px] md:text-[14px] font-medium">
+                <p className=" text-[10px] md: text-[12px] font-medium">
                   Mobile Number
                 </p>
                 <div className="flex items-center space-x-[20px] w-1/2 justify-end">

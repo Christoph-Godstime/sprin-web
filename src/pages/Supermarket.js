@@ -104,7 +104,7 @@ const Supermarket = () => {
         alt={item.title}
         className="w-24 h-24 object-contain"
       />
-      <p className="text-center mt-2 text-[12px] leading-4">{item.title}</p>
+      <p className="text-center mt-2  text-[10px] leading-4">{item.title}</p>
     </div>
   );
 
@@ -115,8 +115,8 @@ const Supermarket = () => {
         {data?.storeDetails?.isActive === false && (
           <div className=" bg-black bg-opacity-50 fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[260px] z-40 rounded-b-[15px] flex justify-center items-center">
             <div className="flex flex-col items-center">
-              <p className="text-white text-[25px] font-[500]">Closed</p>
-              <p className="text-white text-[18px] font-[400] mt-[10px]">
+              <p className="text-white  text-[22px] font-[500]">Closed</p>
+              <p className="text-white  text-[16px] font-[400] mt-[10px]">
                 Opens at {formattedOrderDateTime}
               </p>
             </div>
@@ -161,7 +161,7 @@ const Supermarket = () => {
         {/* Content Wrapper with z-30 to stay above the image */}
         <div className="relative z-30 bg-white mt-[160px] rounded-tr-[50px]">
           <div className="pt-[50px] px-4 w-full">
-            <h1 className="text-[25px] font-[700]">SPRIN Market</h1>
+            <h1 className=" text-[22px] font-[700]">SPRIN Market</h1>
             {data?.storeDetails?.isAvailable === false &&
               data?.storeDetails?.isActive === true && (
                 <div className="bg-gray-300 p-2 rounded-md text-center mt-4">
@@ -173,11 +173,11 @@ const Supermarket = () => {
               onClick={handleSearch}
             >
               <BsSearch size={16} className="text-[#808080]" />
-              <span className="ml-[16px] text-[#36454F] text-[14px]">
+              <span className="ml-[16px] text-[#36454F]  text-[12px]">
                 What can we get you?
               </span>
             </button>
-            <h2 className="text-[18px] font-[600] mt-6">Shop by category</h2>
+            <h2 className=" text-[16px] font-[600] mt-6">Shop by category</h2>
             <div className="grid grid-cols-3 gap-x-[16px] mt-4 gap-y-[25px]">
               {loading ? (
                 <ReusableShimmer count={6} />
@@ -194,7 +194,7 @@ const Supermarket = () => {
               .map((category) => (
                 <div key={category._id} className="mb-6">
                   <div className="flex justify-between items-center px-[12px]">
-                    <h3 className="text-[18px] font-bold">{category.title}</h3>
+                    <h3 className=" text-[16px] font-bold">{category.title}</h3>
                     <button
                       onClick={() => handleCategory(category._id)}
                       className="p-[5px] rounded-full bg-[#1e1b4b80]"

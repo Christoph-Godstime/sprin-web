@@ -234,7 +234,7 @@ const Login = () => {
             <Form className="space-y-[30px]">
               {/* Email Input */}
               <div>
-                <label className="block text-gray-700 font-[500] text-end text-[12px] md:text-[14px]">
+                <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
                   Email
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-gray-100">
@@ -243,7 +243,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     placeholder="Enter email"
-                    className="w-full outline-none  bg-gray-100 placeholder:text-[12px]  text-[12px] md:text-[14px] "
+                    className="w-full outline-none  bg-gray-100 placeholder: text-[10px]   text-[10px] md: text-[12px] "
                     onFocus={() => setFieldTouched("email")}
                     onBlur={() => setFieldTouched("email", "")}
                     value={values.email}
@@ -254,14 +254,14 @@ const Login = () => {
                   />
                 </div>
                 {touched.email && errors.email && (
-                  <p className="text-red-400 text-[12px] md:text-[14px] mt-1">
+                  <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
                     {errors.email}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-gray-700 font-[500] text-end text-[12px] md:text-[14px]">
+                <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
                   Password
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-gray-100">
@@ -270,7 +270,7 @@ const Login = () => {
                     type={isObsecure ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    className="w-full outline-none  bg-gray-100 placeholder:text-[12px]  text-[12px] md:text-[14px] "
+                    className="w-full outline-none  bg-gray-100 placeholder: text-[10px]   text-[10px] md: text-[12px] "
                     onFocus={() => setFieldTouched("password")}
                     onBlur={() => setFieldTouched("password", "")}
                     value={values.password}
@@ -290,7 +290,7 @@ const Login = () => {
                   </button>
                 </div>
                 {touched.password && errors.password && (
-                  <p className="text-red-400 text-[12px] md:text-[14px] mt-1">
+                  <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
                     {errors.password}
                   </p>
                 )}
@@ -303,7 +303,7 @@ const Login = () => {
                 isValid={isValid}
               />
 
-              <div className="flex justify-between text-[12px] md:text-[14px] text-gray-600 mt-4">
+              <div className="flex justify-between  text-[10px] md: text-[12px] text-gray-600 mt-4">
                 <Link
                   to="/signup"
                   className="text-primary font-medium hover:underline"

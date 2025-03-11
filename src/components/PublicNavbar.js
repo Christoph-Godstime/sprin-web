@@ -46,7 +46,7 @@ const PublicNavbar = () => {
             <div className="cursor-pointer">
               <Link exact to="/">
                 <div className="w-[90px] h-[48px] rounded-full flex justify-center items-center bg-secondary">
-                  <Logo width="w-[50px]" text="text-[18px]" />
+                  <Logo width="w-[50px]" text=" text-[16px]" />
                 </div>
               </Link>
             </div>
@@ -54,7 +54,7 @@ const PublicNavbar = () => {
               onClick={() => setShow(!show)}
               className="w-[48px] h-[48px] rounded-full flex justify-center items-center bg-secondary"
             >
-              <FiMenu className="text-[24px] cursor-pointer text-white" />
+              <FiMenu className=" text-[22px] cursor-pointer text-white" />
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ const PublicNavbar = () => {
               <div onClick={() => setShow(!show)} className="cursor-pointer">
                 <div>
                   <Link exact to="/">
-                    <Logo width="w-[50px]" text="text-[18px]" />
+                    <Logo width="w-[50px]" text=" text-[16px]" />
                   </Link>
                 </div>
               </div>
@@ -96,7 +96,7 @@ const PublicNavbar = () => {
             <div className=" mt-[70px] grid grid-cols-1 md:gap-[30px] gap-[40px]">
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/" activeStyle={{ color: "#f97316" }}>
                   Home
@@ -104,7 +104,7 @@ const PublicNavbar = () => {
               </h4>
               {/* <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink
                   exact
@@ -117,7 +117,7 @@ const PublicNavbar = () => {
 
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/vendors" activeStyle={{ color: "#f97316" }}>
                   Vendors
@@ -125,7 +125,7 @@ const PublicNavbar = () => {
               </h4>
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/riders" activeStyle={{ color: "#f97316" }}>
                   Riders
@@ -133,7 +133,7 @@ const PublicNavbar = () => {
               </h4>
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/privacy" activeStyle={{ color: "#f97316" }}>
                   Privacy Policy
@@ -141,7 +141,7 @@ const PublicNavbar = () => {
               </h4>
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/terms" activeStyle={{ color: "#f97316" }}>
                   Terms of Use
@@ -149,7 +149,7 @@ const PublicNavbar = () => {
               </h4>
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/faqs" activeStyle={{ color: "#f97316" }}>
                   FAQs
@@ -157,7 +157,7 @@ const PublicNavbar = () => {
               </h4>
               <h4
                 onClick={() => setShow(!show)}
-                className="text-[16px] font-[500] md:font-[400] text-white"
+                className=" text-[14px] font-[500] md:font-[400] text-white"
               >
                 <NavLink exact to="/contact" activeStyle={{ color: "#f97316" }}>
                   Contact
@@ -169,7 +169,7 @@ const PublicNavbar = () => {
                 <div>
                   <img className="w-[22px]" src={playstore} />
                 </div>
-                <h4 className="text-[14px] md:text-[16px] text-black">
+                <h4 className=" text-[12px] md: text-[14px] text-black">
                   Download on Google Play
                 </h4>
               </button>
@@ -177,7 +177,7 @@ const PublicNavbar = () => {
                 <div>
                   <img className="w-[22px]" src={applestore} />
                 </div>
-                <h4 className="text-[14px] md:text-[16px] text-black">
+                <h4 className=" text-[12px] md: text-[14px] text-black">
                   Download on App Store
                 </h4>
               </button> */}

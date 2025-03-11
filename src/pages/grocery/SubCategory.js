@@ -81,7 +81,7 @@ const SubCategory = () => {
           );
           return (
             <div key={item.subCategory._id} className="mb-[40px]">
-              <h2 className="text-[18px] font-bold mb-4">
+              <h2 className=" text-[16px] font-bold mb-4">
                 {item.subCategory.title}
               </h2>
               {availableGroceries.length > 0 ? (
@@ -95,7 +95,7 @@ const SubCategory = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-[14px]">No items available</p>
+                <p className="text-gray-500  text-[12px]">No items available</p>
               )}
             </div>
           );

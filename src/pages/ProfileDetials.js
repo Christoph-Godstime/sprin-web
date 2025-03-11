@@ -119,7 +119,7 @@ const ProfileDetials = () => {
           <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mb-[20px] bg-gray-100">
             <input
               type="text"
-              className="w-full outline-none  bg-gray-100 placeholder:text-[12px] text-[12px] md:text-[14px]"
+              className="w-full outline-none  bg-gray-100 placeholder: text-[10px]  text-[10px] md: text-[12px]"
               placeholder="First name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
@@ -128,7 +128,7 @@ const ProfileDetials = () => {
           <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mb-[20px] bg-gray-100">
             <input
               type="text"
-              className="w-full outline-none  bg-gray-100 placeholder:text-[12px] text-[12px] md:text-[14px]"
+              className="w-full outline-none  bg-gray-100 placeholder: text-[10px]  text-[10px] md: text-[12px]"
               placeholder="Last name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
@@ -137,7 +137,7 @@ const ProfileDetials = () => {
           <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mb-[20px] bg-gray-100">
             <input
               type="tel"
-              className="w-full outline-none  bg-gray-100 placeholder:text-[12px] text-[12px] md:text-[14px]"
+              className="w-full outline-none  bg-gray-100 placeholder: text-[10px]  text-[10px] md: text-[12px]"
               placeholder="Phone number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}

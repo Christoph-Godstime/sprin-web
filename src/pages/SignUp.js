@@ -193,7 +193,7 @@ const SignUp = () => {
                 },
               ].map(({ name, placeholder, type, icon, customChange }) => (
                 <div key={name}>
-                  <label className="block text-gray-700 font-[500] text-end text-[12px] md:text-[14px]">
+                  <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
                     {placeholder}
                   </label>
                   <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-gray-100">
@@ -202,7 +202,7 @@ const SignUp = () => {
                       type={type}
                       name={name}
                       placeholder={placeholder}
-                      className="w-full outline-none  bg-gray-100 placeholder:text-[12px]  text-[12px] md:text-[14px] "
+                      className="w-full outline-none  bg-gray-100 placeholder: text-[10px]   text-[10px] md: text-[12px] "
                       onFocus={() => setFieldTouched(name)}
                       onBlur={() => setFieldTouched(name, "")}
                       onChange={(e) =>
@@ -215,7 +215,7 @@ const SignUp = () => {
                     />
                   </div>
                   {touched[name] && errors[name] && (
-                    <p className="text-red-400 text-[12px] md:text-[14px] mt-1">
+                    <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
                       {errors[name]}
                     </p>
                   )}
@@ -223,7 +223,7 @@ const SignUp = () => {
               ))}
 
               <div className="pb-[20px]">
-                <label className="block text-gray-700 font-[500] text-end text-[12px] md:text-[14px]">
+                <label className="block text-gray-700 font-[500] text-end  text-[10px] md: text-[12px]">
                   Password
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-[12px] p-[12px] focus-within:ring-1 focus-within:ring-primary mt-[5px] bg-gray-100">
@@ -232,7 +232,7 @@ const SignUp = () => {
                     type={isObsecure ? "password" : "text"}
                     name="password"
                     placeholder="Password"
-                    className="w-full outline-none  bg-gray-100 placeholder:text-[12px]  text-[12px] md:text-[14px] "
+                    className="w-full outline-none  bg-gray-100 placeholder: text-[10px]   text-[10px] md: text-[12px] "
                     onFocus={() => setFieldTouched("password")}
                     onBlur={() => setFieldTouched("password", "")}
                     value={values.password}
@@ -254,7 +254,7 @@ const SignUp = () => {
                   </button>
                 </div>
                 {touched.password && errors.password && (
-                  <p className="text-red-400 text-[12px] md:text-[14px] mt-1">
+                  <p className="text-red-400  text-[10px] md: text-[12px] mt-1">
                     {errors.password}
                   </p>
                 )}
