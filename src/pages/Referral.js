@@ -35,7 +35,7 @@ const Referral = () => {
         <h1 className="text-xl font-medium text-black text-center pb-4">
           Earn ₦500 For Every Friend You Invite
         </h1>
-        <p className="text-sm text-black text-center pb-6 max-w-lg">
+        <p className="text-[12px] text-black text-center pb-6 max-w-lg">
           Share your unique referral code below with your friends. They will get
           an immediate discount of ₦500 on their first order when they use your
           referral code and you will get ₦500 in your wallet. The more people

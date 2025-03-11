@@ -179,7 +179,7 @@ const Home = () => {
             <h4 className="font-bold text-[32px] md:text-4xl lg:text-6xl tracking-tighter ">
               {headline}
             </h4>
-            <h4 className="text-sm mt-[10px] lg:text-xl lg:w-[60%] lg:mx-auto">
+            <h4 className="text-[12px] mt-[10px] lg:text-xl lg:w-[60%] lg:mx-auto">
               {headline2}
             </h4>
           </div>

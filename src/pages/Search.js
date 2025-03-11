@@ -84,7 +84,7 @@ const Search = () => {
           <p className="text-gray-500  text-[10px] md:text-[12px] truncate">
             Preparation time - {item.time} mins
           </p>
-          <div className="flex items-center text-gray-800 text-sm">
+          <div className="flex items-center text-gray-800 text-[12px]">
             <span className="text-yellow-500 text-lg">★</span>
             <span className="ml-1">{item.rating?.toFixed(1) || "5.0"}</span>
             <span className="ml-2">({item.ratingCount || 0})</span>
@@ -98,7 +98,7 @@ const Search = () => {
               minimumFractionDigits: 0,
             })}
           </p>
-          <p className="text-sm text-gray-500 ">{item.restaurantName}</p>
+          <p className="text-[12px] text-gray-500 ">{item.restaurantName}</p>
         </div>
       </div>
     );
@@ -184,7 +184,7 @@ const Search = () => {
               <p className=" text-[12px] font-bold text-black">
                 "{searchQuery}"
               </p>
-              <p className="text-sm text-gray-500 mt-3">
+              <p className="text-[12px] text-gray-500 mt-3">
                 Check the spelling or try using a different word.
               </p>
             </div>
@@ -192,7 +192,7 @@ const Search = () => {
         ) : (
           <div className="px-4">
             {searchResults.length > 0 && (
-              <p className="text-sm text-gray-500 sticky top-[80px]  z-40">
+              <p className="text-[12px] text-gray-500 sticky top-[80px]  z-40">
                 {searchResults.length} results for{" "}
                 <span className="font-bold text-black">"{searchQuery}"</span>
               </p>

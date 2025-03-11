@@ -145,7 +145,7 @@ const SearchGrocery = () => {
               <p className=" text-[12px] font-bold text-black">
                 "{searchQuery}"
               </p>
-              <p className="text-sm text-gray-500 mt-3">
+              <p className="text-[12px] text-gray-500 mt-3">
                 Check the spelling or try using a different word.
               </p>
             </div>
@@ -153,7 +153,7 @@ const SearchGrocery = () => {
         ) : (
           <div className="px-4">
             {searchResults.length > 0 && (
-              <p className="text-sm text-gray-500 sticky top-[80px]  z-40">
+              <p className="text-[12px] text-gray-500 sticky top-[80px]  z-40">
                 {searchResults.length} results for{" "}
                 <span className="font-bold text-black">"{searchQuery}"</span>
               </p>

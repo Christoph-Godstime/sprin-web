@@ -37,7 +37,7 @@ const CartButton = () => {
             View cart
           </span>
           <span className="mx-2 text-white text-xl">•</span>
-          <span className="text-white ext-[14px] md:text-[14px] font-[400]">
+          <span className="text-white text-[12px] md:text-[14px] font-[400]">
             {calculateTotalPrice(cart?.items).toLocaleString("en-NG", {
               style: "currency",
               currency: "NGN",

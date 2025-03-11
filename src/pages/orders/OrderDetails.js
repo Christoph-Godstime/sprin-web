@@ -341,7 +341,7 @@ const OrderDetails = () => {
                   />
                 </div>
                 <div className="flex-1 pl-3">
-                  <p className={`text-sm ${getStepColor(step.step)}`}>
+                  <p className={`text-[12px] ${getStepColor(step.step)}`}>
                     {step.title}
                   </p>
                 </div>

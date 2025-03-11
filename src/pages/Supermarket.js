@@ -104,7 +104,7 @@ const Supermarket = () => {
         alt={item.title}
         className="w-24 h-24 object-contain"
       />
-      <p className="text-center mt-2  text-[10px] leading-4">{item.title}</p>
+      <p className="text-center mt-2  text-[11px] leading-3">{item.title}</p>
     </div>
   );
 

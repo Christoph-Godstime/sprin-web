@@ -34,7 +34,7 @@ const Orders = () => {
                   No Past or Ongoing Order
                 </p>
                 <button
-                  onClick={() => navigate("/home")}
+                  onClick={() => navigate("/")}
                   className="mt-6 bg-primary text-white  text-[12px] md:text-[14px] font-[500] py-3 px-6 rounded-lg"
                 >
                   Make your first order

@@ -303,7 +303,7 @@ const Grocery = () => {
                       </div>
                       <div className="flex flex-col items-start text-black">
                         <p
-                          className={`text-sm font-light text-left w-[150px] line-clamp-2 overflow-hidden`}
+                          className={`text-[12px] font-light text-left w-[150px] line-clamp-2 overflow-hidden`}
                         >
                           {item.title} {item?.quantity || ""}
                         </p>
@@ -327,7 +327,7 @@ const Grocery = () => {
             <div className="bg-orange-100 p-[8px] rounded-full w-11/12 flex justify-between space-x-[10px]">
               <button
                 onClick={() => handlePress(grocery)}
-                className="bg-primary text-orange-100 px-[8px] py-[10px] rounded-l-full w-1/2 text-center text-sm font-medium"
+                className="bg-primary text-orange-100 px-[8px] py-[10px] rounded-l-full w-1/2 text-center text-[12px] font-medium"
               >
                 Add {count} to cart for{" "}
                 {total.toLocaleString("en-NG", {
@@ -338,7 +338,7 @@ const Grocery = () => {
               </button>
               <button
                 onClick={orderNow}
-                className="bg-primary text-orange-100 px-[8px] py-[10px] rounded-r-full w-1/2 text-center text-sm font-medium"
+                className="bg-primary text-orange-100 px-[8px] py-[10px] rounded-r-full w-1/2 text-center text-[12px] font-medium"
               >
                 Order {count} now for{" "}
                 {total.toLocaleString("en-NG", {

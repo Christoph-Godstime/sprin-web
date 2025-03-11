@@ -308,7 +308,7 @@ const Login = () => {
                   to="/signup"
                   className="text-primary font-medium hover:underline"
                 >
-                  Register client account
+                  Register
                 </Link>
                 <Link to="/forgot-password" className="hover:underline">
                   Forgot Password?

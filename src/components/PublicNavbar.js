@@ -169,7 +169,7 @@ const PublicNavbar = () => {
                 <div>
                   <img className="w-[22px]" src={playstore} />
                 </div>
-                <h4 className=" text-[12px] md: text-[14px] text-black">
+                <h4 className=" text-[12px] md:text-[14px] text-black">
                   Download on Google Play
                 </h4>
               </button>
@@ -177,7 +177,7 @@ const PublicNavbar = () => {
                 <div>
                   <img className="w-[22px]" src={applestore} />
                 </div>
-                <h4 className=" text-[12px] md: text-[14px] text-black">
+                <h4 className=" text-[12px] md:text-[14px] text-black">
                   Download on App Store
                 </h4>
               </button> */}

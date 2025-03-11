@@ -558,7 +558,7 @@ const Rider = () => {
                   </h4>
                   <div
                     onClick={handleClick(i)}
-                    className={`text-sm duration-300 cursor-pointer ${
+                    className={`text-[12px] duration-300 cursor-pointer ${
                       clickedIndex[i] ? "rotate-180" : "rotate-0"
                     } `}
                   >

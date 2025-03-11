@@ -96,7 +96,7 @@ const GroceryTile = ({ item, index, width }) => {
         className="flex flex-col items-start text-black"
       >
         <p
-          className={`text-sm font-light text-left ${width} line-clamp-2 overflow-hidden`}
+          className={`text-[12px] font-light text-left ${width} line-clamp-2 overflow-hidden`}
         >
           {item.title} {item?.quantity || ""}
         </p>
