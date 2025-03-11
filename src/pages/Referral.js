@@ -20,7 +20,7 @@ const Referral = () => {
     try {
       await navigator.share({
         title: "Sprin Referral Code",
-        text: `Hi! Enjoy ₦500 off your first order on Sprin using my referral code "${profileDetails.referralCode}"! Download the app and start ordering here: https://www.sprinapp.com`,
+        text: `Hi! Enjoy ₦500 off your first order on Sprin using my referral code "${profileDetails.referralCode}"! Download the app and start ordering here:`,
         url: "https://www.sprinapp.com",
       });
     } catch (error) {

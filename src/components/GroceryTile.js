@@ -78,11 +78,11 @@ const GroceryTile = ({ item, index, width }) => {
   };
 
   return (
-    <div
-      className="mx-[5px]  rounded-lg h-[180px] flex flex-col items-center relative"
-      onClick={() => handleGrocery(item)}
-    >
-      <div className="w-full h-[120px] flex justify-center items-center">
+    <div className="mx-[5px]  rounded-lg h-[180px] flex flex-col items-center relative cursor-pointer">
+      <div
+        onClick={() => handleGrocery(item)}
+        className="w-full h-[120px] flex justify-center items-center"
+      >
         <img
           src={isImageLoaded ? item.imageUrl[0] : PlaceholderImage}
           alt={item.title}
@@ -91,7 +91,10 @@ const GroceryTile = ({ item, index, width }) => {
           onError={() => setIsImageLoaded(false)}
         />
       </div>
-      <div className="flex flex-col items-start text-black">
+      <div
+        onClick={() => handleGrocery(item)}
+        className="flex flex-col items-start text-black"
+      >
         <p
           className={`text-sm font-light text-left ${width} line-clamp-2 overflow-hidden`}
         >

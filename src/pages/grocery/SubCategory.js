@@ -85,7 +85,7 @@ const SubCategory = () => {
                 {item.subCategory.title}
               </h2>
               {availableGroceries.length > 0 ? (
-                <div className="grid grid-cols-3 gap-[4px]">
+                <div className="grid grid-cols-3 gap-[4px] place-items-center">
                   {availableGroceries.map((grocery, index) => (
                     <GroceryTile
                       key={grocery._id}

@@ -93,6 +93,7 @@ const Supermarket = () => {
 
   const renderItem = (item, index) => (
     <div
+      key={item._id}
       className={`p-2 rounded-lg flex flex-col items-center cursor-pointer bg-${
         index % 2 === 0 ? "gray-200" : "gray-200"
       }`}
@@ -208,7 +209,7 @@ const Supermarket = () => {
                       <>
                         {category.groceries.slice(0, 10).map((item, index) => (
                           <GroceryTile
-                            key={item.id || index}
+                            key={item._id}
                             item={item}
                             index={index}
                             width="w-[150px]"

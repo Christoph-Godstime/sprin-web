@@ -267,7 +267,7 @@ const Grocery = () => {
             </div>
 
             {/* Quantity Selector */}
-            <div className="flex flex-col items-center py-4 px-[12px]">
+            <div className="flex flex-col items-center py-4 px-[12px] h-[100px] justify-center">
               {loading ? (
                 <FiLoader className="animate-spin text-primary text-2xl" />
               ) : (
