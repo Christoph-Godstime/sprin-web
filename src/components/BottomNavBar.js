@@ -16,7 +16,7 @@ const BottomNavBar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed bottom-0 bg-primary w-full max-w-2xl flex justify-around pt-[6px] pb-[4px] rounded-t-[20px] shadow-md shadow-gray-400 z-40">
+    <div className="fixed bottom-0 bg-primary w-full max-w-2xl grid grid-cols-5 place-items-center pt-[6px] pb-[4px] rounded-t-[20px] shadow-md shadow-gray-400 z-40">
       <NavItem
         iconOutline={<BsHouseDoor />}
         iconFilled={<BsHouseDoorFill />}
@@ -72,14 +72,16 @@ const NavItem = ({
   const isActive = location.pathname === route;
 
   return (
-    <div
-      className={`flex flex-col items-center cursor-pointer transition-colors ${
-        isActive ? "text-secondary" : "text-white hover:text-orange-200"
-      }`}
-      onClick={() => navigate(route)}
-    >
-      <div className="text-xl">{isActive ? iconFilled : iconOutline}</div>
-      <div className="text-[12px] mt-[5px]">{label}</div>
+    <div>
+      <button
+        className={`flex flex-col items-center cursor-pointer transition-colors ${
+          isActive ? "text-secondary" : "text-white hover:text-orange-200"
+        }`}
+        onClick={() => navigate(route)}
+      >
+        <div className="text-xl">{isActive ? iconFilled : iconOutline}</div>
+        <div className="text-[12px] mt-[5px]">{label}</div>
+      </button>
     </div>
   );
 };

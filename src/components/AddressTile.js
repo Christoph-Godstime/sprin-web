@@ -12,7 +12,9 @@ const AddressTile = ({ onClick, item, onDelete }) => {
     <div onClick={onClick} className="cursor-pointer">
       <div className="flex justify-between items-center px-3 py-2 border-b border-gray-300">
         <div className="flex items-start w-4/5 ">
-          <BsGeoAlt className="text-primary mt-1 text-[20px]" />
+          <div className="w-fit">
+            <BsGeoAlt className="text-primary mt-1 text-[20px]" />
+          </div>
           <div className="ml-3">
             <p
               className={`text-[12px] md:text-[14px] ${
