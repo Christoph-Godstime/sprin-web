@@ -156,7 +156,7 @@ const Rider = () => {
       </div>
 
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] ">
-        <div className="max-w-[500px] mx-auto rounded-[8px] bg-white -mt-[170px]  shadow-lg px-[16px] py-[20px]">
+        <div className="md:max-w-[700px] mx-auto rounded-[8px] bg-white -mt-[170px]  shadow-lg px-[16px] py-[20px]">
           <h4 className=" md:text-[25px] text-[20px] font-[500]  leading-[24px] md:leading-[45px]  text-[#101828]   text-start lg:w-[800px] mx-auto tracking-tight mb-[25px]">
             Get Started
           </h4>

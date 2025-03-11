@@ -8,6 +8,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply font-sans;
+}
+
 @layer components {
   .my-table-spacing {
     border-spacing: theme("spacing.3");
@@ -31,6 +35,16 @@ thead td {
 /* td div {
   @apply my-[10px]
 } */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
   .text-border {

@@ -1,19 +1,36 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import deliveryAnimation from "../assets/anime/delivery.json";
 
-function NotFound() {
+const NotFound = () => {
   return (
-    <div
-      className="relative lg:rounded-l-[50px] lg:rounded-tr-[0px] rounded-t-[40px] bg-white h-full w-full"
-      style={{ minHeight: "calc(100vh - 70px)" }}
-    >
-      <h1
-        className="absolute md:text-[25px] text-[22px] font-medium text-gray-500 w-full flex justify-center"
-        style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%" }}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-6 text-center">
+      <div className="flex justify-center mb-6">
+        <Lottie
+          animationData={deliveryAnimation}
+          autoPlay
+          style={{ width: "100%", height: "30vh" }}
+        />
+      </div>
+      <div className="relative flex flex-col items-center">
+        <h1 className="text-9xl font-extrabold text-gray-900 tracking-widest">
+          404
+        </h1>
+        <div className="bg-red-500 px-2 text-[12px] md:text-[14px] text-white font-semibold rounded rotate-12 absolute top-1/2 -translate-y-1/2">
+          Page Not Found
+        </div>
+      </div>
+      <p className="text-gray-500 mt-6 text-base">
+        Oops! The page you are looking for does not exist.
+      </p>
+      <Link
+        to="/"
+        className="mt-6 px-6 py-3 text-white bg-primary rounded-md text-[16] font-medium shadow-md hover:bg-orange-600 transition"
       >
-        404 | Not Found.
-      </h1>
+        Go Home
+      </Link>
     </div>
   );
-}
+};
 
 export default NotFound;

@@ -1,81 +1,421 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import PageRender from "./customRouter/PageRender";
-import PrivateRouter from "./customRouter/PrivateRouter";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { useSelector, useDispatch } from "react-redux";
-import io from "socket.io-client";
-import { GLOBALTYPES } from "./redux/actions/globalTypes";
-import SocketClient from "./SocketClient";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  useEffect,
+  useContext,
+  useReducer,
+  createContext,
+  useMemo,
+  useState,
+} from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "react-loading-skeleton/dist/skeleton.css";
+import "react-datepicker/dist/react-datepicker.css";
+import { UserLocationContext } from "./context/UserLocationContext";
+import { LoginProvider } from "./context/LoginContext";
+import { RestaurantContext } from "./context/RestaurantContext";
+import { CheckUserAddressType } from "./context/CheckUserAddressType";
+import { ProfileTabContext } from "./context/ProfileTabContext";
+import { CartCountContext } from "./context/CartCountContext";
+import { UserReversedGeoCode } from "./context/UserReversedGeoCode";
+import { CheckLoadRestaurantData } from "./context/CheckRestaurantData";
+import { UserProfileProvider } from "./context/UserProfileContext";
+import { CartCountProvider } from "./context/CartCountContext";
+import { SocketContextProvider } from "./context/SocketContext";
+import { DefaultAddressProvider } from "./context/DefaultAddressContext";
+import { NearByRestaurantsProvider } from "./context/NearByRestaurants";
+import { TrySomethingNewProvider } from "./context/TrySomethingNewContext";
+import { FastestNearYouProvider } from "./context/FastestNearYou";
+import { OrderProvider } from "./context/OrderContext";
+import { GroceryStoreCategoryProvider } from "./context/GroceryStoreCategory";
+import { FetchCartDetailsProvider } from "./context/FetchCartDetailsContext";
+
+import PublicLayout from "./layouts/PublicLayout";
+import LandingPage from "./pages/LandingPage";
 import Faqs from "./pages/Faqs";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-import SupportAdmin from "./support/SupportAdmin";
-import SupportEngine from "./support/SupportEngine";
-import Peer from "peerjs";
-import CallModal from "./support/SupportEngine/SupportWindow/CallModal";
 import DeleteAccount from "./pages/DeleteAccount";
 import Contact from "./pages/Contact";
 import Rider from "./pages/Rider";
 import Vendor from "./pages/Vendor";
+import { toast } from "react-toastify";
+import LoadingScreen from "./components/LoadingScreen";
+import NotFound from "./components/NotFound";
+import PrivateRoute from "./routes/PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
+import { BaseUrl } from "./constants/theme";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Search from "./pages/Search";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import VerificationPage from "./pages/VerificationPage";
+import ContactUs from "./pages/ContactUs";
+import ChangePassword from "./pages/ChangePassword";
+import ProfileDetials from "./pages/ProfileDetials";
+import Referral from "./pages/Referral";
+import Wallet from "./pages/Wallet";
+import AddAddresses from "./pages/addresses/AddAddresses";
+import ShippingAddress from "./pages/ShippingAddress";
+import DefaultAddress from "./pages/addresses/DefaultAddress";
+import Orders from "./pages/Orders";
+import OrderDetails from "./pages/orders/OrderDetails";
+import Supermarket from "./pages/Supermarket";
+import SubCategory from "./pages/grocery/SubCategory";
+import Grocery from "./pages/grocery/Grocery";
 
-function App() {
-  const auth = false; // Replace with your actual authentication logic
-  const [show, setShow] = useState(false);
+export const AuthContext = createContext();
 
-  const { call, support } = useSelector((state) => state);
-  const dispatch = useDispatch();
+const App = () => {
+  const [location, setLocation] = useState(null);
+  const [address, setAddress] = useState(null);
+  const [restaurantObj, setRestaurant] = useState(null);
+  const [cartCount, setCartCount] = useState(0);
+  const [login, setLogin] = useState(null);
+  const [checkUserAddressType, setCheckUserAddressType] = useState(false);
+  const [loadRestaurantData, setLoadRestaurantData] = useState(false);
+  const [profileTab, setProfileTab] = useState(false);
 
-  // useEffect(() => {
-  //   const socket = io();
-  //   // console.log(socket);
-  //   dispatch({ type: GLOBALTYPES.SOCKET, payload: socket });
-  //   return () => socket.close();
-  // }, [dispatch]);
+  const [state, dispatch] = useReducer(
+    (prevState, action) => {
+      switch (action.type) {
+        case "RESTORE_TOKEN":
+          return {
+            ...prevState,
+            userToken: action.userToken,
+            isLoading: false,
+          };
 
-  // useEffect(() => {
-  //   const newPeer = new Peer(undefined, {
-  //     path: "/",
-  //     secure: true,
-  //   });
-  //   dispatch({ type: GLOBALTYPES.PEER, payload: newPeer });
-  // }, [dispatch]);
-  return (
-    <Router>
-      <div className="font-sans">
-        <div className={auth === true ? "hidden" : "visible"}>
-          <Header show={show} setShow={setShow} />
-        </div>
-        <div className={auth === true ? "visible" : "hidden"}>
-          <Navbar />
-        </div>
+        case "RESTORE_VERIFIED":
+          return {
+            ...prevState,
+            userVerified: action.userVerified,
+            isLoading: false,
+          };
 
-        {/* {support?.support && <SocketClient />}
-        {call && <CallModal />} */}
-        <Route exact path="/" component={Home} />
-        <Route exact path="/faqs" component={Faqs} />
-        <Route exact path="/privacy" component={Privacy} />
-        <Route exact path="/terms" component={Terms} />
-        <Route exact path="/delete-account" component={DeleteAccount} />
-        <Route exact path="/riders" component={Rider} />
-        <Route exact path="/vendors" component={Vendor} />
-        <Route exact path="/contact" component={Contact} />
-        <div style={{}}>
-          <PrivateRouter exact path="/login/:page" component={PageRender} />
-          <PrivateRouter exact path="/login/:page/:id" component={PageRender} />
-        </div>
-        <div className={auth === true ? "hidden" : "visible"}>
-          <Footer />
-        </div>
-        {/* <div className={auth === true ? "hidden" : "visible"}>
-          <SupportEngine />
-        </div> */}
-      </div>
-    </Router>
+        case "SIGN_IN":
+          return {
+            ...prevState,
+            isSignout: false,
+            userToken: action.userToken,
+            userVerified: action.userVerified,
+          };
+        case "SIGN_OUT_START":
+          return { ...prevState, isSigningOut: true };
+        case "SIGN_OUT":
+          return {
+            ...prevState,
+            isSignout: true,
+            userToken: null,
+            userVerified: null,
+            isSigningOut: false,
+          };
+        default:
+          return prevState;
+      }
+    },
+    {
+      isLoading: true,
+      isSignout: false,
+      isSigningOut: false,
+      userToken: null,
+      userVerified: null,
+    }
   );
-}
+
+  useEffect(() => {
+    const bootstrapAsync = () => {
+      try {
+        const userToken = localStorage.getItem("token") || null;
+
+        const userVerified = localStorage.getItem("verification") === "true";
+
+        dispatch({ type: "RESTORE_TOKEN", userToken });
+        dispatch({ type: "RESTORE_VERIFIED", userVerified });
+      } catch (e) {
+        console.log("Restoring token failed", e);
+      }
+    };
+
+    bootstrapAsync();
+  }, []);
+
+  const authContext = useMemo(
+    () => ({
+      signIn: (data) => {
+        localStorage.setItem("token", JSON.stringify(data.userToken));
+        localStorage.setItem("verification", JSON.stringify(data.verified));
+        dispatch({
+          type: "SIGN_IN",
+          userToken: data.userToken,
+          userVerified: data.verified,
+        });
+      },
+      signOut: () => {
+        dispatch({ type: "SIGN_OUT_START" }); // Start sign-out process
+
+        setTimeout(() => {
+          localStorage.clear();
+          dispatch({ type: "SIGN_OUT" });
+        }, 2000); // Simulate loading delay
+      },
+      isSigningOut: state.isSigningOut,
+    }),
+    [state.isSigningOut]
+  );
+
+  useEffect(() => {
+    const checkTokenValidity = async () => {
+      const token = localStorage.getItem("token");
+
+      const accessToken = JSON.parse(token);
+
+      if (!accessToken) {
+        dispatch({ type: "SIGN_OUT" }); // Ensure user stays logged out
+        return;
+      }
+
+      try {
+        const response = await fetch(`${BaseUrl}/check-token`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+          },
+        });
+
+        const data = await response.json();
+        if (data.status === 200) {
+          loginStatus();
+        }
+
+        if (!data.status) {
+          toast.error("Your session has expired. Please log in again.");
+          localStorage.clear();
+          dispatch({ type: "SIGN_OUT" });
+        }
+      } catch (error) {
+        console.error("Error checking token:", error);
+        toast.error("An error occurred. Please try logging in again.");
+        localStorage.clear();
+        dispatch({ type: "SIGN_OUT" });
+      }
+    };
+
+    checkTokenValidity();
+  }, []);
+
+  const loginStatus = async () => {
+    const userToken = localStorage.getItem("token");
+
+    if (userToken !== null) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+  };
+
+  if (state.isLoading) {
+    return <LoadingScreen />;
+  }
+
+  return (
+    <AuthContext.Provider value={authContext}>
+      <CheckLoadRestaurantData.Provider
+        value={{ loadRestaurantData, setLoadRestaurantData }}
+      >
+        <CheckUserAddressType.Provider
+          value={{ checkUserAddressType, setCheckUserAddressType }}
+        >
+          <UserReversedGeoCode.Provider value={{ address, setAddress }}>
+            <RestaurantContext.Provider
+              value={{ restaurantObj, setRestaurant }}
+            >
+              <CartCountContext.Provider value={{ cartCount, setCartCount }}>
+                <SocketContextProvider>
+                  <CartCountProvider>
+                    <FetchCartDetailsProvider>
+                      <UserProfileProvider>
+                        <LoginProvider value={{ login, setLogin }}>
+                          <DefaultAddressProvider>
+                            <GroceryStoreCategoryProvider>
+                              <NearByRestaurantsProvider>
+                                <TrySomethingNewProvider>
+                                  <FastestNearYouProvider>
+                                    <OrderProvider>
+                                      <Router>
+                                        <div className="font-sans">
+                                          <Routes>
+                                            <Route
+                                              path="/"
+                                              element={<Home />}
+                                            />
+                                            <Route
+                                              path="/search"
+                                              element={<Search />}
+                                            />
+                                            <Route
+                                              path="/add-address"
+                                              element={<AddAddresses />}
+                                            />
+                                            <Route
+                                              path="/orders"
+                                              element={<Orders />}
+                                            />
+                                            <Route
+                                              path="/supermarket"
+                                              element={<Supermarket />}
+                                            />
+                                            <Route
+                                              path="/sub-categories"
+                                              element={<SubCategory />}
+                                            />
+                                            <Route
+                                              path="/grocery-item"
+                                              element={<Grocery />}
+                                            />
+
+                                            {/* Public Pages (With Navbar/Footer) */}
+                                            <Route element={<PublicLayout />}>
+                                              {/* <Route path="/" element={<LandingPage />} /> */}
+                                              <Route
+                                                path="/faqs"
+                                                element={<Faqs />}
+                                              />
+                                              <Route
+                                                path="/privacy"
+                                                element={<Privacy />}
+                                              />
+                                              <Route
+                                                path="/terms"
+                                                element={<Terms />}
+                                              />
+                                              <Route
+                                                path="/delete-account"
+                                                element={<DeleteAccount />}
+                                              />
+                                              <Route
+                                                path="/riders"
+                                                element={<Rider />}
+                                              />
+                                              <Route
+                                                path="/vendors"
+                                                element={<Vendor />}
+                                              />
+                                              <Route
+                                                path="/contact"
+                                                element={<Contact />}
+                                              />
+                                            </Route>
+
+                                            <Route
+                                              element={
+                                                <PublicRoute
+                                                  userToken={state.userToken}
+                                                  verified={state.userVerified}
+                                                />
+                                              }
+                                            >
+                                              <Route
+                                                index
+                                                path="/login"
+                                                element={<Login />}
+                                              />
+                                              <Route
+                                                path="/verification-page"
+                                                element={<VerificationPage />}
+                                              />
+                                              <Route
+                                                path="/signup"
+                                                element={<SignUp />}
+                                              />
+
+                                              <Route
+                                                path="/forgot-password"
+                                                element={<ForgotPassword />}
+                                              />
+                                              <Route
+                                                path="/reset-password"
+                                                element={<ResetPassword />}
+                                              />
+                                            </Route>
+
+                                            <Route
+                                              element={
+                                                <PrivateRoute
+                                                  userToken={state.userToken}
+                                                  verified={state.userVerified}
+                                                />
+                                              }
+                                            >
+                                              <Route
+                                                path="/profile"
+                                                element={<Profile />}
+                                              />
+                                              <Route
+                                                path="/contact-us"
+                                                element={<ContactUs />}
+                                              />
+                                              <Route
+                                                path="/change-password"
+                                                element={<ChangePassword />}
+                                              />
+                                              <Route
+                                                path="/profile-details"
+                                                element={<ProfileDetials />}
+                                              />
+                                              <Route
+                                                path="/referral"
+                                                element={<Referral />}
+                                              />
+                                              <Route
+                                                path="/wallet"
+                                                element={<Wallet />}
+                                              />
+
+                                              <Route
+                                                path="/shipping-address"
+                                                element={<ShippingAddress />}
+                                              />
+                                              <Route
+                                                path="/default-address"
+                                                element={<DefaultAddress />}
+                                              />
+                                              <Route
+                                                path="/order-details"
+                                                element={<OrderDetails />}
+                                              />
+                                            </Route>
+
+                                            <Route
+                                              path="*"
+                                              element={<NotFound />}
+                                            />
+                                          </Routes>
+                                        </div>
+                                        <ToastContainer />
+                                      </Router>
+                                    </OrderProvider>
+                                  </FastestNearYouProvider>
+                                </TrySomethingNewProvider>
+                              </NearByRestaurantsProvider>
+                            </GroceryStoreCategoryProvider>
+                          </DefaultAddressProvider>
+                        </LoginProvider>
+                      </UserProfileProvider>
+                    </FetchCartDetailsProvider>
+                  </CartCountProvider>
+                </SocketContextProvider>
+              </CartCountContext.Provider>
+            </RestaurantContext.Provider>
+          </UserReversedGeoCode.Provider>
+        </CheckUserAddressType.Provider>
+      </CheckLoadRestaurantData.Provider>
+    </AuthContext.Provider>
+  );
+};
 
 export default App;
