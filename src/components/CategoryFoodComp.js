@@ -1,85 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaClock } from "react-icons/fa";
-
-const Rate = ({
-  rating,
-  size,
-  maxStars,
-  setRating,
-  bordered,
-  color,
-  editable,
-}) => {
-  const handleRatingChange = (newRating) => {
-    if (editable && setRating) {
-      setRating(newRating);
-    }
-  };
-
-  return (
-    <div className="flex">
-      {[...Array(maxStars)].map((_, index) => (
-        <button
-          key={index}
-          onClick={() => handleRatingChange(index + 1)}
-          disabled={!editable}
-          className={`text-${index < rating ? color : "gray-400"} text-${size}`}
-        >
-          ★
-        </button>
-      ))}
-    </div>
-  );
-};
+import { PlaceholderImage } from "../constants/theme";
 
 const CategoryFoodComp = ({ item, onClick }) => {
   const navigate = useNavigate();
 
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <div
-      className="bg-white p-3 rounded-lg w-full max-w-2xl mb-5 cursor-pointer"
+      className="bg-white p-2 rounded-lg w-full max-w-2xl cursor-pointer"
       onClick={onClick}
     >
       <img
-        src={item.imageUrl[0]}
+        src={isImageLoaded ? item.imageUrl[0] : PlaceholderImage}
         alt={item.title}
-        className="w-full h-40 rounded-md object-cover"
+        className={`w-full h-40 rounded-md object-cover ${
+          isImageLoaded ? "object-contain" : "object-cover"
+        }`}
+        onLoad={() => setIsImageLoaded(true)}
+        onError={() => setIsImageLoaded(false)}
       />
 
-      <div className="flex justify-between w-full mt-2">
-        <p className="text-base font-semibold truncate w-1/2">{item.title}</p>
-        <p className="text-base font-semibold truncate w-1/2 text-right">
+      <div className="flex justify-between mt-2 space-x-[20px]">
+        <p className="text-[11px] font-[400] truncate w-1/2">{item.title}</p>
+        <p className="text-[11px] font-[400] truncate w-1/2 text-right">
           {item.restaurantName}
         </p>
       </div>
 
-      <div className="flex justify-between w-full items-center mt-1">
+      <div className="flex justify-between items-center mt-1">
         <div className="flex items-center">
-          <FaClock size={14} className="text-black" />
-          <p className="text-sm text-gray-500 ml-2">
+          <FaClock className="text-black text-xs" />
+          <p className="text-[11px] text-gray-600 ml-1">
             {item.time} - {Number(item.time) + 10} mins
           </p>
         </div>
-        <p className="text-sm text-primary font-semibold text-right">
-          {new Intl.NumberFormat("en-NG", {
+        <p className="text-[12px] font-[500] text-primary">
+          {item.price.toLocaleString("en-NG", {
             style: "currency",
             currency: "NGN",
             minimumFractionDigits: 0,
-          }).format(item.price)}
+          })}
         </p>
       </div>
 
-      <div className="flex justify-between w-full items-center mt-1">
-        <div className="flex items-baseline">
-          <span className="text-lg text-primary">★</span>
-          <p className="ml-2 text-sm font-medium text-black">
-            {item.ratingCount === 0 ? "5.0" : item.rating?.toFixed(1)}
-          </p>
-          <p className="ml-2 text-sm font-medium text-black">
-            ({item.ratingCount})
-          </p>
-        </div>
+      <div className="flex justify-between items-center">
+        {item.ratingCount === 0 ? (
+          <div className="flex items-baseline">
+            <span className="text-primary text-lg">★</span>
+            <span className="ml-1 text-black text-[12px]">5.0</span>
+            <span className="ml-1 text-black text-[12px]">(0)</span>
+          </div>
+        ) : (
+          <div className="flex items-baseline">
+            <span className="text-lg text-primary">★</span>
+            <p className="ml-1 text-black text-[12px]">
+              {item.rating?.toFixed(1)}
+            </p>
+            <p className="ml-1 text-black text-[12px]">({item.ratingCount})</p>
+          </div>
+        )}
       </div>
     </div>
   );

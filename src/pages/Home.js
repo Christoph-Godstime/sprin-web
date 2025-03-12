@@ -28,6 +28,7 @@ import { DefaultAddressContext } from "../context/DefaultAddressContext";
 import { LoginContext } from "../context/LoginContext";
 import { toast } from "react-toastify";
 import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
+import FastestNearYou from "../components/FastestNearYou";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -108,7 +109,7 @@ const Home = () => {
         <HomeHeader />
 
         <div>
-          {categoriesLoading ? (
+          {/* {categoriesLoading ? (
             <div className="flex space-x-3 overflow-x-auto px-4 no-scrollbar py-[10px]">
               {[...Array(7)].map((_, index) => (
                 <ReusableShimmer
@@ -119,13 +120,13 @@ const Home = () => {
                 />
               ))}
             </div>
-          ) : (
-            <CategoryList
-              setSelectedValue={setSelectedValue}
-              setSelectedCategory={setSelectedCategory}
-              setSelectedSection={setSelectedSection}
-            />
-          )}
+          ) : ( */}
+          <CategoryList
+            setSelectedValue={setSelectedValue}
+            setSelectedCategory={setSelectedCategory}
+            setSelectedSection={setSelectedSection}
+          />
+          {/* )} */}
 
           {selectedCategory && selectedSection ? (
             <div className="pb-12">
@@ -157,7 +158,9 @@ const Home = () => {
 
               <Heading
                 heading="Nearby Restaurants"
-                onClick={() => console.log("Navigate to nearby restaurants")}
+                onClick={() => {
+                  navigate("/nearby-restaurants");
+                }}
               />
               <NearByRestaurants />
 
@@ -165,14 +168,21 @@ const Home = () => {
 
               <Heading
                 heading="Try Something New 🧡"
-                onClick={() => console.log("Navigate to new foods")}
+                onClick={() => {
+                  navigate("/new-foods");
+                }}
               />
               <NewFoodList />
 
               <Divider />
 
-              {/* <Heading heading="Fastest Near you 🚀" onClick={() => console.log("Navigate to fastest")} />
-            <FastestNearYou /> */}
+              <Heading
+                heading={"Fastest Near you 🚀"}
+                onClick={() => {
+                  navigate("/fastest");
+                }}
+              />
+              <FastestNearYou />
             </div>
           )}
         </div>

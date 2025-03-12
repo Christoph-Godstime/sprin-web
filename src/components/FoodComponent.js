@@ -6,7 +6,7 @@ const FoodComponent = ({ item, onPress }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   return (
     <div
-      className="bg-white p-2 rounded-2xl cursor-pointer w-[320px] min-w-[320px]"
+      className="bg-white p-2 rounded-2xl cursor-pointer w-[340px] min-w-[340px]"
       onClick={onPress}
     >
       <img
@@ -19,7 +19,7 @@ const FoodComponent = ({ item, onPress }) => {
         onError={() => setIsImageLoaded(false)}
       />
 
-      <div className="flex justify-between mt-2">
+      <div className="flex justify-between mt-2 space-x-[20px]">
         <p className="text-[11px] font-[400] truncate w-1/2">{item.title}</p>
         <p className="text-[11px] font-[400] truncate w-1/2 text-right">
           {item.restaurantName}

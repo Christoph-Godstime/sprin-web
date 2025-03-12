@@ -15,31 +15,25 @@ const HomeCategory = ({ category, isLoading }) => {
 
   if (isLoading) {
     return (
-      <div className="flex flex-wrap justify-around px-4 pt-2">
-        {[...Array(10)].map((_, index) => (
-          <div key={index} className="mb-3">
-            <ReusableShimmer
-              width={"calc(100% - 30px)"}
-              height={"15vh"}
-              radius={10}
-            />
-          </div>
-        ))}
+      <div className="flex justify-center items-center min-h-[calc(100vh-390px)]">
+        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   if (category && category.length === 0) {
     return (
-      <div className="flex justify-center items-center h-1/2">
-        <p className="text-lg font-medium">No Item In This Category...</p>
+      <div className="flex justify-center items-center min-h-[calc(100vh-390px)]">
+        <p className="text-[16px] font-[500] text-gray-700">
+          No Item In This Category...
+        </p>
       </div>
     );
   }
 
   return (
-    <div className="ml-3 mb-2">
-      <div className="mt-2 space-y-4">
+    <div className="px-[12px] min-h-[calc(100vh-390px)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] gap-y-[20px]">
         {category.map((item) => (
           <div key={item._id}>{renderCategoryFoodComp(item)}</div>
         ))}

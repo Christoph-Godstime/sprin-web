@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CategoryItem from "./CategoryItem";
 import useFetchCategories from "../hooks/useCategoryHook";
 import ReusableShimmer from "./Shimmers/ReusableShimmer";
 import { useNavigate } from "react-router-dom";

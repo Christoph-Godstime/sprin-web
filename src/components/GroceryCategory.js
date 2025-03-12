@@ -58,7 +58,7 @@ const GroceryCategory = () => {
               src={isImageLoaded ? item.imageUrl : PlaceholderImage}
               alt={item.title}
               className={`w-full h-20  mb-2 ${
-                isImageLoaded ? "object-cover" : "object-contain"
+                isImageLoaded ? "object-contain" : "object-contain"
               }`}
               onLoad={() => setIsImageLoaded(true)}
               onError={() => setIsImageLoaded(false)}

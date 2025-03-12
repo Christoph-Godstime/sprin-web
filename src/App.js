@@ -68,6 +68,7 @@ import SubCategory from "./pages/grocery/SubCategory";
 import Grocery from "./pages/grocery/Grocery";
 import SearchGrocery from "./pages/grocery/SearchGrocery";
 import InstallBanner from "./components/InstallBanner";
+import MoreFoods from "./pages/food/MoreFoods";
 
 export const AuthContext = createContext();
 
@@ -283,6 +284,11 @@ const App = () => {
                                             <Route
                                               path="/search-grocery"
                                               element={<SearchGrocery />}
+                                            />
+
+                                            <Route
+                                              path="/more-categories"
+                                              element={<MoreFoods />}
                                             />
 
                                             {/* Public Pages (With Navbar/Footer) */}

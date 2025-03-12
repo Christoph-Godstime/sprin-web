@@ -48,18 +48,21 @@ const HomeHeader = () => {
 
   return (
     <div className="flex justify-between items-center px-[12px] pt-[20px] pb-[10px] w-full max-w-2xl sticky top-0  z-40 bg-gray-100">
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-3 w-full">
         <img src={logo} alt="Logo" className="w-[45px] h-[45px]" />
-        <button onClick={() => navigate("/add-address")} className="text-left">
+        <button
+          onClick={() => navigate("/add-address")}
+          className="text-left w-full"
+        >
           {addressLoading ? (
             <p className="text-gray-500 text-[12px]">
               Loading delivery address...
             </p>
           ) : defaultAddress ? (
-            <div>
+            <div className="w-full">
               <p className="text-gray-500 text-[12px]">Delivering to</p>
               <div className="flex items-center mt-[2px]">
-                <p className="text-[12px] font-medium truncate max-w-xs">
+                <p className="text-[12px] font-medium truncate max-w-[70%]">
                   {defaultAddress.addressLine1}
                 </p>
                 <IoChevronDown className="ml-2 text-lg" />

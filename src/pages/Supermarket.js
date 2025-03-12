@@ -26,6 +26,8 @@ const Supermarket = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const [coords, setCoords] = useState([6.108269691467286, 5.788121544177521]);
 
   const formattedOrderDateTime = data?.storeDetails?.openingTime
@@ -100,9 +102,11 @@ const Supermarket = () => {
       onClick={() => handleCategory(item._id)}
     >
       <img
-        src={item.imageUrl}
+        src={isImageLoaded ? item.imageUrl : PlaceholderImage}
         alt={item.title}
         className="w-24 h-24 object-contain"
+        onLoad={() => setIsImageLoaded(true)}
+        onError={() => setIsImageLoaded(false)}
       />
       <p className="text-center mt-2  text-[11px] leading-3">{item.title}</p>
     </div>
