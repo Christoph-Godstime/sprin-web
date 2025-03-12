@@ -109,12 +109,12 @@ const Home = () => {
 
         <div>
           {categoriesLoading ? (
-            <div className="flex space-x-3 overflow-x-auto px-4 no-scrollbar">
+            <div className="flex space-x-3 overflow-x-auto px-4 no-scrollbar py-[10px]">
               {[...Array(7)].map((_, index) => (
                 <ReusableShimmer
                   key={index}
-                  width={90}
-                  height={90}
+                  width={80}
+                  height={80}
                   radius={16}
                 />
               ))}

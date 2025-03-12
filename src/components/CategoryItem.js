@@ -7,19 +7,21 @@ const CategoryItem = ({ category, selected }) => {
   return (
     <div
       className={`
-        flex flex-col items-center justify-center p-2 w-[90px] h-[90px] rounded-[15px] border border-transparent
-        ${category.value === selected ? "bg-orange-200" : "bg-transparent"}
-        shadow-sm
+        flex flex-col items-center justify-center p-[8px] w-[80px] min-w-[80px]  rounded-[15px] border border-transparent shadow-lg overflow-hidden
+        ${category.value === selected ? "bg-orange-200" : "bg-white"}
+        
       `}
     >
       <img
         src={isImageLoaded ? category.imageUrl : PlaceholderImage}
         alt={category.title}
-        className={`w-[55px] h-[55px] object-contain `}
+        className={`w-full h-[55px] object-contain `}
         onLoad={() => setIsImageLoaded(true)}
         onError={() => setIsImageLoaded(false)}
       />
-      <p className="text-[12px] font-normal text-center">{category.title}</p>
+      <p className="text-[12px] font-normal text-center leading-[14px]">
+        {category.title} dsd
+      </p>
     </div>
   );
 };
