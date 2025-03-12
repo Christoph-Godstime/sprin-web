@@ -8,11 +8,12 @@ const ReusableShimmer = ({
   marginTop,
   marginBottom,
   marginLeft,
+  width,
 }) => {
   return (
     <div
       style={{
-        width: "100%",
+        width,
         marginRight,
         marginTop,
         marginBottom,
@@ -20,7 +21,7 @@ const ReusableShimmer = ({
       }}
     >
       <Skeleton
-        width="100%"
+        width={width}
         height={height}
         borderRadius={radius}
         baseColor="#e5e7eb"

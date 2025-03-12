@@ -2,14 +2,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {
   BsHouseDoor,
   BsHouseDoorFill,
-  BsCart,
-  BsCartFill,
   BsSearch,
   BsClipboardCheck,
   BsClipboardCheckFill,
   BsPerson,
   BsPersonFill,
 } from "react-icons/bs";
+import { IoStorefrontSharp, IoStorefrontOutline } from "react-icons/io5";
 
 const BottomNavBar = () => {
   const location = useLocation();
@@ -26,8 +25,8 @@ const BottomNavBar = () => {
         navigate={navigate}
       />
       <NavItem
-        iconOutline={<BsCart />}
-        iconFilled={<BsCartFill />}
+        iconOutline={<IoStorefrontOutline />}
+        iconFilled={<IoStorefrontSharp />}
         label="Supermarket"
         route="/supermarket"
         location={location}

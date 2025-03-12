@@ -108,6 +108,66 @@ const Supermarket = () => {
     </div>
   );
 
+  if (loading) {
+    return (
+      <div className="flex flex-col min-h-screen bg-white items-center pb-[60px] relative">
+        <ScrollToTopOnMount />
+        <div className="w-full max-w-2xl relative">
+          {/* Main Shimmer */}
+          <ReusableShimmer
+            width="100%"
+            height="20vh"
+            radius={0}
+            marginRight={0}
+            className="relative z-0"
+          />
+
+          {/* Input Shimmer Section */}
+          <div className="relative z-10 px-3 pt-[50px] bg-white rounded-tr-[50px] mt-[-50px]">
+            <ReusableShimmer
+              width="100%"
+              height={50}
+              radius={50}
+              marginRight={0}
+            />
+
+            {/* Grid of 5 rows × 3 columns */}
+            <div className="mt-10">
+              {Array.from({ length: 3 }).map((_, rowIndex) => (
+                <div key={rowIndex} className="flex justify-between mb-3">
+                  {Array.from({ length: 3 }).map((_, colIndex) => (
+                    <ReusableShimmer
+                      key={colIndex}
+                      width="100%"
+                      height={120}
+                      radius={8}
+                      marginRight={colIndex < 2 ? 15 : 0}
+                      marginBottom={30}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+
+            {/* Another Section with 3 Boxes */}
+            <div className="flex justify-between mt-4 overflow-hidden">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <ReusableShimmer
+                  key={index}
+                  width={150}
+                  height={140}
+                  radius={8}
+                  marginRight={index < 5 ? 15 : 0}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <BottomNavBar />
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-white items-center pb-[150px] relative">
       <ScrollToTopOnMount />
