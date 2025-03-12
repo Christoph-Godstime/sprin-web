@@ -27,6 +27,7 @@ import ReusableShimmer from "../components/Shimmers/ReusableShimmer";
 import { DefaultAddressContext } from "../context/DefaultAddressContext";
 import { LoginContext } from "../context/LoginContext";
 import { toast } from "react-toastify";
+import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -102,6 +103,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white items-center ">
+      <ScrollToTopOnMount />
       <div className="flex flex-col bg-gray-100 w-full max-w-2xl pb-[100px]">
         <HomeHeader />
 
