@@ -113,7 +113,7 @@ const Search = () => {
           </div>
           <input
             ref={textInputRef}
-            className="flex-1 h-full px-[8px] bg-transparent outline-none placeholder:text-[10px]  text-[10px] md:text-[12px] placeholder:md:text-[12px]"
+            className="flex-1 h-full px-[8px] bg-transparent outline-none  text-[12px] placeholder:text-[12px]"
             value={searchKey}
             onChange={(e) => setSearchKey(e.target.value)}
             placeholder="What would you like to eat?"

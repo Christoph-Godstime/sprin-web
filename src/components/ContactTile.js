@@ -2,7 +2,7 @@ import React from "react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
 import { SiMinutemailer } from "react-icons/si";
-import { BsArrowRight } from "react-icons/bs";
+import { FaAngleRight } from "react-icons/fa6";
 
 const ContactTile = ({ title, icon }) => {
   const handlePress = () => {
@@ -24,26 +24,26 @@ const ContactTile = ({ title, icon }) => {
   const getIcon = () => {
     switch (icon) {
       case "phone":
-        return <IoIosCall className="text-primary text-lg" />;
+        return <IoIosCall className="text-primary text-[24px]" />;
       case "whatsapp":
-        return <FaWhatsapp className="text-primary text-lg" />;
+        return <FaWhatsapp className="text-primary text-[24px]" />;
       case "message-alert":
-        return <SiMinutemailer className="text-primary text-lg" />;
+        return <SiMinutemailer className="text-primary text-[24px]" />;
       default:
-        return <FaPhone className="text-primary text-lg" />;
+        return <FaPhone className="text-primary text-[24px]" />;
     }
   };
 
   return (
     <div className="cursor-pointer" onClick={handlePress}>
-      <div className="flex justify-between items-center py-3 ">
+      <div className="flex justify-between items-center py-[15px] ">
         <div className="flex items-center space-x-4">
           {getIcon()}
-          <span className="text-gray-800  text-[10px] md:text-[12px] font-medium">
+          <span className="text-gray-800  text-[12px]  font-medium">
             {title}
           </span>
         </div>
-        <BsArrowRight className="text-gray-400  text-[12px]" />
+        <FaAngleRight className="text-gray-400  text-[16px]" />
       </div>
       <hr className="border-gray-300 opacity-70 ml-[30px]" />
     </div>

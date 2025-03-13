@@ -43,7 +43,7 @@ const NewFoodList = () => {
           <FoodComponent
             key={item._id}
             item={item}
-            onPress={() => navigate("/food-nav", { state: item })}
+            onPress={() => navigate("/food-nav", { state: { item: item } })}
           />
         ))}
       </div>
