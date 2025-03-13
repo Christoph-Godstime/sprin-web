@@ -152,7 +152,9 @@ const Home = () => {
               </div>
               <Heading
                 heading="Supermarket Categories"
-                onClick={() => console.log("Navigate to supermarket")}
+                onClick={() => {
+                  navigate("/supermarket");
+                }}
               />
               <GroceryCategory />
 

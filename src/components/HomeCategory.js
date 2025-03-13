@@ -9,7 +9,7 @@ const HomeCategory = ({ category, isLoading }) => {
   const renderCategoryFoodComp = (item) => (
     <CategoryFoodComp
       item={item}
-      onClick={() => navigate("/food-nav", { state: item })}
+      onClick={() => navigate("/food-nav", { state: { data: item } })}
     />
   );
 

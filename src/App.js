@@ -69,6 +69,10 @@ import Grocery from "./pages/grocery/Grocery";
 import SearchGrocery from "./pages/grocery/SearchGrocery";
 import InstallBanner from "./components/InstallBanner";
 import MoreFoods from "./pages/food/MoreFoods";
+import AllCategories from "./pages/AllCategories";
+import FastestFoods from "./pages/food/FastestFoods";
+import NewFoods from "./pages/food/NewFoods";
+import AllRestaurants from "./pages/food/AllRestaurants";
 
 export const AuthContext = createContext();
 
@@ -289,6 +293,26 @@ const App = () => {
                                             <Route
                                               path="/more-categories"
                                               element={<MoreFoods />}
+                                            />
+
+                                            <Route
+                                              path="/all-categories"
+                                              element={<AllCategories />}
+                                            />
+
+                                            <Route
+                                              path="/fastest"
+                                              element={<FastestFoods />}
+                                            />
+
+                                            <Route
+                                              path="/new-foods"
+                                              element={<NewFoods />}
+                                            />
+
+                                            <Route
+                                              path="/nearby-restaurants"
+                                              element={<AllRestaurants />}
                                             />
 
                                             {/* Public Pages (With Navbar/Footer) */}
