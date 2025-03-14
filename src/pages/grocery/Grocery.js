@@ -224,7 +224,7 @@ const Grocery = () => {
   return (
     <div
       ref={pageRef}
-      className="flex flex-col  bg-white items-center pb-[100px] pt-[400px]"
+      className="flex flex-col  overflow-y-auto bg-white items-center pb-[100px] pt-[400px]"
     >
       <ScrollToTopOnMount />
 

@@ -247,7 +247,7 @@ const FoodPage = () => {
   return (
     <div
       ref={pageRef}
-      className="flex flex-col  bg-white items-center pb-[150px] pt-[250px]"
+      className="flex flex-col overflow-y-auto bg-white items-center pb-[150px] pt-[250px]"
     >
       <ScrollToTopOnMount />
 

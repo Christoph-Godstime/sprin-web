@@ -173,7 +173,7 @@ const Supermarket = () => {
   }
 
   return (
-    <div className="flex flex-col  bg-white items-center pb-[150px] relative">
+    <div className="flex flex-col  overflow-y-auto bg-white items-center pb-[150px] relative">
       <ScrollToTopOnMount />
       <div className="w-full max-w-2xl relative">
         {data?.storeDetails?.isActive === false && (

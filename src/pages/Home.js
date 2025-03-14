@@ -103,7 +103,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col  bg-gray-100 items-center relative">
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center relative">
       <ScrollToTopOnMount />
       <div className="flex flex-col bg-gray-100 w-full max-w-2xl pb-[100px]">
         <HomeHeader />
