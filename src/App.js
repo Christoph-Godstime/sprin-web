@@ -89,6 +89,22 @@ const App = () => {
   const [loadRestaurantData, setLoadRestaurantData] = useState(false);
   const [profileTab, setProfileTab] = useState(false);
 
+  useEffect(() => {
+    const setAppHeight = () => {
+      document.documentElement.style.setProperty(
+        "--app-height",
+        `${window.innerHeight}px`
+      );
+    };
+
+    setAppHeight(); // Set on mount
+    window.addEventListener("resize", setAppHeight); // Update on resize
+
+    return () => {
+      window.removeEventListener("resize", setAppHeight);
+    };
+  }, []);
+
   const [state, dispatch] = useReducer(
     (prevState, action) => {
       switch (action.type) {
@@ -258,7 +274,7 @@ const App = () => {
                                     <OrderProvider>
                                       <Router>
                                         <InstallBanner />
-                                        <div className="font-sans">
+                                        <div className="font-sans app-container">
                                           <Routes>
                                             <Route
                                               path="/"

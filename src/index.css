@@ -37,6 +37,17 @@ thead td {
 } */
 }
 
+:root {
+  --app-height: 100vh;
+}
+
+.app-container {
+  height: var(--app-height);
+  overflow: hidden;
+}
+
+
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
