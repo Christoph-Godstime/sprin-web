@@ -260,13 +260,13 @@ const AddAddresses = () => {
 
   return (
     <div
-      className="h-screen w-full overflow-hidden"
+      className="h-[calc(100dvh)] w-full overflow-hidden"
       // onTouchStart={handleTouchStart}
       // onTouchMove={handleTouchMove}
       // onTouchEnd={handleTouchEnd}
     >
       {currentPage === 0 && (
-        <div className="relative flex flex-col items-center h-screen  ">
+        <div className="relative flex flex-col items-center h-[calc(100dvh)]  ">
           <div className="absolute top-10 w-full  max-w-lg py-[12px] z-10 px-4">
             {isLoaded && (
               <GooglePlacesAutocomplete
@@ -319,7 +319,7 @@ const AddAddresses = () => {
       )}
 
       {currentPage === 1 && (
-        <div className="flex flex-col min-h-screen bg-white items-center pb-[50px]">
+        <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center pb-[50px]">
           <div className="w-full max-w-2xl flex justify-start items-center h-[60px] sticky top-0  z-40 px-[12px] bg-secondary">
             <button onClick={goToPrevious} className="text-white text-xl  ">
               <BsArrowLeft />

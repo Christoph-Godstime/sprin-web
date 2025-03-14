@@ -15,7 +15,7 @@ const AllRestaurants = () => {
 
   if (loadNearByRestaurants) {
     return (
-      <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[50px]">
+      <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[50px]">
         <ScrollToTopOnMount />
         <Header text="All Restaurants" />
         <div className="w-full max-w-2xl pt-[20px] px-[12px]">
@@ -34,7 +34,7 @@ const AllRestaurants = () => {
 
   if (!nearByRestaurants || nearByRestaurants.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white ">
+      <div className="flex flex-col items-center justify-center h-[calc(100dvh)] overflow-y-auto bg-white ">
         <Header text="All Restaurants" />
         <div className="w-full max-w-xl py-[30px] flex flex-col items-center justify-center flex-1 px-[12px]">
           <p className="text-[16px] font-[500] text-gray-700">
@@ -46,7 +46,7 @@ const AllRestaurants = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[50px]">
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[50px]">
       <ScrollToTopOnMount />
       <Header text="All Restaurants" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">

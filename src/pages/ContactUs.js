@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const ContactUs = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[50px]">
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[50px]">
       <Header text="Contact Us" />
       <div className="w-full max-w-2xl pt-[10px] px-[12px]">
         <ContactTile title="Call" icon="phone" font={3} />

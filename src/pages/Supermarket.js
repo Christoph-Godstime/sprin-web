@@ -114,7 +114,7 @@ const Supermarket = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col min-h-screen bg-white items-center pb-[60px] relative">
+      <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center pb-[60px] relative">
         <ScrollToTopOnMount />
         <div className="w-full max-w-2xl relative">
           {/* Main Shimmer */}
@@ -173,7 +173,7 @@ const Supermarket = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-white items-center pb-[150px] relative">
+    <div className="flex flex-col  bg-white items-center pb-[150px] relative">
       <ScrollToTopOnMount />
       <div className="w-full max-w-2xl relative">
         {data?.storeDetails?.isActive === false && (

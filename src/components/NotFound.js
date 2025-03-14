@@ -4,7 +4,7 @@ import deliveryAnimation from "../assets/anime/delivery.json";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-6 text-center">
+    <div className="flex flex-col items-center justify-center h-[calc(100dvh)] overflow-y-auto bg-white px-6 text-center">
       <div className="flex justify-center mb-6">
         <Lottie
           animationData={deliveryAnimation}

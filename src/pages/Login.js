@@ -202,7 +202,7 @@ const Login = () => {
     );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
+    <div className="flex flex-col items-center justify-center h-[calc(100dvh)] overflow-y-auto bg-white px-4">
       <div className="w-full max-w-lg py-[30px]">
         <div className="flex justify-center mb-6">
           <Lottie

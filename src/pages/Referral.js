@@ -29,7 +29,7 @@ const Referral = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white items-center pb-[100px]">
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center pb-[100px]">
       <Header text="Refer a Friend" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px] flex flex-col items-center">
         <h1 className="text-xl font-medium text-black text-center pb-4">

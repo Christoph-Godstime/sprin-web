@@ -144,7 +144,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[180px] relative ">
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[180px] relative ">
       <ScrollToTopOnMount />
       <Header text="Checkout" />
       <div className="w-full max-w-2xl pt-[105px]">
