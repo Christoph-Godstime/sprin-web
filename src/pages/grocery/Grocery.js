@@ -231,7 +231,7 @@ const Grocery = () => {
       <div className="w-full max-w-2xl pt-[20px]">
         <div className=" flex flex-col">
           {/* Header Section */}
-          <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[400px] z-40">
+          <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl bg-white rounded-b-[15px] h-[400px] z-40">
             <img
               src={grocery.imageUrl[0]}
               alt="Grocery"

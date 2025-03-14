@@ -30,7 +30,7 @@ const CartButton = () => {
     >
       <button
         onClick={() => navigate("/grocery-checkout", { state: { data: cart } })}
-        className="bg-primary px-4 py-2 rounded-full w-[90%] flex justify-center items-center"
+        className="bg-primary px-4 py-2 rounded-full w-[90%] flex justify-center items-center max-w-md"
       >
         <div className="flex items-center">
           <span className="text-white  text-[12px] md:text-[14px] font-[400]">

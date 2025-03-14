@@ -81,11 +81,10 @@ const HomeHeader = () => {
         <div className="p-[10px] bg-white rounded-full shadow-md">
           <AiOutlineShoppingCart className="text-2xl" />
         </div>
-        {cartCount > 0 && (
-          <span className="absolute -top-[5px] -right-[5px] bg-red-500 text-white text-xs font-[400] w-5 h-5 flex items-center justify-center rounded-full">
-            {cartCount}
-          </span>
-        )}
+
+        <span className="absolute -top-[5px] -right-[5px] bg-red-500 text-white text-xs font-[400] w-5 h-5 flex items-center justify-center rounded-full">
+          {cartCount}
+        </span>
       </button>
     </div>
   );

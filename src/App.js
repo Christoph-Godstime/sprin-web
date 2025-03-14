@@ -73,7 +73,9 @@ import AllCategories from "./pages/AllCategories";
 import FastestFoods from "./pages/food/FastestFoods";
 import NewFoods from "./pages/food/NewFoods";
 import AllRestaurants from "./pages/food/AllRestaurants";
-import FoodPage from "./pages/restaurant.js/FoodPage";
+import FoodPage from "./pages/restaurant/FoodPage";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 export const AuthContext = createContext();
 
@@ -319,6 +321,16 @@ const App = () => {
                                             <Route
                                               path="/food-nav"
                                               element={<FoodPage />}
+                                            />
+
+                                            <Route
+                                              path="/cart"
+                                              element={<Cart />}
+                                            />
+
+                                            <Route
+                                              path="/checkout"
+                                              element={<Checkout />}
                                             />
 
                                             {/* Public Pages (With Navbar/Footer) */}

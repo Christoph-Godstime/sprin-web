@@ -54,7 +54,7 @@ const ShippingAddress = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white items-center pb-[50px]">
+    <div className="flex flex-col min-h-screen bg-white items-center pb-[150px]">
       <Header text="Addresses" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">
         {isLoading ? (
@@ -64,7 +64,7 @@ const ShippingAddress = () => {
             <p className="text-lg font-medium">No Address Available...</p>
           </div>
         ) : (
-          <div className="overflow-auto max-h-[70vh] space-y-4">
+          <div className=" space-y-4">
             {addresses?.map((item) => (
               <AddressTile
                 key={item._id}
@@ -81,7 +81,7 @@ const ShippingAddress = () => {
       <div className="w-full px-[12px] fixed bottom-[40px] flex justify-center z-40">
         <button
           onClick={() => navigate("/add-address")}
-          className="max-w-lg w-full py-3 text-white font-bold rounded-lg flex justify-center items-center bg-primary hover:bg-orange-600"
+          className="max-w-lg w-full py-3 text-white font-bold rounded-lg flex justify-center items-center bg-primary hover:bg-orange-600 z-50"
         >
           Add Address
         </button>

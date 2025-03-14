@@ -193,7 +193,7 @@ const FoodPage = () => {
   }, [addittives]);
   const handleNavigation = () => {
     if (data === true) {
-      navigate("/restaurant", restaurantObj);
+      navigate("/restaurant", { state: { restaurantObj: restaurantObj } });
     }
   };
   const fetchData = async () => {
@@ -254,7 +254,7 @@ const FoodPage = () => {
       <div className="w-full max-w-2xl ">
         <div className="flex flex-col">
           {/* Header Section */}
-          <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[250px] z-40">
+          <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[250px] bg-white rounded-b-[15px] z-40">
             <img
               src={item.imageUrl[0]}
               alt={item.title}
@@ -276,6 +276,28 @@ const FoodPage = () => {
               className="absolute top-4 right-[12px] p-2 bg-black bg-opacity-50 rounded-full text-white"
             >
               <FaShare size={18} />
+            </button>
+
+            <button
+              className="absolute z-40 bottom-3 left-[12px] border border-primary rounded-[15px] py-[10px] px-[10px] bg-[#1e1b4b80] flex items-center"
+              onClick={() =>
+                navigate("/food-feedbacks", {
+                  state: { foodId: item._id },
+                })
+              }
+            >
+              <span className="text-[12px] text-primary">
+                {item?.rating?.toFixed(1)} ({item?.ratingCount})
+              </span>
+              <span className="text-white ml-4 text-[12px]">See Ratings</span>
+            </button>
+
+            {/* Open Store Button */}
+            <button
+              className="absolute z-40 bottom-3 right-[12px] border border-primary rounded-[15px] py-[10px] px-[10px] bg-[#1e1b4b80] flex justify-center items-center"
+              onClick={handleNavigation}
+            >
+              <span className="text-white text-[12px]">Open the Store</span>
             </button>
           </div>
 
