@@ -258,7 +258,7 @@ const App = () => {
                                     <OrderProvider>
                                       <Router>
                                         <InstallBanner />
-                                        <div className="font-sans h-dvh">
+                                        <div className="font-sans">
                                           <Routes>
                                             <Route
                                               path="/"
