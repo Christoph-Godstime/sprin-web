@@ -175,7 +175,7 @@ const OrderDetails = () => {
       className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[200px]"
     >
       <ScrollToTopOnMount />
-      <div className="w-full max-w-2xl flex justify-between items-center h-[60px] sticky top-0  z-40 px-[12px] bg-white shadow-lg">
+      <div className="w-full max-w-2xl flex justify-between items-center min-h-[60px] h-[60px] sticky top-0  z-40 px-[12px] bg-white shadow-lg">
         <div className="flex justify-start items-center">
           <button onClick={() => navigate(-1)} className="text-black text-xl  ">
             <BsArrowLeft />

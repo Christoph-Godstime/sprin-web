@@ -41,7 +41,7 @@ const DeleteAccount = () => {
   };
 
   return (
-    <div className=" -mt-[70px] lg:-mt-[100px] 2xl:-mt-[200px]">
+    <div className=" -mt-[70px] lg:-mt-[100px] 2xl:-mt-[200px] h-[calc(100dvh)] overflow-y-auto">
       <ScrollToTopOnMount />
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pb-[100px] bg-orange-100 pt-[100px]">
         <h4 className="lg:text-[16px]  text-[10px] text-black md:w-[600px] mx-auto text-center">

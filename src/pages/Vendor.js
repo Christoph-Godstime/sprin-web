@@ -121,7 +121,7 @@ const Vendor = () => {
     }
   };
   return (
-    <div className=" -mt-[70px]">
+    <div className=" -mt-[70px] h-[calc(100dvh)] overflow-y-auto">
       <ScrollToTopOnMount />
       <div className="px-[3%] lg:px-[5%] xl:px-[15%] 2xl:px-[20%] pb-[220px] pt-[100px] lg:pt-[150px] overflow-hidden bg-orange-100">
         <div className="max-w-[1480px] mx-auto">

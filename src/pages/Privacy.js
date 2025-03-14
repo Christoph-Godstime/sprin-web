@@ -51,7 +51,7 @@ const Privacy = () => {
     activeHeadingIndex !== privacy.length - 1 ||
     activeSlideIndex !== privacy[activeHeadingIndex].slides.length - 1;
   return (
-    <div className=" -mt-[70px]">
+    <div className=" -mt-[70px] h-[calc(100dvh)] overflow-y-auto">
       <ScrollToTopOnMount />
       <div className="bg-secondary pt-[90px] lg:pt-[150px]  pb-[50px] 2xl:pb-[80px] px-[3%]">
         <h4 className="text-center text-6xl leading-relaxed lg:text-[112px] font-bold text-white">

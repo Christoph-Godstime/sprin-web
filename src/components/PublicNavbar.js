@@ -165,14 +165,25 @@ const PublicNavbar = () => {
               </h4>
             </div>
             <div className="mt-auto pt-[40px] pb-[60px] grid grid-cols-1 gap-[20px]">
-              <button className="flex items-center justify-center space-x-[10px]  rounded-[8px] bg-orange-100 w-[250px] h-[40px]">
-                <div>
-                  <img className="w-[22px]" src={playstore} />
-                </div>
-                <h4 className=" text-[12px] md:text-[14px] text-black">
-                  Download on Google Play
-                </h4>
-              </button>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.sprin.sprincustomer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="flex items-center justify-center space-x-[10px] rounded-[8px] bg-orange-100 w-[250px] h-[40px]">
+                  <div>
+                    <img
+                      className="w-[22px]"
+                      src={playstore}
+                      alt="Google Play Store"
+                    />
+                  </div>
+                  <h4 className="text-[12px] md:text-[14px] text-black">
+                    Download on Google Play
+                  </h4>
+                </button>
+              </a>
+
               {/* <button className="flex items-center justify-center space-x-[10px] rounded-[8px] bg-orange-100 w-[250px] h-[40px]">
                 <div>
                   <img className="w-[22px]" src={applestore} />
