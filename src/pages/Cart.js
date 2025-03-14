@@ -120,7 +120,7 @@ const Cart = () => {
 
   if (cartList && cartList.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center h-dvh bg-white ">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-white ">
         <Header text="Cart" />
         <div className="w-full max-w-xl py-[30px] flex flex-col items-center justify-center flex-1 px-[12px]">
           <p className="text-[16px] font-[500] text-gray-700">
