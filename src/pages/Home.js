@@ -103,13 +103,14 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen  bg-white items-center ">
-      <ScrollToTopOnMount />
-      <div className="flex flex-col bg-gray-100 w-full max-w-2xl pb-[100px]">
-        <HomeHeader />
+    <div className="h-dvh">
+      <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center relative">
+        <ScrollToTopOnMount />
+        <div className="flex flex-col bg-gray-100 w-full max-w-2xl pb-[100px]">
+          <HomeHeader />
 
-        <div>
-          {/* {categoriesLoading ? (
+          <div>
+            {/* {categoriesLoading ? (
             <div className="flex space-x-3 overflow-x-auto px-4 no-scrollbar py-[10px]">
               {[...Array(7)].map((_, index) => (
                 <ReusableShimmer
@@ -121,75 +122,76 @@ const Home = () => {
               ))}
             </div>
           ) : ( */}
-          <CategoryList
-            setSelectedValue={setSelectedValue}
-            setSelectedCategory={setSelectedCategory}
-            setSelectedSection={setSelectedSection}
-          />
-          {/* )} */}
+            <CategoryList
+              setSelectedValue={setSelectedValue}
+              setSelectedCategory={setSelectedCategory}
+              setSelectedSection={setSelectedSection}
+            />
+            {/* )} */}
 
-          {selectedCategory && selectedSection ? (
-            <div className="pb-12">
-              <Heading
-                heading={`Browse ${selectedValue} Category`}
-                onClick={() => {
-                  navigate("/all-categories", {
-                    state: { categoryId: selectedCategory },
-                  });
-                }}
-              />
-              <HomeCategory category={category} isLoading={isLoading} />
-            </div>
-          ) : (
-            <div className="pb-12">
-              <div className="mt-4">
-                {/* <Carousel /> */}
-                {loadNearByRestaurants && (
-                  <div className="w-full">
-                    <ReusableShimmer width="100%" height={200} radius={0} />
-                  </div>
-                )}
+            {selectedCategory && selectedSection ? (
+              <div className="pb-12">
+                <Heading
+                  heading={`Browse ${selectedValue} Category`}
+                  onClick={() => {
+                    navigate("/all-categories", {
+                      state: { categoryId: selectedCategory },
+                    });
+                  }}
+                />
+                <HomeCategory category={category} isLoading={isLoading} />
               </div>
-              <Heading
-                heading="Supermarket Categories"
-                onClick={() => {
-                  navigate("/supermarket");
-                }}
-              />
-              <GroceryCategory />
+            ) : (
+              <div className="pb-12">
+                <div className="mt-4">
+                  {/* <Carousel /> */}
+                  {loadNearByRestaurants && (
+                    <div className="w-full">
+                      <ReusableShimmer width="100%" height={200} radius={0} />
+                    </div>
+                  )}
+                </div>
+                <Heading
+                  heading="Supermarket Categories"
+                  onClick={() => {
+                    navigate("/supermarket");
+                  }}
+                />
+                <GroceryCategory />
 
-              <Heading
-                heading="Nearby Restaurants"
-                onClick={() => {
-                  navigate("/nearby-restaurants");
-                }}
-              />
-              <NearByRestaurants />
+                <Heading
+                  heading="Nearby Restaurants"
+                  onClick={() => {
+                    navigate("/nearby-restaurants");
+                  }}
+                />
+                <NearByRestaurants />
 
-              <Divider />
+                <Divider />
 
-              <Heading
-                heading="Try Something New 🧡"
-                onClick={() => {
-                  navigate("/new-foods");
-                }}
-              />
-              <NewFoodList />
+                <Heading
+                  heading="Try Something New 🧡"
+                  onClick={() => {
+                    navigate("/new-foods");
+                  }}
+                />
+                <NewFoodList />
 
-              <Divider />
+                <Divider />
 
-              <Heading
-                heading={"Fastest Near you 🚀"}
-                onClick={() => {
-                  navigate("/fastest");
-                }}
-              />
-              <FastestNearYou />
-            </div>
-          )}
+                <Heading
+                  heading={"Fastest Near you 🚀"}
+                  onClick={() => {
+                    navigate("/fastest");
+                  }}
+                />
+                <FastestNearYou />
+              </div>
+            )}
+          </div>
         </div>
+        <BottomNavBar />
       </div>
-      <BottomNavBar />
     </div>
   );
 };
