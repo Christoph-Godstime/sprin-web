@@ -5,7 +5,7 @@ import { BsArrowLeft } from "react-icons/bs";
 const Header = ({ text }) => {
   const navigate = useNavigate();
   return (
-    <div className="w-full max-w-2xl flex justify-start items-center h-[60px] sticky top-0  z-40 px-[12px] bg-secondary">
+    <div className="w-full max-w-2xl flex justify-start items-center min-h-[60px] h-[60px] sticky top-0  z-40 px-[12px] bg-secondary">
       <button onClick={() => navigate(-1)} className="text-white text-xl  ">
         <BsArrowLeft />
       </button>
