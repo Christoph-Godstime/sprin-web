@@ -110,7 +110,7 @@ const Cart = () => {
 
   if (isCartLoading || loadClearCart) {
     return (
-      <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[50px]">
+      <div className="flex flex-col h-dvh bg-gray-100 items-center pb-[50px]">
         <ScrollToTopOnMount />
         <Header text="Cart" />
         <Loading />
@@ -120,7 +120,7 @@ const Cart = () => {
 
   if (cartList && cartList.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white ">
+      <div className="flex flex-col items-center justify-center h-dvh bg-white ">
         <Header text="Cart" />
         <div className="w-full max-w-xl py-[30px] flex flex-col items-center justify-center flex-1 px-[12px]">
           <p className="text-[16px] font-[500] text-gray-700">
@@ -220,7 +220,7 @@ const Cart = () => {
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[150px] relative">
+    <div className="flex flex-col h-dvh bg-gray-100 items-center pb-[150px] relative">
       <ScrollToTopOnMount />
       <Header text="Cart" />
       <div className="w-full max-w-2xl pt-[10px] px-[12px]">

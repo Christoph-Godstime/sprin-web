@@ -54,7 +54,7 @@ const ShippingAddress = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white items-center pb-[150px]">
+    <div className="flex flex-col h-dvh bg-white items-center pb-[150px]">
       <Header text="Addresses" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">
         {isLoading ? (

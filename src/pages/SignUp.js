@@ -125,7 +125,7 @@ const SignUp = () => {
     );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
+    <div className="flex flex-col items-center justify-center h-dvh bg-white px-4">
       <div className="w-full max-w-lg py-[40px]">
         <div className="flex justify-center my-[20px]">
           <Logo />

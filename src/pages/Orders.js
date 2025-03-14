@@ -14,7 +14,7 @@ const Orders = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 items-center pb-[100px] ">
+    <div className="flex flex-col h-dvh bg-gray-100 items-center pb-[100px] ">
       <ScrollToTopOnMount />
       <div className="w-full max-w-2xl flex justify-start items-center h-[60px] sticky top-0  z-40 px-[12px] bg-white shadow-lg">
         <h2 className="text-black  text-[12px] md:text-[14px] font-[500]">

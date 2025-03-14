@@ -105,7 +105,7 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white items-center pb-[100px]">
+    <div className="flex flex-col bg-white items-center pb-[100px]">
       <div className="w-full max-w-2xl">
         <div className="flex items-center mx-[12px] my-4 border border-gray-200 rounded-full bg-gray-200 h-10 sticky top-[20px]  z-40 focus-within:ring-1 focus-within:ring-primary">
           <div className="w-12 h-full flex justify-center items-center bg-lightBlue rounded-l-full">

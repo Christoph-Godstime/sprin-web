@@ -12,7 +12,7 @@ const Wallet = () => {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col min-h-screen bg-white items-center pb-[50px]">
+      <div className="flex flex-col h-dvh bg-white items-center pb-[50px]">
         <Header text="Wallet Balance" />
         <Loading />
       </div>
@@ -27,7 +27,7 @@ const Wallet = () => {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-white items-center pb-[100px]">
+    <div className="flex flex-col h-dvh bg-white items-center pb-[100px]">
       <Header text="Wallet Balance" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px] flex flex-col items-center">
         <h2 className="text-lg font-bold text-primary mb-2">Total in NGN</h2>
