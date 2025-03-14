@@ -235,7 +235,7 @@ const Checkout = () => {
                   {item.additives.map((additive) => (
                     <div
                       key={additive.id}
-                      className="flex justify-between text-[10px] text-gray-700 space-y-[3px]"
+                      className="flex justify-between text-[12px] text-gray-700 space-y-[3px]"
                     >
                       <span>{additive.title}</span>
                       <span>
@@ -253,7 +253,7 @@ const Checkout = () => {
             {item.instructions && (
               <div className="bg-gray-100 p-3 rounded mt-3">
                 <h5 className="text-[12px] font-semibold mb-1">Instructions</h5>
-                <p className="text-[10px] text-gray-700">{item.instructions}</p>
+                <p className="text-[12px] text-gray-700">{item.instructions}</p>
               </div>
             )}
           </div>
