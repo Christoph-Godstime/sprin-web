@@ -220,22 +220,20 @@ const Cart = () => {
   );
 
   return (
-    <div className="h-dvh">
-      <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[150px] relative">
-        <ScrollToTopOnMount />
-        <Header text="Cart" />
-        <div className="w-full max-w-2xl pt-[10px] px-[12px]">
-          <div>{cartList.map(renderCartItem)}</div>
-        </div>
-        <div className="w-full px-[12px] fixed bottom-[40px] right-[12px] flex justify-center z-40">
-          <div className="w-full max-w-2xl flex justify-end">
-            <button
-              onClick={clearCart}
-              className=" py-[10px] px-[18px] rounded-[20px] text-white text-[12px] font-bold flex justify-center items-center bg-primary hover:bg-orange-600"
-            >
-              Clear Cart
-            </button>
-          </div>
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center pb-[150px] relative">
+      <ScrollToTopOnMount />
+      <Header text="Cart" />
+      <div className="w-full max-w-2xl pt-[10px] px-[12px]">
+        <div>{cartList.map(renderCartItem)}</div>
+      </div>
+      <div className="w-full px-[12px] fixed bottom-[40px] right-[12px] flex justify-center z-40">
+        <div className="w-full max-w-2xl flex justify-end">
+          <button
+            onClick={clearCart}
+            className=" py-[10px] px-[18px] rounded-[20px] text-white text-[12px] font-bold flex justify-center items-center bg-primary hover:bg-orange-600 mr-[12px]"
+          >
+            Clear Cart
+          </button>
         </div>
       </div>
     </div>
