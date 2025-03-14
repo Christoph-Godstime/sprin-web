@@ -173,11 +173,11 @@ const Supermarket = () => {
   }
 
   return (
-    <div className="flex flex-col  overflow-y-auto bg-white items-center pb-[150px] relative">
+    <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center pb-[150px] relative">
       <ScrollToTopOnMount />
       <div className="w-full max-w-2xl relative">
         {data?.storeDetails?.isActive === false && (
-          <div className=" bg-black bg-opacity-50 fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[260px] z-40 rounded-b-[15px] flex justify-center items-center">
+          <div className=" bg-black bg-opacity-50 fixed top-0  w-full max-w-2xl h-[260px] z-40 rounded-b-[15px] flex justify-center items-center">
             <div className="flex flex-col items-center">
               <p className="text-white  text-[22px] font-[500]">Closed</p>
               <p className="text-white  text-[16px] font-[400] mt-[10px]">
@@ -187,7 +187,7 @@ const Supermarket = () => {
           </div>
         )}
         {/* Background Image */}
-        <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[320px] z-0">
+        <div className="sticky top-0  w-full max-w-2xl h-[320px] z-0">
           <img
             src={data?.storeDetails?.imageUrl || PlaceholderImage}
             alt="Store"
@@ -196,7 +196,7 @@ const Supermarket = () => {
         </div>
 
         {/* Fixed Button - Highest Z-Index */}
-        <div className="fixed top-[30px] left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[50px] z-50">
+        <div className="fixed top-[30px]  w-full max-w-2xl h-[50px] z-50">
           <button
             onClick={() => navigate(-1)}
             className=" ml-[12px] p-2 rounded-full bg-[#1e1b4b80]"
@@ -205,7 +205,7 @@ const Supermarket = () => {
           </button>
         </div>
 
-        <div className="fixed top-[125px] left-1/2 transform -translate-x-1/2 w-full max-w-2xl h-[50px] z-50">
+        <div className="fixed top-[125px]  w-full max-w-2xl h-[50px] z-50">
           <div
             className="p-1 border border-gray-300 rounded-[15px] shadow-lg w-fit ml-[12px]"
             style={{
@@ -223,7 +223,7 @@ const Supermarket = () => {
         <CartButton />
 
         {/* Content Wrapper with z-30 to stay above the image */}
-        <div className="relative z-30 bg-white mt-[160px] rounded-tr-[50px]">
+        <div className="relative z-30 bg-white -mt-[160px] rounded-tr-[50px]">
           <div className="pt-[50px] px-4 w-full">
             <h1 className=" text-[22px] font-[700]">SPRIN Market</h1>
             {data?.storeDetails?.isAvailable === false &&

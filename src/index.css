@@ -43,6 +43,7 @@ thead td {
 
 .app-container {
   height: var(--app-height);
+  overflow: hidden;
 }
 
 

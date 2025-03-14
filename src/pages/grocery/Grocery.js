@@ -224,35 +224,35 @@ const Grocery = () => {
   return (
     <div
       ref={pageRef}
-      className="flex flex-col  overflow-y-auto bg-white items-center pb-[100px] pt-[400px]"
+      className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center pb-[100px] "
     >
       <ScrollToTopOnMount />
 
-      <div className="w-full max-w-2xl pt-[20px]">
+      <div className="w-full max-w-2xl">
+        <div className="sticky top-0 w-full max-w-2xl bg-white rounded-b-[15px] h-[400px] z-40">
+          <img
+            src={grocery.imageUrl[0]}
+            alt="Grocery"
+            className="object-cover rounded-b-[15px] w-full h-full"
+          />
+          <button
+            onClick={() => navigate(-1)}
+            className="absolute top-4 left-[12px] p-2 bg-black bg-opacity-50 rounded-full text-white"
+          >
+            <BsArrowLeft size={18} />
+          </button>
+          <button
+            onClick={handleShare}
+            className="absolute top-4 right-[12px] p-2 bg-black bg-opacity-50 rounded-full text-white"
+          >
+            <FaShare size={18} />
+          </button>
+        </div>
         <div className=" flex flex-col">
           {/* Header Section */}
-          <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl bg-white rounded-b-[15px] h-[400px] z-40">
-            <img
-              src={grocery.imageUrl[0]}
-              alt="Grocery"
-              className="object-cover rounded-b-[15px] w-full h-full"
-            />
-            <button
-              onClick={() => navigate(-1)}
-              className="absolute top-4 left-[12px] p-2 bg-black bg-opacity-50 rounded-full text-white"
-            >
-              <BsArrowLeft size={18} />
-            </button>
-            <button
-              onClick={handleShare}
-              className="absolute top-4 right-[12px] p-2 bg-black bg-opacity-50 rounded-full text-white"
-            >
-              <FaShare size={18} />
-            </button>
-          </div>
 
           {/* Grocery Details */}
-          <div className=" flex flex-col space-y-4">
+          <div className=" flex flex-col space-y-4 pt-[10px]">
             <div className="flex justify-between items-start px-[12px]">
               <h1 className=" text-[20px] font-medium w-4/5 pr-[20px]">
                 {grocery.title} {grocery?.quantity || ""}
