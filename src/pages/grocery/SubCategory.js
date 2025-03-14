@@ -62,7 +62,7 @@ const SubCategory = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col h-dvh bg-white items-center pb-[200px]">
+      <div className="flex flex-col min-h-screen bg-white items-center pb-[200px]">
         <Header text="Grocery Items" />
         <Loading />
       </div>
@@ -70,7 +70,7 @@ const SubCategory = () => {
   }
 
   return (
-    <div className="flex flex-col h-dvh bg-white items-center pb-[200px]">
+    <div className="flex flex-col min-h-screen bg-white items-center pb-[200px]">
       <ScrollToTopOnMount />
       <Header text="Grocery Items" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">

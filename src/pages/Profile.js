@@ -30,14 +30,14 @@ const Profile = () => {
     "https://firebasestorage.googleapis.com/v0/b/sprinfare2024.appspot.com/o/images%2Fboy.png?alt=media&token=bf004ac5-75a6-4d0d-b323-91fe9021754e";
 
   return (
-    <div className="flex flex-col h-dvh overflow-y-auto bg-gray-100 items-center pb-[100px]">
+    <div className="flex flex-col h-dvh bg-gray-100 items-center pb-[100px]">
       <ScrollToTopOnMount />
       <Header text="Profile" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">
         <div className="flex flex-col flex-grow">
           <div className="flex justify-between items-center mb-4">
             {isLoading ? (
-              <p className="text-gray-600">Loading Profile...</p>
+              <p className="text-gray-600 text-[12px]">Loading Profile...</p>
             ) : (
               <div className="flex items-center">
                 <AssetImage
@@ -51,7 +51,7 @@ const Profile = () => {
                 <div className="ml-3  text-[10px] md:text-[12px]">
                   <p className="font-medium text-black">
                     {profileDetails
-                      ? `${profileDetails.firstName} ${profileDetails.lastName} checking`
+                      ? `${profileDetails.firstName} ${profileDetails.lastName}`
                       : ""}
                   </p>
                   <p className="text-gray-500">{profileDetails?.email || ""}</p>

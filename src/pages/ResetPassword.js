@@ -64,7 +64,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-dvh bg-white p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
       <div className="max-w-lg w-full bg-gray-100 p-[18px] rounded-lg shadow-md">
         <BackBtn onClick={() => navigate(-1)} />
 

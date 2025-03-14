@@ -83,7 +83,7 @@ const VerificationPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-dvh bg-white px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
       <div className="w-full max-w-lg py-[30px]">
         <h2 className=" text-[22px] font-[600] text-primary mb-2 text-center">
           Verify Your Account

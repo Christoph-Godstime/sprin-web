@@ -36,7 +36,7 @@ const MoreFoods = ({ navigation }) => {
 
   if (isLoadingAll) {
     return (
-      <div className="flex flex-col h-dvh bg-white items-center pb-[50px]">
+      <div className="flex flex-col min-h-screen bg-white items-center pb-[50px]">
         <Header text="Explore Food Categries" />
         <Loading />
       </div>
@@ -44,7 +44,7 @@ const MoreFoods = ({ navigation }) => {
   }
 
   return (
-    <div className="flex flex-col h-dvh bg-white items-center pb-[50px]">
+    <div className="flex flex-col min-h-screen bg-white items-center pb-[50px]">
       <ScrollToTopOnMount />
       <Header text="Explore Food Categries" />
       <div className="w-full max-w-2xl pt-[20px] px-[12px]">
