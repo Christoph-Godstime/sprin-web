@@ -48,8 +48,8 @@ const HomeHeader = () => {
 
   return (
     <div className="flex justify-between items-center px-[12px] pt-[20px] pb-[10px] w-full max-w-2xl sticky top-0  z-40 bg-gray-100">
-      <div className="flex items-center space-x-3 w-full">
-        <img src={logo} alt="Logo" className="w-[45px] h-[45px]" />
+      <div className="flex items-center mr-[20px] space-x-[12px]">
+        <img src={logo} alt="Logo" className="w-[45px] min-w-[45px] h-[45px]" />
         <button
           onClick={() => navigate("/add-address")}
           className="text-left w-full"
@@ -62,7 +62,7 @@ const HomeHeader = () => {
             <div className="w-full">
               <p className="text-gray-500 text-[12px]">Delivering to</p>
               <div className="flex items-center mt-[2px]">
-                <p className="text-[12px] font-medium truncate max-w-[70%]">
+                <p className="text-[12px] font-medium line-clamp-1 ">
                   {defaultAddress.addressLine1}
                 </p>
                 <IoChevronDown className="ml-2 text-lg" />

@@ -33,7 +33,10 @@ const Payment = () => {
   const [showPaystack, setShowPaystack] = useState(false);
   const [isDistanceCalculated, setIsDistanceCalculated] = useState(false);
 
-  const total = orderDetails?.orderTotal + orderDetails?.discountedDeliveryFee;
+  const total =
+    orderDetails?.orderTotal +
+    orderDetails?.discountedDeliveryFee +
+    orderDetails?.serviceFee;
 
   console.log("delivery fee: ", deliveryFee);
   console.log("order details: ", orderDetails);
