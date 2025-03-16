@@ -90,7 +90,7 @@ const Grocery = () => {
   const orderNow = async () => {
     if (!login) {
       navigate("/login");
-      toast.info("Please login to proceed to checkout.", {
+      toast.info("Please login to proceed to payment.", {
         position: "top-center",
         autoClose: 3000,
       });
@@ -106,18 +106,20 @@ const Grocery = () => {
           autoClose: 3000,
         });
       } else {
-        navigate("/order-page", {
+        navigate("/payment", {
           state: {
-            orderItem: [orderItem],
-            totalPrice: grocery.price * count,
-            storeId: grocery.groceryStore,
-            pack: 1,
-            coords: {
-              latitude: grocery.location.coordinates[1],
-              longitude: grocery.location.coordinates[0],
+            params: {
+              orderItem: [orderItem],
+              totalPrice: grocery.price * count,
+              storeId: grocery.groceryStore,
+              pack: 1,
+              coords: {
+                latitude: grocery.location.coordinates[1],
+                longitude: grocery.location.coordinates[0],
+              },
+              storeType: "GroceryStore",
+              fromCart: false,
             },
-            storeType: "GroceryStore",
-            fromCart: false,
           },
         });
       }
@@ -140,12 +142,13 @@ const Grocery = () => {
       );
       setCartCount(response.data.count);
 
+      navigate(-1);
+
       toast.success(
         `${count} ${grocery.title} ${grocery?.quantity} added to cart successfully`,
         {
-          position: "top-right",
+          position: "top-center",
           autoClose: 3000,
-          onClose: () => navigate(-1),
         }
       );
     } catch (error) {

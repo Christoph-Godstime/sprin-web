@@ -56,7 +56,7 @@ const ShippingAddress = () => {
   return (
     <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-white items-center pb-[150px]">
       <Header text="Addresses" />
-      <div className="w-full max-w-2xl pt-[20px] px-[12px]">
+      <div className="w-full max-w-2xl pt-[10px] px-[12px]">
         {isLoading ? (
           <Loading />
         ) : addresses && addresses.length === 0 ? (

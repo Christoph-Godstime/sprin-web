@@ -39,13 +39,10 @@ const VerificationPage = () => {
           "verification",
           JSON.stringify(response.data.verified)
         );
-        toast.success(
-          "Client account verified successfully, Please login to create a restaurant account.",
-          {
-            position: "top-center",
-            autoClose: 15000,
-          }
-        );
+        toast.success(response.data.message, {
+          position: "top-center",
+          autoClose: 15000,
+        });
 
         navigate("/");
       } else {

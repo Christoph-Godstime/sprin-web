@@ -17,6 +17,8 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const textInputRef = useRef(null);
 
   useEffect(() => {
@@ -67,12 +69,16 @@ const Search = () => {
       <div
         className="flex items-center p-[10px] bg-white shadow-md rounded-lg cursor-pointer hover:shadow-lg transition"
         key={item._id}
-        onClick={() => navigate("/food-nav", { state: { data: item } })}
+        onClick={() => navigate("/food-nav", { state: { item: item } })}
       >
         <img
-          src={item.imageUrl[0]}
+          src={isImageLoaded ? item.imageUrl[0] : PlaceholderImage}
           alt={item.title}
-          className="w-24 h-24 rounded-lg object-cover"
+          className={`w-24 h-24 rounded-lg ${
+            isImageLoaded ? "object-cover" : "object-contain"
+          }`}
+          onLoad={() => setIsImageLoaded(true)}
+          onError={() => setIsImageLoaded(false)}
         />
         <div className="mx-4 flex-1 overflow-hidden w-full">
           <h2 className=" text-[12px] md:text-[14px] font-semibold text-gray-900 truncate">
@@ -105,7 +111,7 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white items-center pb-[100px]">
+    <div className="flex flex-col bg-white h-[calc(100dvh)] overflow-y-auto items-center pb-[100px]">
       <div className="w-full max-w-2xl">
         <div className="flex items-center mx-[12px] my-4 border border-gray-200 rounded-full bg-gray-200 h-10 sticky top-[20px]  z-40 focus-within:ring-1 focus-within:ring-primary">
           <div className="w-12 h-full flex justify-center items-center bg-lightBlue rounded-l-full">

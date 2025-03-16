@@ -94,7 +94,7 @@ const Supermarket = () => {
   };
 
   const renderItem = (item, index) => (
-    <div
+    <button
       key={item._id}
       className={`p-2 rounded-lg flex flex-col items-center cursor-pointer bg-${
         index % 2 === 0 ? "gray-200" : "gray-200"
@@ -109,7 +109,7 @@ const Supermarket = () => {
         onError={() => setIsImageLoaded(false)}
       />
       <p className="text-center mt-2  text-[11px] leading-3">{item.title}</p>
-    </div>
+    </button>
   );
 
   if (loading) {

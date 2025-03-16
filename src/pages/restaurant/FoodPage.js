@@ -117,7 +117,7 @@ const FoodPage = () => {
   const orderNow = async () => {
     if (!login) {
       navigate("/login");
-      toast.info("Please login to proceed to checkout.", {
+      toast.info("Please login to proceed to payment.", {
         position: "top-center",
         autoClose: 3000,
       });
@@ -133,14 +133,18 @@ const FoodPage = () => {
           autoClose: 3000,
         });
       } else {
-        navigate("/order-page", {
-          orderItem: [orderItem],
-          totalPrice: (item.price + totalPrice) * count,
-          storeId: id,
-          pack: 1,
-          coords: restaurantObj.coords,
-          storeType: "Restaurant",
-          fromCart: false,
+        navigate("/payment", {
+          state: {
+            params: {
+              orderItem: [orderItem],
+              totalPrice: (item.price + totalPrice) * count,
+              storeId: id,
+              pack: 1,
+              coords: restaurantObj.coords,
+              storeType: "Restaurant",
+              fromCart: false,
+            },
+          },
         });
       }
     }

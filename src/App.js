@@ -76,6 +76,9 @@ import AllRestaurants from "./pages/food/AllRestaurants";
 import FoodPage from "./pages/restaurant/FoodPage";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import GroceryCheckout from "./pages/grocery/GroceryCheckout";
+import Payment from "./pages/Payment";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 export const AuthContext = createContext();
 
@@ -219,13 +222,19 @@ const App = () => {
         }
 
         if (!data.status) {
-          toast.error("Your session has expired. Please log in again.");
+          toast.error("Your session has expired. Please log in again.", {
+            position: "top-center",
+            autoClose: 3000,
+          });
           localStorage.clear();
           dispatch({ type: "SIGN_OUT" });
         }
       } catch (error) {
         console.error("Error checking token:", error);
-        toast.error("An error occurred. Please try logging in again.");
+        toast.error("An error occurred. Please try logging in again.", {
+          position: "top-center",
+          autoClose: 3000,
+        });
         localStorage.clear();
         dispatch({ type: "SIGN_OUT" });
       }
@@ -349,6 +358,11 @@ const App = () => {
                                               element={<Checkout />}
                                             />
 
+                                            <Route
+                                              path="/grocery-checkout"
+                                              element={<GroceryCheckout />}
+                                            />
+
                                             {/* Public Pages (With Navbar/Footer) */}
                                             <Route element={<PublicLayout />}>
                                               {/* <Route path="/" element={<LandingPage />} /> */}
@@ -458,6 +472,16 @@ const App = () => {
                                               <Route
                                                 path="/order-details"
                                                 element={<OrderDetails />}
+                                              />
+
+                                              <Route
+                                                path="/payment"
+                                                element={<Payment />}
+                                              />
+
+                                              <Route
+                                                path="/payment-success"
+                                                element={<PaymentSuccess />}
                                               />
                                             </Route>
 

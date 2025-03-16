@@ -1,17 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { BaseUrl, PlaceholderImage } from "../constants/theme";
+import { BaseUrl, PlaceholderImage } from "../../constants/theme";
 import axios from "axios";
-import { CartCountContext } from "../context/CartCountContext";
-import { RestaurantContext } from "../context/RestaurantContext";
+import { CartCountContext } from "../../context/CartCountContext";
+import { RestaurantContext } from "../../context/RestaurantContext";
 import { toast } from "react-toastify";
 import { FaTrash } from "react-icons/fa";
-import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
-import Header from "../components/Header";
+import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
+import Header from "../../components/Header";
 import { PiStarFourFill } from "react-icons/pi";
-import { LoginContext } from "../context/LoginContext";
+import { LoginContext } from "../../context/LoginContext";
 
-const Checkout = () => {
+const GroceryCheckout = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { data } = location.state || {};
@@ -66,7 +66,7 @@ const Checkout = () => {
     }));
     try {
       const response = await axios.delete(
-        `${BaseUrl}/api/cart/${storeId}/${itemId}/Food`,
+        `${BaseUrl}/api/cart/${storeId}/${itemId}/Grocery`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -76,7 +76,7 @@ const Checkout = () => {
 
       await setCartData(response.data.cart);
 
-      if (response.data.cart.items && response.data.cart.items.length === 0) {
+      if (!response.data.cart.items.length) {
         navigate(-1);
         return;
       }
@@ -99,18 +99,15 @@ const Checkout = () => {
 
   const transformDataForPayment = (data) => {
     return data.items.map((item) => ({
-      additives: item.additives,
       description: item.title,
-      productId: item.productId._id, // Assuming foodId is an object with _id
+      productId: item.productId?._id,
       imageUrl: item.imageUrl,
-      instructions: item.instructions,
       price: item.price,
       quantity: item.quantity,
-      storeId: data.storeId._id, // Restaurant ID
-      time: item.time,
+      storeId: data.storeId._id,
       title: item.title,
-      storeType: "Restaurant",
-      itemType: "Food",
+      storeType: "GroceryStore",
+      itemType: "Grocery",
     }));
   };
 
@@ -127,14 +124,14 @@ const Checkout = () => {
         state: {
           params: {
             orderItem: transformedData,
-            totalPrice: calculateTotalPrice(cartData?.items),
-            storeId: data?.storeId?._id,
-            pack: data?.items?.length,
+            totalPrice: calculateTotalPrice(cartData.items),
+            storeId: data.storeId._id,
+            pack: data.items.length,
             coords: {
-              latitude: data?.storeId?.location?.coordinates[1],
-              longitude: data?.storeId?.location?.coordinates[0],
+              latitude: data.storeId.location.coordinates[1],
+              longitude: data.storeId.location.coordinates[0],
             },
-            storeType: "Restaurant",
+            storeType: "GroceryStore",
             fromCart: true,
           },
         },
@@ -159,7 +156,7 @@ const Checkout = () => {
       <ScrollToTopOnMount />
       <Header text="Checkout" />
       <div className="w-full max-w-2xl pt-[105px]">
-        <div className="fixed top-[60px]  w-full max-w-2xl h-[105px] z-40">
+        <div className="fixed top-[60px] w-full max-w-2xl h-[105px] z-40">
           <h2 className="bg-gray-200 px-[12px] py-3 text-[16px] font-medium">
             Cart Details
           </h2>
@@ -238,35 +235,6 @@ const Checkout = () => {
                 className="w-20 h-20 object-cover rounded"
               />
             </div>
-
-            {item.additives.length > 0 && (
-              <div className="bg-gray-100 p-3 rounded mt-3">
-                <h5 className="text-[12px] font-semibold">Your Selections</h5>
-                <div className="mt-2 ">
-                  {item.additives.map((additive) => (
-                    <div
-                      key={additive.id}
-                      className="flex justify-between text-[12px] text-gray-700 space-y-[3px]"
-                    >
-                      <span>{additive.title}</span>
-                      <span>
-                        {Number(additive.price).toLocaleString("en-NG", {
-                          style: "currency",
-                          currency: "NGN",
-                        })}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {item.instructions && (
-              <div className="bg-gray-100 p-3 rounded mt-3">
-                <h5 className="text-[12px] font-semibold mb-1">Instructions</h5>
-                <p className="text-[12px] text-gray-700">{item.instructions}</p>
-              </div>
-            )}
           </div>
         ))}
       </div>
@@ -274,12 +242,7 @@ const Checkout = () => {
       <div className="w-full px-[12px] fixed bottom-[20px]  flex justify-center z-40">
         <div className="w-full max-w-2xl">
           <button
-            onClick={() => {
-              navigate("/restaurant", {
-                state: { restaurant: cartData.storeId },
-              });
-              setRestaurant(cartData.storeId);
-            }}
+            onClick={() => navigate("/supermarket")}
             className="px-[10px] py-[6px] bg-primary1 rounded-full flex items-center justify-center w-40 bg-orange-100"
           >
             <i className="text-primary text-lg">+</i>
@@ -324,4 +287,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default GroceryCheckout;

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FetchCartDetailsContext } from "../context/FetchCartDetailsContext";
 import { useNavigate } from "react-router-dom";
 
@@ -6,13 +6,15 @@ const CartButton = () => {
   const navigate = useNavigate();
   const { cart, cartStatus } = useContext(FetchCartDetailsContext);
 
-  const slideAnim = useRef(100); // Start off-screen
+  const [slideAnim, setSlideAnim] = useState(100); // Start off-screen
 
   useEffect(() => {
     if (cartStatus) {
       setTimeout(() => {
-        slideAnim.current = 0;
-      }, 500); // Smooth animation over 500ms
+        setSlideAnim(0); // Slide in smoothly
+      }, 50); // Small delay for better animation
+    } else {
+      setSlideAnim(100); // Hide when cart is closed
     }
   }, [cartStatus]);
 
@@ -25,7 +27,7 @@ const CartButton = () => {
   return (
     <div
       className={`fixed bottom-[65px] w-full max-w-2xl flex justify-center transition-transform duration-500 z-40 ${
-        slideAnim.current === 0 ? "translate-y-0" : "translate-y-full"
+        slideAnim === 0 ? "translate-y-0" : "translate-y-full"
       }`}
     >
       <button

@@ -226,7 +226,7 @@ const Cart = () => {
       <div className="w-full max-w-2xl pt-[10px] px-[12px]">
         <div>{cartList.map(renderCartItem)}</div>
       </div>
-      <div className="w-full px-[12px] fixed bottom-[40px] right-[12px] flex justify-center z-40">
+      <div className="w-full px-[12px] fixed bottom-[40px]  flex justify-center z-40">
         <div className="w-full max-w-2xl flex justify-end">
           <button
             onClick={clearCart}

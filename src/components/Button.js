@@ -6,13 +6,13 @@ const Button = ({ title, onClick, isValid, isLoading }) => {
     <button
       type="submit"
       onClick={isValid && !isLoading ? onClick : null}
-      className={`w-full py-3 text-white font-bold rounded-lg flex justify-center items-center ${
+      className={`w-full py-3 text-white font-bold rounded-lg flex justify-center items-center text-[14px] h-[50px] ${
         isValid ? "bg-primary hover:bg-orange-600" : "bg-gray-400"
       }`}
       disabled={!isValid || isLoading}
     >
       {isLoading ? (
-        <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-6 h-6 border-[2px] border-white border-t-transparent rounded-full animate-spin"></div>
       ) : (
         title
       )}

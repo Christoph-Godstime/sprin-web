@@ -10,9 +10,15 @@ const Referral = () => {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(profileDetails.referralCode);
-      toast.success("Referral code copied to clipboard!");
+      toast.success("Referral code copied to clipboard!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } catch (error) {
-      toast.error("Failed to copy referral code.");
+      toast.error("Failed to copy referral code.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
 
@@ -24,7 +30,10 @@ const Referral = () => {
         url: "https://www.sprinapp.com",
       });
     } catch (error) {
-      toast.error("Failed to share referral code.");
+      toast.error("Failed to share referral code.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
 

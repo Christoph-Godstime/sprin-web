@@ -55,7 +55,9 @@ const AllRestaurants = () => {
             key={item._id}
             className="flex items-center bg-white rounded-lg p-[12px] mb-4 cursor-pointer shadow-md relative"
             onClick={() => {
-              navigate("/restaurant", { state: { item: item } });
+              navigate("/restaurant", {
+                state: { item: { restaurant: item } },
+              });
               setRestaurant(item);
             }}
           >

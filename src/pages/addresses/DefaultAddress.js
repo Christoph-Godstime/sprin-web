@@ -53,7 +53,7 @@ const DefaultAddress = () => {
           autoClose: 3000,
         });
 
-        navigate("/shipping-address", { replace: true });
+        // navigate("/shipping-address", { replace: true });
 
         setDefaultAddress(response.data);
         refetchGroceryStoreCategory();
@@ -89,10 +89,10 @@ const DefaultAddress = () => {
           <div className="flex justify-center mt-[20px]">
             <button
               onClick={() => handleSubmit(data._id)}
-              className="max-w-lg w-full py-3 text-white font-bold rounded-lg flex justify-center items-center bg-primary hover:bg-orange-600"
+              className="max-w-lg w-full py-3 text-white font-bold rounded-lg flex justify-center items-center text-[12px] bg-primary hover:bg-orange-600 h-[50px]"
             >
               {loading ? (
-                <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-6 h-6 border-[2px] border-white border-t-transparent rounded-full animate-spin"></div>
               ) : (
                 "D E F A U L T"
               )}

@@ -49,7 +49,7 @@ const NearByRestaurants = () => {
             key={item.id}
             item={item}
             onPress={() => {
-              navigate("/restaurant", { state: item });
+              navigate("/restaurant", { state: { restaurant: item } });
               setRestaurant(item);
             }}
           />
