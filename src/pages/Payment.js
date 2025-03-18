@@ -107,7 +107,7 @@ const Payment = () => {
       if (response.data.status) {
         setOrderDetails(response.data);
         if (response.data.promoCodeStatus.message) {
-          toast.success(response?.data?.promoCodeStatus.message, {
+          toast.info(response?.data?.promoCodeStatus.message, {
             position: "top-center",
             autoClose: 3000,
           });
@@ -238,7 +238,10 @@ const Payment = () => {
     setIsLoading(true);
 
     try {
-      const totalAmount = totalPrice + orderDetails?.discountedDeliveryFee;
+      const totalAmount =
+        totalPrice +
+        orderDetails?.discountedDeliveryFee +
+        orderDetails?.serviceFee;
       let paymentAmount = totalAmount;
 
       if (useWallet) {
@@ -273,7 +276,10 @@ const Payment = () => {
         `${BaseUrl}/api/orders`,
         {
           ...orderObject,
-          grandTotal: totalPrice + orderDetails?.discountedDeliveryFee,
+          grandTotal:
+            totalPrice +
+            orderDetails?.discountedDeliveryFee +
+            orderDetails?.serviceFee,
           paymentMethod: "Wallet",
         },
         {
@@ -328,7 +334,10 @@ const Payment = () => {
         navigate("/payment-success", {
           state: {
             params: {
-              totalPrice: totalPrice + orderDetails?.discountedDeliveryFee,
+              totalPrice:
+                totalPrice +
+                orderDetails?.discountedDeliveryFee +
+                orderDetails?.serviceFee,
               defaultAddress: defaultAddress,
               orderItem: orderItem,
             },
@@ -357,7 +366,10 @@ const Payment = () => {
         `${BaseUrl}/api/orders`,
         {
           ...orderObject,
-          grandTotal: totalPrice + orderDetails?.discountedDeliveryFee,
+          grandTotal:
+            totalPrice +
+            orderDetails?.discountedDeliveryFee +
+            orderDetails?.serviceFee,
           paymentMethod: "PatialWallet",
         },
         {
@@ -384,14 +396,19 @@ const Payment = () => {
     try {
       console.log(
         "totalPrice + deliveryFee: ",
-        totalPrice + orderDetails?.discountedDeliveryFee
+        totalPrice +
+          orderDetails?.discountedDeliveryFee +
+          orderDetails?.serviceFee
       );
       console.log("orderObject 1: ", orderObject);
       const response = await axios.post(
         `${BaseUrl}/api/orders`,
         {
           ...orderObject,
-          grandTotal: totalPrice + orderDetails?.discountedDeliveryFee,
+          grandTotal:
+            totalPrice +
+            orderDetails?.discountedDeliveryFee +
+            orderDetails?.serviceFee,
         },
         {
           headers: { Authorization: `Bearer ${tokenVal}` },
@@ -489,7 +506,7 @@ const Payment = () => {
 
   const handlePaystackCancel = () => {
     setShowPaystack(false);
-    toast.info("Payment was canceled!", {
+    toast.info("Payment was cancelled!", {
       position: "top-center",
       autoClose: 3000,
     });
@@ -504,12 +521,26 @@ const Payment = () => {
     metadata: {
       custom_fields: [
         {
-          full_name: `${profileDetails?.firstName} ${profileDetails?.lastName}`,
-          mobile: profileDetails?.phoneNumber,
+          display_name: "Full Name",
+          variable_name: "full_name",
+          value: `${profileDetails?.firstName} ${profileDetails?.lastName}`,
+        },
+        {
+          display_name: "Mobile Number",
+          variable_name: "mobile",
+          value: profileDetails?.phoneNumber,
+        },
+        {
+          display_name: "Order Type",
+          variable_name: "order_type",
           value: "Order Payment",
         },
-        // To pass extra metadata, add an object with the same fields as above
       ],
+      orderId: orderId,
+      senderId: defaultAddress?.userId,
+      storeId: storeId,
+      referredBy: orderDetails?.referrerId || null,
+      storeType: storeType,
     },
   };
 
@@ -664,6 +695,8 @@ const Payment = () => {
             value={promoCode}
             onChange={(e) => handleTextChange(e.target.value)}
             className="flex-1 px-3 py-2 bg-gray-100 focus:outline-none focus:ring-0 focus:border-transparent text-[12px] placeholder:text-[12px]"
+            spellCheck="false"
+            autoCorrect="off"
           />
           <button
             onClick={fetchOrderDetails}

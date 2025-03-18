@@ -23,7 +23,7 @@ const NearByRestaurants = () => {
         <div className="flex space-x-[12px] overflow-x-auto mt-1 no-scrollbar px-[12px]">
           {restaurantShimmer.map((item) => (
             <div key={item} className="">
-              <ReusableShimmer width={350} height={224} radius={16} />
+              <ReusableShimmer width={320} height={224} radius={16} />
             </div>
           ))}
         </div>

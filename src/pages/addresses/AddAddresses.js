@@ -304,7 +304,7 @@ const AddAddresses = () => {
             />
           </GoogleMap>
           <div className="absolute bottom-10  max-w-lg py-[12px] bg-[#FFA50040] p-4 rounded-[30px] shadow-lg text-center mx-4">
-            <p className="mb-4 text-secondary  text-[10px] md:text-[12px]">
+            <p className="mb-4  text-[12px] ">
               Hold and drag the map marker or type the address to select your
               desired location.
             </p>

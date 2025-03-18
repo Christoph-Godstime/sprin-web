@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/LoginContext";
+import useFetchDefaultAddress from "../hooks/useFetchDefaultAdress";
+import { toast } from "react-toastify";
+import useFetchAddresses from "../hooks/useFetchAddresses";
 
 const OrderTile = ({ onClick, item }) => {
   const navigate = useNavigate();
+
+  const { login, setLogin } = useContext(LoginContext);
+
+  const {
+    defaultAddress,
+    isAddressLoading,
+    refetch: fetchDeliveryAddress,
+  } = useFetchDefaultAddress();
+
+  const { refetch: addressRefetch } = useFetchAddresses();
+
+  const handleAddressAdded = (newAddress) => {
+    addressRefetch();
+  };
+
   const [isDefaultAddress, setIsDefaultAddress] = useState(false);
 
   const formattedOrderDateTime = format(
@@ -11,17 +30,40 @@ const OrderTile = ({ onClick, item }) => {
     "MMMM dd, yyyy h:mm a"
   );
 
-  const reOrder = () => {
-    navigate("/order-page", {
-      state: {
-        orderItem: item.orderItems,
-        totalPrice: item.orderTotal,
-        storeId: item.storeId?._id,
-        pack: item.orderItems.length,
-        coords: item.storeId?.coords,
-        storeType: item.storeType,
-      },
-    });
+  const reOrder = async () => {
+    if (!login) {
+      navigate("/login");
+      toast.info("Please login to proceed to payment.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    } else {
+      await fetchDeliveryAddress();
+
+      if (!isAddressLoading && defaultAddress === null) {
+        navigate("/add-address", {
+          onAddressAdded: handleAddressAdded,
+        });
+        toast.info("Please add a default delivery address.", {
+          position: "top-center",
+          autoClose: 3000,
+        });
+      } else {
+        navigate("/payment", {
+          state: {
+            params: {
+              orderItem: item.orderItems,
+              totalPrice: item.orderTotal,
+              storeId: item.storeId?._id,
+              pack: item.orderItems.length,
+              coords: item.storeId?.coords,
+              storeType: item.storeType,
+              fromCart: false,
+            },
+          },
+        });
+      }
+    }
   };
 
   return (

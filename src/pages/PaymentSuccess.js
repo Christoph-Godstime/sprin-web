@@ -18,9 +18,8 @@ const PaymentSuccess = () => {
 
   return (
     <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center justify-center">
-      <div className="w-full max-w-2xl py-[20px] px-[12px]">
-        <div className="flex justify-between items-center bg-gray-100 text-[14px]">
-          <div></div>
+      <div className="w-full px-[12px] fixed top-[20px]  flex justify-center z-40">
+        <div className="w-full max-w-2xl flex justify-end">
           <button
             className="text-primary font-bold text-lg"
             onClick={() => navigate("/")}
@@ -28,7 +27,8 @@ const PaymentSuccess = () => {
             Done
           </button>
         </div>
-
+      </div>
+      <div className="w-full max-w-2xl py-[20px] px-[12px]">
         <div className="flex flex-col justify-center items-center h-full">
           <div className="flex justify-center items-center">
             <IoCheckmarkCircle className="text-primary" size={40} />
