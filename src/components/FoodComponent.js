@@ -6,7 +6,7 @@ const FoodComponent = ({ item, onPress }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   return (
     <div
-      className="bg-white p-2 rounded-2xl cursor-pointer w-[340px] min-w-[340px]"
+      className="bg-white p-2 rounded-2xl cursor-pointer w-[85%] min-w-[85%] sm:w-[340px] sm:min-w-[340px]"
       onClick={onPress}
     >
       <img

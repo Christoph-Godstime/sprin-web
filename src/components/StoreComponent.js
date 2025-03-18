@@ -53,7 +53,7 @@ const StoreComponent = ({ item, onPress }) => {
   return (
     <div
       onClick={onPress}
-      className=" bg-white p-2 rounded-[16px] cursor-pointer w-[350px] min-w-[350px] relative"
+      className=" bg-white p-2 rounded-[16px] cursor-pointer w-[90%] min-w-[90%] sm:w-[350px] sm:min-w-[350px] relative"
     >
       <img
         src={isImageLoaded ? item.imageUrl : PlaceholderImage}
