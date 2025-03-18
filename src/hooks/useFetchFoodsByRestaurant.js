@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { BaseUrl } from "../constants/theme";
 
 const useFetchFoodsByRest = (restaurantId, code) => {
-  const [restaurantFoodList, setRestaurantFood] = useState(null);
+  const [restaurantFoodList, setRestaurantFood] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -32,8 +32,6 @@ const useFetchFoodsByRest = (restaurantId, code) => {
       //     setIsLoading(false);
       //   } catch (error) {}
       // }
-
-      setIsLoading(false);
     } catch (error) {
       setError(error);
     } finally {
@@ -43,7 +41,7 @@ const useFetchFoodsByRest = (restaurantId, code) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [restaurantId]);
 
   const refetch = () => {
     setIsLoading(true);

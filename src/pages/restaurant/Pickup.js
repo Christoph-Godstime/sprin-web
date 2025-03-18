@@ -7,10 +7,11 @@ import {
 } from "@react-google-maps/api";
 import { RestaurantContext } from "../../context/RestaurantContext";
 import { GoogleApiKey } from "../../constants/theme";
+import { DirectionsService } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
-  height: "400px",
+  height: "calc(100vh - 540px)",
 };
 
 const Pickup = () => {
@@ -61,6 +62,7 @@ const Pickup = () => {
   ) => {
     try {
       const url = `https://maps.googleapis.com/maps/api/directions/json?origin=${startLat},${startLng}&destination=${destinationLat},${destinationLng}&key=${GoogleApiKey}`;
+
       const response = await fetch(url);
       const data = await response.json();
       if (data.status === "OK" && data.routes[0]) {
@@ -78,30 +80,39 @@ const Pickup = () => {
 
   const decodePolyline = (encoded) => {
     const points = [];
-    let index = 0,
-      lat = 0,
-      lng = 0;
-    while (index < encoded.length) {
-      let shift = 0,
-        result = 0,
-        byte;
+    let index = 0;
+    const len = encoded.length;
+    let lat = 0;
+    let lng = 0;
+
+    while (index < len) {
+      let shift = 0;
+      let result = 0;
+      let byte;
       do {
         byte = encoded.charCodeAt(index++) - 63;
         result |= (byte & 0x1f) << shift;
         shift += 5;
       } while (byte >= 0x20);
-      lat += result & 1 ? ~(result >> 1) : result >> 1;
+      const deltaLat = result & 1 ? ~(result >> 1) : result >> 1;
+      lat += deltaLat;
 
-      (shift = 0), (result = 0);
+      shift = 0;
+      result = 0;
       do {
         byte = encoded.charCodeAt(index++) - 63;
         result |= (byte & 0x1f) << shift;
         shift += 5;
       } while (byte >= 0x20);
-      lng += result & 1 ? ~(result >> 1) : result >> 1;
+      const deltaLng = result & 1 ? ~(result >> 1) : result >> 1;
+      lng += deltaLng;
 
-      points.push({ lat: lat / 1e5, lng: lng / 1e5 });
+      points.push({
+        lat: lat / 1e5,
+        lng: lng / 1e5,
+      });
     }
+
     return points;
   };
 
@@ -116,7 +127,7 @@ const Pickup = () => {
   if (!isLoaded || loading) return <p>Loading...</p>;
 
   return (
-    <div className="bg-gray-100 h-auto p-4">
+    <div className="bg-gray-100 h-auto p-[5px] ">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={mapCenter}
@@ -136,12 +147,12 @@ const Pickup = () => {
         )}
       </GoogleMap>
 
-      <div className="flex justify-between items-center mt-4 p-2">
-        <p className="text-sm text-gray-600 w-3/4">
+      <div className="flex justify-between items-center mt-[5px] p-2">
+        <p className="text-sm text-gray-600 w-3/4 line-clamp-2 mr-[8px]">
           {restaurantObj.coords.address}
         </p>
         <button
-          className="border border-gray-300 px-4 py-2 rounded-lg text-md"
+          className="border border-gray-300 px-4 py-2 rounded-lg text-[14px] w-[140px]"
           onClick={onDirectionClick}
         >
           🚶🏽‍♂️ Directions

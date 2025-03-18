@@ -1,14 +1,20 @@
-import React from "react";
-import { AiOutlinePlusCircle } from "react-icons/ai";
+import React, { useState } from "react";
+import { AiFillPlusCircle } from "react-icons/ai";
+import { PlaceholderImage } from "../constants/theme";
 
 const FoodTile = ({ item, onPress, showDetails, loadAddCart }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   return (
-    <div className="bg-gray-100 rounded-lg p-3 mb-4 mr-3 relative w-[calc(50%-20px)]">
+    <div className="bg-orange-100 rounded-[12px] p-3 relative w-full">
       <button onClick={showDetails} className="relative w-full">
         <img
-          src={item.imageUrl[0]}
+          src={isImageLoaded ? item.imageUrl[0] : PlaceholderImage}
           alt={item.title}
-          className="w-full h-24 object-cover rounded-lg"
+          className={`w-full h-24  rounded-lg ${
+            isImageLoaded ? "object-cover" : "object-contain"
+          }`}
+          onLoad={() => setIsImageLoaded(true)}
+          onError={() => setIsImageLoaded(false)}
         />
         {item?.isAvailable === false && (
           <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center rounded-lg">
@@ -16,32 +22,27 @@ const FoodTile = ({ item, onPress, showDetails, loadAddCart }) => {
           </div>
         )}
       </button>
-
-      <div className="mt-2">
-        <p className="text-sm font-medium px-1">
+      <div className="mt-[2px]">
+        <p className="text-[13px] font-medium px-1">
           {new Intl.NumberFormat("en-NG", {
             style: "currency",
             currency: "NGN",
             minimumFractionDigits: 0,
           }).format(item.price)}
         </p>
-        <p className="text-xs text-gray-600 px-1 truncate w-[calc(50%-10px)]">
+        <p className="text-[12px] text-gray-600 px-1 line-clamp-1">
           {item.title}
         </p>
+      </div>{" "}
+      <div className="absolute right-[8px] bottom-[55px] w-[35px] h-[35px] rounded-full bg-orange-100 flex justify-center items-center">
+        {loadAddCart?.[item._id] ? (
+          <div className="w-[20px] h-[20px] border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+        ) : (
+          <button onClick={onPress} className="  text-primary">
+            <AiFillPlusCircle size={26} />
+          </button>
+        )}
       </div>
-
-      {loadAddCart?.[item._id] ? (
-        <div className="absolute bottom-9 right-3 bg-gray-100 p-1 rounded-full">
-          <div className="w-4 h-4 border-2 border-primary border-t-transparent animate-spin rounded-full"></div>
-        </div>
-      ) : (
-        <button
-          onClick={onPress}
-          className="absolute bottom-9 right-3 bg-gray-100 p-1 rounded-full"
-        >
-          <AiOutlinePlusCircle className="text-primary text-xl" />
-        </button>
-      )}
     </div>
   );
 };

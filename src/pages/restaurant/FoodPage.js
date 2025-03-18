@@ -197,7 +197,7 @@ const FoodPage = () => {
   }, [addittives]);
   const handleNavigation = () => {
     if (data === true) {
-      navigate("/restaurant", { state: { restaurantObj: restaurantObj } });
+      navigate("/restaurant", { state: { restaurant: restaurantObj } });
     }
   };
   const fetchData = async () => {

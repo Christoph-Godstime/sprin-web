@@ -79,6 +79,7 @@ import Checkout from "./pages/Checkout";
 import GroceryCheckout from "./pages/grocery/GroceryCheckout";
 import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import RestaurantPage from "./pages/restaurant/RestaurantPage";
 
 export const AuthContext = createContext();
 
@@ -361,6 +362,11 @@ const App = () => {
                                             <Route
                                               path="/grocery-checkout"
                                               element={<GroceryCheckout />}
+                                            />
+
+                                            <Route
+                                              path="/restaurant"
+                                              element={<RestaurantPage />}
                                             />
 
                                             {/* Public Pages (With Navbar/Footer) */}
