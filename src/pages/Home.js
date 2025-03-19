@@ -38,77 +38,6 @@ import refer from "../assets/refer.png";
 import freedelivery from "../assets/freedelivery.png";
 import Footer from "../components/Footer";
 
-const carouselData = [
-  {
-    id: 1,
-    image: refer,
-    content: (
-      <div className="w-full px-5 py-5">
-        <h2 className="text-xl font-semibold mt-2">
-          🎉 Free Delivery on First Order and Beyond 🚴‍♂️📦
-        </h2>
-        <p className="mt-5">
-          Get ready for amazing savings with our exclusive free delivery offers!
-        </p>
-        <ul className="mt-5 space-y-2">
-          <li>
-            🥳 <strong>First two orders</strong>: Completely free delivery as a
-            welcome gift.
-          </li>
-          <li>
-            🔁 <strong>Your 11th and 12th order</strong>: Enjoy free delivery as
-            a loyalty reward.
-          </li>
-          <li>
-            🚀 <strong>Cycle continues</strong>: Get free delivery on your 21st
-            and 22nd order, 31st and 32nd order, and so on.
-          </li>
-        </ul>
-        <p className="mt-5 text-lg">
-          🛒 Start ordering now and enjoy these incredible benefits! 🍔🍜🍕
-        </p>
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    image: freedelivery,
-    content: (
-      <div className="w-full px-5 py-5">
-        <h2 className="text-xl font-semibold mt-2">
-          🎁 Share the Joy, Earn Rewards! 💸
-        </h2>
-        <p className="mt-5">
-          Share your referral code and unlock amazing rewards for both you and
-          your friends!
-        </p>
-        <ul className="mt-5 space-y-2">
-          <li>
-            💵 <strong>Earn ₦500</strong>: Get ₦500 credited to your wallet
-            every time a friend uses your referral code on their{" "}
-            <strong>first order</strong>.
-          </li>
-          <li>
-            🎉 <strong>Discount for your friends</strong>: Your friend enjoys a{" "}
-            <strong>₦500 discount</strong> on their first order too!
-          </li>
-          <li>
-            🔗 <strong>Unlimited referrals</strong>: Keep sharing your code and
-            keep earning!
-          </li>
-        </ul>
-        <p className="mt-5 text-lg">
-          🌟 Spread the word, share the love, and watch your wallet grow! Start
-          referring today! 📲
-        </p>
-        <button className="w-full bg-blue-500 text-white py-3 rounded-lg mt-5 hover:bg-blue-600">
-          REFERRAL CODE
-        </button>
-      </div>
-    ),
-  },
-];
-
 const Home = () => {
   const navigate = useNavigate();
 
@@ -193,6 +122,95 @@ const Home = () => {
     }
     navigate("/referral");
   };
+
+  const handleReferral = async () => {
+    setSelectedSlide(null);
+    if (!login) {
+      toast.info("Please login to see your referral code.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+
+      navigate("/login");
+      return;
+    }
+    navigate("/referral");
+  };
+
+  const carouselData = [
+    {
+      id: 1,
+      image: freedelivery,
+      content: (
+        <div className="w-full px-5 py-5">
+          <h2 className="text-[15px] font-semibold mt-2">
+            🎉 Free Delivery on First Order and Beyond 🚴‍♂️📦
+          </h2>
+          <p className="mt-5 text-[13px]">
+            Get ready for amazing savings with our exclusive free delivery
+            offers!
+          </p>
+          <ul className="mt-5 space-y-2 text-[12px]">
+            <li>
+              🥳 <strong>First two orders</strong>: Completely free delivery as
+              a welcome gift.
+            </li>
+            <li>
+              🔁 <strong>Your 11th and 12th order</strong>: Enjoy free delivery
+              as a loyalty reward.
+            </li>
+            <li>
+              🚀 <strong>Cycle continues</strong>: Get free delivery on your
+              21st and 22nd order, 31st and 32nd order, and so on.
+            </li>
+          </ul>
+          <p className="mt-5 text-[13px]">
+            🛒 Start ordering now and enjoy these incredible benefits! 🍔🍜🍕
+          </p>
+        </div>
+      ),
+    },
+    {
+      id: 2,
+      image: refer,
+      content: (
+        <div className="w-full px-5 py-5">
+          <h2 className="text-[15px] font-semibold mt-2">
+            🎁 Share the Joy, Earn Rewards! 💸
+          </h2>
+          <p className="mt-5 text-[13px]">
+            Share your referral code and unlock amazing rewards for both you and
+            your friends!
+          </p>
+          <ul className="mt-5 space-y-2 text-[12px]">
+            <li>
+              💵 <strong>Earn ₦500</strong>: Get ₦500 credited to your wallet
+              every time a friend uses your referral code on their{" "}
+              <strong>first order</strong>.
+            </li>
+            <li>
+              🎉 <strong>Discount for your friends</strong>: Your friend enjoys
+              a <strong>₦500 discount</strong> on their first order too!
+            </li>
+            <li>
+              🔗 <strong>Unlimited referrals</strong>: Keep sharing your code
+              and keep earning!
+            </li>
+          </ul>
+          <p className="mt-5 text-[13px]">
+            🌟 Spread the word, share the love, and watch your wallet grow!
+            Start referring today! 📲
+          </p>
+          <button
+            onClick={() => handleReferral()}
+            className="w-full bg-primary text-white py-3 rounded-lg mt-5 text-[14px] hover:bg-orange-600"
+          >
+            REFERRAL CODE
+          </button>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <div className="flex flex-col h-[calc(100dvh)] overflow-y-auto bg-gray-100 items-center relative">
