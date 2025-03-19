@@ -220,7 +220,9 @@ const RestaurantPage = () => {
                 if (login == false || !login) {
                   navigate("/login");
                 } else {
-                  navigate("/rating-page");
+                  navigate("/rating-page", {
+                    state: { restaurant: restaurant },
+                  });
                 }
               }}
             >

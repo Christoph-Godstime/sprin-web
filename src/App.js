@@ -80,6 +80,7 @@ import GroceryCheckout from "./pages/grocery/GroceryCheckout";
 import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import RestaurantPage from "./pages/restaurant/RestaurantPage";
+import AddRating from "./pages/AddRating";
 
 export const AuthContext = createContext();
 
@@ -488,6 +489,11 @@ const App = () => {
                                               <Route
                                                 path="/payment-success"
                                                 element={<PaymentSuccess />}
+                                              />
+
+                                              <Route
+                                                path="/rating-page"
+                                                element={<AddRating />}
                                               />
                                             </Route>
 

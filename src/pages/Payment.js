@@ -541,6 +541,7 @@ const Payment = () => {
       storeId: storeId,
       referredBy: orderDetails?.referrerId || null,
       storeType: storeType,
+      walletAmountUsed: orderDetails?.walletAmountUsed,
     },
   };
 
