@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="mb-[30px] lg:mb-[0px]">
           <Logo width="w-[70px]" text=" text-[18px]" />
           <h4 className="mt-[30px]  text-[10px] md:text-[12px] font-[300] text-gray-400 hidden lg:block whitespace-nowrap">
-            © 2024 Sprin Technologies Limited. All rights reserved
+            © 2025 Sprin Technologies Limited. All rights reserved
           </h4>
         </div>
         <div className="grid grid-cols-1 gap-[40px] sm:grid-cols-3  w-full">
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
         <h4 className="mt-[30px]  text-[10px] md:text-[12px] font-[300] text-gray-400  lg:hidden">
-          © 2024 Sprin Technologies Limited. All rights reserved
+          © 2025 Sprin Technologies Limited. All rights reserved
         </h4>
       </footer>
     </div>

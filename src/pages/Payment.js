@@ -38,9 +38,6 @@ const Payment = () => {
     orderDetails?.discountedDeliveryFee +
     orderDetails?.serviceFee;
 
-  console.log("delivery fee: ", deliveryFee);
-  console.log("order details: ", orderDetails);
-
   const { socket } = useContext(SocketContext);
 
   const { profileDetails, updateProfileDetails } =
@@ -212,6 +209,7 @@ const Payment = () => {
       discountAmount: orderDetails?.discountAmount,
       referredBy: orderDetails?.referrerId,
       freeDelivery: orderDetails?.freeDelivery,
+      walletAmountUsed: orderDetails?.walletAmountUsed,
     };
   }
 
@@ -243,6 +241,16 @@ const Payment = () => {
         orderDetails?.discountedDeliveryFee +
         orderDetails?.serviceFee;
       let paymentAmount = totalAmount;
+
+      if (useWallet === true && orderDetails?.walletAmountUsed === 0) {
+        toast.error(
+          "Your cannot make use of your wallet for payment, your wallet balance is ₦0",
+          {
+            position: "top-center",
+            autoClose: 3000,
+          }
+        );
+      }
 
       if (useWallet) {
         if (orderDetails?.walletPayment === true) {
@@ -299,27 +307,28 @@ const Payment = () => {
             storeId: storeId,
             referredBy: orderDetails?.referrerId,
             storeType,
+            walletAmountUsed: orderDetails?.walletAmountUsed,
           },
           {
             headers: { Authorization: `Bearer ${accessToken}` },
           }
         );
 
-        console.log(
-          "deduct wallet from full wallet payment: ",
-          orderDetails?.walletAmountUsed
-        );
+        // console.log(
+        //   "deduct wallet from full wallet payment: ",
+        //   orderDetails?.walletAmountUsed
+        // );
 
-        // Update wallet balance after successful payment
-        await axios.post(
-          `${BaseUrl}/api/orders/update-wallet`,
-          {
-            amountUsed: orderDetails?.walletAmountUsed,
-          },
-          {
-            headers: { Authorization: `Bearer ${accessToken}` },
-          }
-        );
+        // // Update wallet balance after successful payment
+        // await axios.post(
+        //   `${BaseUrl}/api/orders/update-wallet`,
+        //   {
+        //     amountUsed: orderDetails?.walletAmountUsed,
+        //   },
+        //   {
+        //     headers: { Authorization: `Bearer ${accessToken}` },
+        //   }
+        // );
 
         socket?.emit("sendOrder", {
           senderId: defaultAddress.userId,
@@ -394,13 +403,6 @@ const Payment = () => {
 
   const handlePaystackPayment = async (totalAmount) => {
     try {
-      console.log(
-        "totalPrice + deliveryFee: ",
-        totalPrice +
-          orderDetails?.discountedDeliveryFee +
-          orderDetails?.serviceFee
-      );
-      console.log("orderObject 1: ", orderObject);
       const response = await axios.post(
         `${BaseUrl}/api/orders`,
         {
@@ -451,6 +453,7 @@ const Payment = () => {
           storeId: storeId,
           referredBy: orderDetails?.referrerId,
           storeType,
+          walletAmountUsed: orderDetails?.walletAmountUsed,
         },
         {
           headers: {
@@ -460,8 +463,6 @@ const Payment = () => {
       );
 
       if (response.data.status) {
-        console.log(response.data.message);
-
         if (fromCart === true) {
           deleteCartItem();
         }
@@ -469,26 +470,29 @@ const Payment = () => {
         navigate("/payment-success", {
           state: {
             params: {
-              totalPrice: totalPrice + orderDetails.discountedDeliveryFee,
+              totalPrice:
+                totalPrice +
+                orderDetails.discountedDeliveryFee +
+                orderDetails?.serviceFee,
               defaultAddress: defaultAddress,
               orderItem: orderItem,
             },
           },
         });
 
-        console.log(
-          "deduct wallet from partial wallet payment: ",
-          orderDetails?.walletAmountUsed
-        );
-        await axios.post(
-          `${BaseUrl}/api/orders/update-wallet`,
-          {
-            amountUsed: orderDetails?.walletAmountUsed,
-          },
-          {
-            headers: { Authorization: `Bearer ${accessToken}` },
-          }
-        );
+        // console.log(
+        //   "deduct wallet from partial wallet payment: ",
+        //   orderDetails?.walletAmountUsed
+        // );
+        // await axios.post(
+        //   `${BaseUrl}/api/orders/update-wallet`,
+        //   {
+        //     amountUsed: orderDetails?.walletAmountUsed,
+        //   },
+        //   {
+        //     headers: { Authorization: `Bearer ${accessToken}` },
+        //   }
+        // );
 
         socket?.emit("sendOrder", {
           senderId: defaultAddress.userId,
@@ -518,31 +522,31 @@ const Payment = () => {
     amount: orderDetails?.grandTotal * 100, // Convert NGN to kobo
     currency: "NGN",
     publicKey: PAYSTACK_KEY,
-    metadata: {
-      custom_fields: [
-        {
-          display_name: "Full Name",
-          variable_name: "full_name",
-          value: `${profileDetails?.firstName} ${profileDetails?.lastName}`,
-        },
-        {
-          display_name: "Mobile Number",
-          variable_name: "mobile",
-          value: profileDetails?.phoneNumber,
-        },
-        {
-          display_name: "Order Type",
-          variable_name: "order_type",
-          value: "Order Payment",
-        },
-      ],
-      orderId: orderId,
-      senderId: defaultAddress?.userId,
-      storeId: storeId,
-      referredBy: orderDetails?.referrerId || null,
-      storeType: storeType,
-      walletAmountUsed: orderDetails?.walletAmountUsed,
-    },
+    // metadata: {
+    //   custom_fields: [
+    //     {
+    //       display_name: "Full Name",
+    //       variable_name: "full_name",
+    //       value: `${profileDetails?.firstName} ${profileDetails?.lastName}`,
+    //     },
+    //     {
+    //       display_name: "Mobile Number",
+    //       variable_name: "mobile",
+    //       value: profileDetails?.phoneNumber,
+    //     },
+    //     {
+    //       display_name: "Order Type",
+    //       variable_name: "order_type",
+    //       value: "Order Payment",
+    //     },
+    //   ],
+    //   orderId: orderId,
+    //   senderId: defaultAddress?.userId,
+    //   storeId: storeId,
+    //   referredBy: orderDetails?.referrerId || null,
+    //   storeType: storeType,
+    //   walletAmountUsed: orderDetails?.walletAmountUsed,
+    // },
   };
 
   useEffect(() => {

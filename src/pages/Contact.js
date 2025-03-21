@@ -53,7 +53,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="-mt-[70px]">
+    <div className="-mt-[70px] h-[calc(100dvh)] overflow-y-auto">
       <ScrollToTopOnMount />
       {/* <div className="bg-secondary w-[1100px] h-[550px] flex justify-center items-center mt-[50px]">
         <img className="h-[460px]" src={vendor1} />
