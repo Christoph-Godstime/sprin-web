@@ -78,7 +78,7 @@ const GroceryTile = ({ item, index, width }) => {
   };
 
   return (
-    <div className="mx-[5px]  rounded-lg h-[180px] flex flex-col items-center relative cursor-pointer">
+    <div className="mx-[5px]  rounded-lg h-[180px] flex flex-col items-center relative cursor-pointer max-w-[150px]">
       <div
         onClick={() => handleGrocery(item)}
         className="w-full h-[120px] flex justify-center items-center"
@@ -86,6 +86,7 @@ const GroceryTile = ({ item, index, width }) => {
         <img
           src={isImageLoaded ? item.imageUrl[0] : PlaceholderImage}
           alt={item.title}
+          loading="lazy"
           className="w-4/5 h-4/5 object-contain"
           onLoad={() => setIsImageLoaded(true)}
           onError={() => setIsImageLoaded(false)}
@@ -95,11 +96,11 @@ const GroceryTile = ({ item, index, width }) => {
         onClick={() => handleGrocery(item)}
         className="flex flex-col items-start text-black"
       >
-        <p
-          className={`text-[12px] font-light text-left ${width} line-clamp-2 overflow-hidden`}
+        <h2
+          className={`text-[12px] font-light text-left ${width}  line-clamp-2 overflow-hidden max-w-[150px]`}
         >
           {item.title} {item?.quantity || ""}
-        </p>
+        </h2>
         <p className="text-[13px] font-medium">
           {item.price?.toLocaleString("en-NG", {
             style: "currency",

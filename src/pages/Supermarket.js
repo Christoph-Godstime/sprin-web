@@ -276,7 +276,7 @@ const Supermarket = () => {
                             key={item._id}
                             item={item}
                             index={index}
-                            width="w-[150px]"
+                            width="w-[140px]"
                           />
                         ))}
 

@@ -244,7 +244,7 @@ const Payment = () => {
 
       if (useWallet === true && orderDetails?.walletAmountUsed === 0) {
         toast.error(
-          "Your cannot make use of your wallet for payment, your wallet balance is ₦0",
+          "You cannot make use of your wallet for payment, your wallet balance is ₦0",
           {
             position: "top-center",
             autoClose: 3000,
