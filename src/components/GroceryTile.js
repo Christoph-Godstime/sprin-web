@@ -7,8 +7,18 @@ import { BaseUrl, PlaceholderImage } from "../constants/theme";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-const GroceryTile = ({ item, index, width }) => {
+const GroceryTile = ({
+  item,
+  index,
+  width,
+  smWidth,
+  smMinWidth,
+  lgWidth,
+  lgMinWidth,
+}) => {
   const navigate = useNavigate();
   const { cart, refetchCartDetails } = useContext(FetchCartDetailsContext);
   const { cartCount, setCartCount } = useContext(CartCountContext);
@@ -18,6 +28,7 @@ const GroceryTile = ({ item, index, width }) => {
   const [loading, setLoading] = useState(false);
 
   const handlePress = async () => {
+    // console.log("login: ", login);
     if (!login) {
       toast.info("Please login to add items to your cart.", {
         position: "top-center",
@@ -78,26 +89,37 @@ const GroceryTile = ({ item, index, width }) => {
   };
 
   return (
-    <div className="mx-[5px]  rounded-lg h-[180px] flex flex-col items-center relative cursor-pointer max-w-[150px]">
+    <div
+      className={`mx-[5px]  rounded-lg h-[180px] flex flex-col items-center relative cursor-pointer ${smWidth} ${smMinWidth} ${lgWidth} ${lgMinWidth}`}
+    >
       <div
         onClick={() => handleGrocery(item)}
-        className="w-full h-[120px] flex justify-center items-center"
+        className="w-full h-[120px] flex justify-center items-center overflow-hidden"
       >
-        <img
+        <div className=" flex justify-center items-center">
+          <LazyLoadImage
+            src={item.imageUrl[0]}
+            alt="Grocery Item"
+            className="w-full h-[90px] object-contain"
+            placeholderSrc={PlaceholderImage}
+          />
+        </div>
+
+        {/* <img
           src={isImageLoaded ? item.imageUrl[0] : PlaceholderImage}
           alt={item.title}
           loading="lazy"
           className="w-4/5 h-4/5 object-contain"
           onLoad={() => setIsImageLoaded(true)}
           onError={() => setIsImageLoaded(false)}
-        />
+        /> */}
       </div>
       <div
         onClick={() => handleGrocery(item)}
         className="flex flex-col items-start text-black"
       >
         <h2
-          className={`text-[12px] font-light text-left ${width}  line-clamp-2 overflow-hidden max-w-[150px]`}
+          className={`text-[12px] font-light text-left ${width}  line-clamp-2 overflow-hidden max-w-[140px]`}
         >
           {item.title} {item?.quantity || ""}
         </h2>

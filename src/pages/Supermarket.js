@@ -268,7 +268,7 @@ const Supermarket = () => {
                   </div>
 
                   {/* Flex container for horizontal scroll + "See all" button */}
-                  <div className="flex overflow-x-auto mt-4 no-scrollbar pl-[12px] items-center">
+                  <div className="flex overflow-x-auto mt-4 space-x-[12px] no-scrollbar  items-center px-[12px]">
                     {category.groceries.length > 0 ? (
                       <>
                         {category.groceries.slice(0, 10).map((item, index) => (
@@ -277,6 +277,10 @@ const Supermarket = () => {
                             item={item}
                             index={index}
                             width="w-[140px]"
+                            smWidth="w-[35%]"
+                            smMinWidth="min-w-[35%]"
+                            lgWidth="sm:w-[140px]"
+                            lgMinWidth="sm:min-w-[140px]"
                           />
                         ))}
 
@@ -284,7 +288,7 @@ const Supermarket = () => {
                         {category.groceries.length >= 10 && (
                           <button
                             onClick={() => handleCategory(category._id)}
-                            className="ml-4 text-primary font-semibold whitespace-nowrap"
+                            className="mx-4 text-primary font-semibold whitespace-nowrap"
                           >
                             See all
                           </button>

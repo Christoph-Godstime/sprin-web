@@ -39,7 +39,6 @@ const Login = () => {
   const [setLocation] = useState(null);
   const { updateLoginStatus } = useContext(LoginContext);
   const { setAddress } = useContext(UserReversedGeoCode);
-  const [setDefault] = useState({});
   const { setLoadRestaurantData } = useContext(CheckLoadRestaurantData);
   const { checkUserAddressType, setCheckUserAddressType } =
     useContext(CheckUserAddressType);
@@ -101,7 +100,6 @@ const Login = () => {
           );
         } else {
           setAddress(response.data);
-          setDefault(response.data);
 
           localStorage.setItem(
             "latitude",

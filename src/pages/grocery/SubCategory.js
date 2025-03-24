@@ -100,8 +100,8 @@ const SubCategory = () => {
             </div>
           );
         })}
-        <CartButton />
       </div>
+      <CartButton />
     </div>
   );
 };
