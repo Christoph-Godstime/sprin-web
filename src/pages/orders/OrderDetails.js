@@ -210,9 +210,15 @@ const OrderDetails = () => {
           {data.orderItems.map((item, index) => (
             <div className="bg-white p-4 rounded-lg shadow-md mt-4">
               <div className="flex justify-between items-baseline">
-                <h2 className="text-base font-[500] text-gray-900">
-                  Pack {index + 1}
-                </h2>
+                {storeType === "Restaurant" ? (
+                  <h2 className="text-base font-[500] text-gray-900">
+                    Pack {index + 1}
+                  </h2>
+                ) : (
+                  <h2 className="text-base font-[500] text-gray-900">
+                    Product {index + 1}
+                  </h2>
+                )}
               </div>
               <div className="flex justify-between items-center mt-[8px]">
                 <div>
@@ -362,7 +368,7 @@ const OrderDetails = () => {
         "Delivered",
       ].includes(updatedData.orderStatus) && (
         <animated.div
-          {...bind()}
+          // {...bind()}
           style={{ height }}
           className="fixed bottom-0 bg-white w-full max-w-2xl flex flex-col justify-around pt-[6px] pb-[4px] rounded-t-[20px] shadow-md shadow-gray-400 z-40"
         >
@@ -422,7 +428,7 @@ const OrderDetails = () => {
                   alt="Rider"
                   className="w-12 h-12 rounded-full"
                 />
-                <p className=" text-[10px] md:text-[12px] text-blue-500 w-1/2 text-right truncate">
+                <p className=" text-[10px] md:text-[12px] w-1/2 text-right truncate">
                   {updatedData?.assignedRider?.riderProfile?.firstName} {"   "}
                   {updatedData?.assignedRider?.riderProfile?.lastName}
                 </p>
@@ -433,7 +439,7 @@ const OrderDetails = () => {
                   Mobile Number
                 </p>
                 <div className="flex items-center space-x-[20px] w-1/2 justify-end">
-                  <span className="text-primary truncate">
+                  <span className="text-primary">
                     {updatedData?.assignedRider?.riderProfile?.phone}
                   </span>
                   <button onClick={handlePhone} className="text-black text-lg">
