@@ -4,12 +4,13 @@ import CategoryFoodComp from "./CategoryFoodComp";
 import ReusableShimmer from "./Shimmers/ReusableShimmer";
 
 const HomeCategory = ({ category, isLoading }) => {
+  console.log("category: ", category);
   const navigate = useNavigate();
 
   const renderCategoryFoodComp = (item) => (
     <CategoryFoodComp
       item={item}
-      onClick={() => navigate("/food-nav", { state: { data: item } })}
+      onClick={() => navigate("/food-nav", { state: { item: item } })}
     />
   );
 
@@ -24,7 +25,7 @@ const HomeCategory = ({ category, isLoading }) => {
   if (category && category.length === 0) {
     return (
       <div className="flex justify-center items-center min-h-[calc(100vh-390px)]">
-        <p className="text-[16px] font-[500] text-gray-700">
+        <p className="text-[14px] font-[500] text-gray-700">
           No Item In This Category...
         </p>
       </div>
@@ -33,7 +34,7 @@ const HomeCategory = ({ category, isLoading }) => {
 
   return (
     <div className="px-[12px] min-h-[calc(100vh-390px)]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] gap-y-[20px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[15px] gap-y-[20px] pb-[50px]">
         {category.map((item) => (
           <div key={item._id}>{renderCategoryFoodComp(item)}</div>
         ))}

@@ -20,6 +20,7 @@ import { MdAccessTimeFilled } from "react-icons/md";
 import { BsPeopleFill } from "react-icons/bs";
 import { IoBagCheck } from "react-icons/io5";
 import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
+import Footer from "../components/Footer";
 
 const Vendor = () => {
   const [activeSection, setActiveSection] = useState("request");
@@ -617,6 +618,7 @@ const Vendor = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

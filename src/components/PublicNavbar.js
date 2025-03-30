@@ -98,7 +98,12 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   Home
                 </NavLink>
               </h4>
@@ -119,7 +124,12 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/vendors" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/vendors"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   Vendors
                 </NavLink>
               </h4>
@@ -127,7 +137,12 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/riders" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/riders"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   Riders
                 </NavLink>
               </h4>
@@ -135,7 +150,12 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/privacy" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/privacy"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   Privacy Policy
                 </NavLink>
               </h4>
@@ -143,7 +163,12 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/terms" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/terms"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   Terms of Use
                 </NavLink>
               </h4>
@@ -151,7 +176,12 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/faqs" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/faqs"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   FAQs
                 </NavLink>
               </h4>
@@ -159,12 +189,17 @@ const PublicNavbar = () => {
                 onClick={() => setShow(!show)}
                 className=" text-[14px] font-[500] md:font-[400] text-white"
               >
-                <NavLink exact to="/contact" activeStyle={{ color: "#f97316" }}>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive ? "text-orange-500" : "text-white"
+                  }
+                >
                   Contact
                 </NavLink>
               </h4>
             </div>
-            <div className="mt-auto pt-[40px] pb-[60px] grid grid-cols-1 gap-[20px]">
+            <div className="mt-auto pt-[40px] pb-[80px] grid grid-cols-1 gap-[20px]">
               <a
                 href="https://play.google.com/store/apps/details?id=com.sprin.sprincustomer"
                 target="_blank"

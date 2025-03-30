@@ -5,6 +5,7 @@ import vendor2 from "../assets/vendor2.png";
 import vendor3 from "../assets/vendor3.png";
 import vendor4 from "../assets/vendor4.png";
 import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -170,6 +171,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

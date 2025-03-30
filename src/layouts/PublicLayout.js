@@ -7,7 +7,7 @@ const PublicLayout = () => {
     <>
       <PublicNavbar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

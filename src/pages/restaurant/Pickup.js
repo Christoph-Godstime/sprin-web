@@ -45,7 +45,7 @@ const Pickup = () => {
             destinationLat,
             destinationLng
           );
-          setMapCenter({ lat: startLat, lng: startLng });
+          setMapCenter({ lat: coords.latitude, lng: coords.longitude });
         }
       } catch (error) {
         console.error("Failed to fetch data:", error);

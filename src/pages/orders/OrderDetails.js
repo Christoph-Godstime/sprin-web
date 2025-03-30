@@ -290,12 +290,14 @@ const OrderDetails = () => {
                   <button
                     className="bg-primary  text-[12px] md:text-[14px] text-white px-4 py-2 rounded-lg"
                     onClick={() =>
-                      navigate("/order-rating", {
+                      navigate("/food-rating", {
                         state: {
-                          foodId: item.productId,
-                          orderId: data._id,
-                          orderItemId: item._id,
-                          imageUrl: item.imageUrl,
+                          params: {
+                            foodId: item.productId,
+                            orderId: data._id,
+                            orderItemId: item._id,
+                            imageUrl: item.imageUrl,
+                          },
                         },
                       })
                     }
@@ -388,13 +390,17 @@ const OrderDetails = () => {
                     onClick={() =>
                       navigate("/rider-rating", {
                         state: {
-                          riderId: updatedData?.assignedRider?._id,
-                          orderId: updatedData?._id,
-                          riderFirstName:
-                            updatedData?.assignedRider?.riderProfile?.firstName,
-                          riderLastName:
-                            updatedData?.assignedRider?.riderProfile?.lastName,
-                          imageUrl: updatedData?.assignedRider?.imageUrl,
+                          params: {
+                            riderId: updatedData?.assignedRider?._id,
+                            orderId: updatedData?._id,
+                            riderFirstName:
+                              updatedData?.assignedRider?.riderProfile
+                                ?.firstName,
+                            riderLastName:
+                              updatedData?.assignedRider?.riderProfile
+                                ?.lastName,
+                            imageUrl: updatedData?.assignedRider?.imageUrl,
+                          },
                         },
                       })
                     }

@@ -28,6 +28,8 @@ const FoodPage = () => {
     useContext(CartCountContext);
   const { item } = location.state || {};
 
+  console.log("item: ", item);
+
   const pageRef = useRef(null);
 
   const [loading, setLoading] = useState(false);

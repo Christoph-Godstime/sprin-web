@@ -3,6 +3,7 @@ import { faqs } from "../utils/data";
 import leftnav from "../assets/leftnav.png";
 import rightnav from "../assets/rightnav.png";
 import ScrollToTopOnMount from "../components/ScrollToTopOnMount";
+import Footer from "../components/Footer";
 
 const Faqs = () => {
   const [activeHeadingIndex, setActiveHeadingIndex] = useState(0);
@@ -166,6 +167,7 @@ const Faqs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

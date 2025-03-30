@@ -247,7 +247,7 @@ const GroceryCheckout = () => {
           >
             <i className="text-primary text-lg">+</i>
             <span className="text-[12px] text-primary font-medium ml-2">
-              Add Another Pack
+              Add Another Product
             </span>
           </button>
 

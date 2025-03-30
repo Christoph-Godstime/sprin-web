@@ -81,6 +81,9 @@ import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import RestaurantPage from "./pages/restaurant/RestaurantPage";
 import AddRating from "./pages/AddRating";
+import RiderRating from "./pages/RiderRating";
+import FoodRating from "./pages/FoodRating";
+import FoodFeedbacks from "./pages/FoodFeedbacks";
 
 export const AuthContext = createContext();
 
@@ -351,6 +354,11 @@ const App = () => {
                                             />
 
                                             <Route
+                                              path="/food-feedbacks"
+                                              element={<FoodFeedbacks />}
+                                            />
+
+                                            <Route
                                               path="/cart"
                                               element={<Cart />}
                                             />
@@ -494,6 +502,16 @@ const App = () => {
                                               <Route
                                                 path="/rating-page"
                                                 element={<AddRating />}
+                                              />
+
+                                              <Route
+                                                path="/rider-rating"
+                                                element={<RiderRating />}
+                                              />
+
+                                              <Route
+                                                path="/food-rating"
+                                                element={<FoodRating />}
                                               />
                                             </Route>
 

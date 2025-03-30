@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useRef,
 } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import BottomNavBar from "../components/BottomNavBar";
 import CategoryList from "../components/CategoryList";
 import HomeHeader from "../components/HomeHeader";
@@ -36,7 +36,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import refer from "../assets/refer.png";
 import freedelivery from "../assets/freedelivery.png";
-import Footer from "../components/Footer";
+import Logo from "../components/Logo";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -313,7 +313,116 @@ const Home = () => {
               <FastestNearYou />
 
               <div className="-mb-[30px] mt-[30px] pb-[50px] bg-secondary">
-                <Footer />
+                <footer className="py-[50px] px-[3%] lg:px-[5%] bg-secondary lg:flex gap-[100px] items-center">
+                  <div className="mb-[30px] lg:mb-[0px]">
+                    <Logo width="w-[70px]" text=" text-[18px]" />
+                    <h4 className="mt-[30px]  text-[10px] md:text-[12px] font-[300] text-gray-400 hidden lg:block whitespace-nowrap">
+                      © 2025 Sprin Technologies Limited. All rights reserved
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-1 gap-[40px] sm:grid-cols-3  w-full">
+                    <div>
+                      <h4 className=" text-[16px] text-gray-400 mb-[25px]">
+                        Company
+                      </h4>
+                      {/* <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+              <NavLink exact to="/customers" activeStyle={{ color: "#f97316" }}>
+                Customers
+              </NavLink>
+            </h3> */}
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <NavLink
+                          exact
+                          to="/vendors"
+                          activeStyle={{ color: "#f97316" }}
+                        >
+                          Vendors
+                        </NavLink>
+                      </h3>
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <NavLink
+                          exact
+                          to="/riders"
+                          activeStyle={{ color: "#f97316" }}
+                        >
+                          Riders
+                        </NavLink>
+                      </h3>
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <NavLink
+                          exact
+                          to="/contact"
+                          activeStyle={{ color: "#f97316" }}
+                        >
+                          Contact
+                        </NavLink>
+                      </h3>
+
+                      {/* <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                About
+              </h3> */}
+                    </div>
+
+                    <div>
+                      <h4 className=" text-[16px] text-gray-400 mb-[25px]">
+                        Support
+                      </h4>
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <NavLink
+                          exact
+                          to="/faqs"
+                          activeStyle={{ color: "#f97316" }}
+                        >
+                          FAQs
+                        </NavLink>
+                      </h3>
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <NavLink
+                          exact
+                          to="/terms"
+                          activeStyle={{ color: "#f97316" }}
+                        >
+                          Terms of services
+                        </NavLink>
+                      </h3>
+
+                      {/* <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                Cookies Policy
+              </h3> */}
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <NavLink
+                          exact
+                          to="/privacy"
+                          activeStyle={{ color: "#f97316" }}
+                        >
+                          Privacy Policy
+                        </NavLink>
+                      </h3>
+                    </div>
+
+                    <div>
+                      <h4 className=" text-[16px] text-gray-400 mb-[25px]">
+                        Follow Us
+                      </h4>
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        Instagram
+                      </h3>
+
+                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        Twitter
+                      </h3>
+                    </div>
+                  </div>
+                  <h4 className="mt-[30px]  text-[10px] md:text-[12px] font-[300] text-gray-400  lg:hidden">
+                    © 2025 Sprin Technologies Limited. All rights reserved
+                  </h4>
+                </footer>
               </div>
             </div>
           )}
