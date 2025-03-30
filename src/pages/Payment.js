@@ -568,9 +568,11 @@ const Payment = () => {
       <div className="w-full max-w-2xl pt-[20px]">
         <ReusableHeader title={"Payment"} />
         <div className="mx-3 mb-2.5 bg-white p-2.5 py-2.5 rounded-[8px] flex items-center flex-shrink mt-[20px]">
-          <BsExclamationCircle size={18} className="text-primary" />
-          <div className="flex-shrink mt-0.5 ml-1.5">
-            <p className="ml-3 font-regular text-primary text-[12px]">
+          <div>
+            <BsExclamationCircle size={18} className="text-primary" />
+          </div>
+          <div className="flex-shrink mt-0.5 mx-[15px]">
+            <p className=" font-regular text-primary text-[12px]">
               Delivery requires PIN confirmation
             </p>
           </div>
@@ -586,11 +588,15 @@ const Payment = () => {
         >
           <div className="mx-3 bg-white p-1.5 py-2.5 rounded-[8px] flex items-center justify-between flex-shrink">
             <div className="flex items-center">
-              <BsGeoAlt size={18} className="text-primary" />
+              <div>
+                <BsGeoAlt size={18} className="text-primary" />
+              </div>
               <div className="flex-shrink mt-0.5 mx-[15px]">
                 {defaultAddress !== null ? (
                   <p className="text-gray-600 text-[12px] line-clamp-1">
-                    {defaultAddress.addressLine1}
+                    {defaultAddress.addressLine1} fsdf dfsdf sdfsdfsdf dfsdfsdf
+                    dfsdfsdfsd sdfsfsdf sdfsdfsdf sdfs dfsdfsdf sdfsdfsdf
+                    sdfsdfs
                   </p>
                 ) : (
                   <p className="text-[12px] text-primary  line-clamp-1">
