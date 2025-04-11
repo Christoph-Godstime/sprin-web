@@ -176,13 +176,14 @@ const Payment = () => {
 
   const groceryTime = isNaN(durationInMinutes)
     ? ""
-    : Number(durationInMinutes) * 2 + 10 + " mins";
+    : Math.ceil(Number(durationInMinutes) * 1.2 + 10 )+ " mins";
 
   // Multiply the duration by 3 and add "mins" text
   const totalMins =
-    isNaN(durationInMinutes) || isNaN(orderItem[0].time)
-      ? ""
-      : Number(durationInMinutes) * 2 + Number(orderItem[0].time) + " mins";
+  isNaN(durationInMinutes) || isNaN(orderItem[0].time)
+    ? ""
+    : Math.ceil(Number(durationInMinutes) * 1.2 + Number(orderItem[0].time)) + " mins";
+
 
   const handleTextChange = (text) => {
     setPromoCode(text.toUpperCase());
@@ -593,10 +594,8 @@ const Payment = () => {
               </div>
               <div className="flex-shrink mt-0.5 mx-[15px]">
                 {defaultAddress !== null ? (
-                  <p className="text-gray-600 text-[12px] line-clamp-1">
-                    {defaultAddress.addressLine1} fsdf dfsdf sdfsdfsdf dfsdfsdf
-                    dfsdfsdfsd sdfsfsdf sdfsdfsdf sdfs dfsdfsdf sdfsdfsdf
-                    sdfsdfs
+                  <p className="text-gray-600 text-[12px] line-clamp-1 text-left">
+                    {defaultAddress.addressLine1}
                   </p>
                 ) : (
                   <p className="text-[12px] text-primary  line-clamp-1">

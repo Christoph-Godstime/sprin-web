@@ -157,7 +157,7 @@ const Cart = () => {
         <img
           src={isImageLoaded ? item.storeId.logoUrl : PlaceholderImage}
           alt="store logo"
-          className={`w-24 h-24 rounded-lg ${
+          className={`w-24 h-24 min-w-24 min-w-24 rounded-lg ${
             isImageLoaded ? "object-cover" : "object-contain"
           }`}
           onLoad={() => setIsImageLoaded(true)}

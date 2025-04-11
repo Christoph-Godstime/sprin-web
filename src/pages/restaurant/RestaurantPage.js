@@ -116,8 +116,9 @@ const RestaurantPage = () => {
 
   // Multiply the duration by 3 and add "mins" text
   const totalMins = isNaN(durationInMinutes)
-    ? ""
-    : durationInMinutes * 2 + " mins";
+  ? ""
+  : Math.ceil(durationInMinutes * 1.2) + " mins";
+
 
   const handleShare = async () => {
     try {
