@@ -203,8 +203,8 @@ const SignUp = () => {
                       name={name}
                       placeholder={placeholder}
                       className="w-full outline-none  bg-gray-100 placeholder:text-[10px]   text-[10px] md:text-[12px] "
-                      onFocus={() => setFieldTouched(name)}
-                      onBlur={() => setFieldTouched(name, "")}
+                      onFocus={() => setFieldTouched(name, true)}
+                      onBlur={handleBlur}
                       onChange={(e) =>
                         customChange
                           ? customChange(e.target.value)
@@ -233,8 +233,8 @@ const SignUp = () => {
                     name="password"
                     placeholder="Password"
                     className="w-full outline-none  bg-gray-100 placeholder:text-[10px]   text-[10px] md:text-[12px] "
-                    onFocus={() => setFieldTouched("password")}
-                    onBlur={() => setFieldTouched("password", "")}
+                    onFocus={() => setFieldTouched("password", true)}
+                    onBlur={handleBlur}
                     value={values.password}
                     onChange={(event) =>
                       handleChange("password")(removeEmojis(event.target.value))

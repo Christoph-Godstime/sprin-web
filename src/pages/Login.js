@@ -242,8 +242,8 @@ const Login = () => {
                     name="email"
                     placeholder="Enter email"
                     className="w-full outline-none  bg-gray-100 placeholder:text-[10px]   text-[10px] md:text-[12px] "
-                    onFocus={() => setFieldTouched("email")}
-                    onBlur={() => setFieldTouched("email", "")}
+                    onFocus={() => setFieldTouched("email", true)}
+                    onBlur={handleBlur}
                     value={values.email}
                     onChange={(e) =>
                       handleChange("email")(removeEmojis(e.target.value))
@@ -269,8 +269,8 @@ const Login = () => {
                     name="password"
                     placeholder="Password"
                     className="w-full outline-none  bg-gray-100 placeholder:text-[10px]   text-[10px] md:text-[12px] "
-                    onFocus={() => setFieldTouched("password")}
-                    onBlur={() => setFieldTouched("password", "")}
+                    onFocus={() => setFieldTouched("password", true)}
+                    onBlur={handleBlur}
                     value={values.password}
                     onChange={handleChange("password")}
                     autoComplete="off"
