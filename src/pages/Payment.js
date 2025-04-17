@@ -1,4 +1,10 @@
-import React, { useState, useContext, useCallback, useEffect } from "react";
+import React, {
+  useState,
+  useContext,
+  useCallback,
+  useEffect,
+  useRef,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReusableHeader from "../components/ReusableHeader";
 import { BaseUrl } from "../constants/theme";
@@ -10,7 +16,8 @@ import GoogleApiServices from "../hooks/GoogleApiServices";
 import useFetchDefaultAddress from "../hooks/useFetchDefaultAdress";
 import { toast } from "react-toastify";
 import { BsExclamationCircle, BsGeoAlt } from "react-icons/bs";
-import { PaystackConsumer } from "react-paystack";
+import { usePaystackPayment } from "react-paystack";
+
 import { FaChevronRight } from "react-icons/fa6";
 import { RiDiscountPercentFill } from "react-icons/ri";
 
@@ -30,6 +37,7 @@ const Payment = () => {
   const [promoCode, setPromoCode] = useState(""); // Promo code input
   const [deliveryFee, setDeliveryFee] = useState(500); // Default delivery fee
   const [orderId, setOrderId] = useState(null);
+  const orderIdRef = useRef(null);
   const [showPaystack, setShowPaystack] = useState(false);
   const [isDistanceCalculated, setIsDistanceCalculated] = useState(false);
 
@@ -99,7 +107,7 @@ const Payment = () => {
         }
       );
 
-      console.log("API Response:", response.data);
+      // console.log("API Response:", response.data);
 
       if (response.data.status) {
         setOrderDetails(response.data);
@@ -176,14 +184,14 @@ const Payment = () => {
 
   const groceryTime = isNaN(durationInMinutes)
     ? ""
-    : Math.ceil(Number(durationInMinutes) * 1.2 + 10 )+ " mins";
+    : Math.ceil(Number(durationInMinutes) * 1.2 + 10) + " mins";
 
   // Multiply the duration by 3 and add "mins" text
   const totalMins =
-  isNaN(durationInMinutes) || isNaN(orderItem[0].time)
-    ? ""
-    : Math.ceil(Number(durationInMinutes) * 1.2 + Number(orderItem[0].time)) + " mins";
-
+    isNaN(durationInMinutes) || isNaN(orderItem[0].time)
+      ? ""
+      : Math.ceil(Number(durationInMinutes) * 1.2 + Number(orderItem[0].time)) +
+        " mins";
 
   const handleTextChange = (text) => {
     setPromoCode(text.toUpperCase());
@@ -213,6 +221,10 @@ const Payment = () => {
       walletAmountUsed: orderDetails?.walletAmountUsed,
     };
   }
+
+  const referenceId = `ref_${new Date().getTime()}_${Math.floor(
+    Math.random() * 1000000
+  )}`;
 
   const createOrder = async () => {
     if (!defaultAddress) {
@@ -285,6 +297,7 @@ const Payment = () => {
         `${BaseUrl}/api/orders`,
         {
           ...orderObject,
+          reference: referenceId,
           grandTotal:
             totalPrice +
             orderDetails?.discountedDeliveryFee +
@@ -366,6 +379,23 @@ const Payment = () => {
     }
   };
 
+  const initializePayment = usePaystackPayment({
+    reference: referenceId,
+    email: profileDetails?.email,
+    amount: orderDetails?.grandTotal * 100,
+    currency: "NGN",
+    publicKey: PAYSTACK_KEY,
+  });
+
+  console.log(
+    "configs: ",
+    orderIdRef.current,
+    profileDetails?.email,
+    orderDetails?.grandTotal * 100,
+    "NGN",
+    PAYSTACK_KEY
+  );
+
   const handlePartialWalletPayment = async () => {
     const token = localStorage.getItem("token");
 
@@ -376,6 +406,7 @@ const Payment = () => {
         `${BaseUrl}/api/orders`,
         {
           ...orderObject,
+          reference: referenceId,
           grandTotal:
             totalPrice +
             orderDetails?.discountedDeliveryFee +
@@ -388,8 +419,13 @@ const Payment = () => {
       );
 
       if (response.status === 201) {
-        setOrderId(response.data.data._id);
-        setShowPaystack(true);
+        const newOrderId = response.data.data._id;
+        orderIdRef.current = newOrderId;
+
+        initializePayment({
+          onSuccess: handlePaystackSuccess, // Success callback
+          onClose: handlePaystackCancel, // Cancel callback
+        });
       }
     } catch (error) {
       const errorMessage =
@@ -408,6 +444,7 @@ const Payment = () => {
         `${BaseUrl}/api/orders`,
         {
           ...orderObject,
+          reference: referenceId,
           grandTotal:
             totalPrice +
             orderDetails?.discountedDeliveryFee +
@@ -419,11 +456,16 @@ const Payment = () => {
       );
 
       if (response.status === 201) {
-        setOrderId(response.data.data._id);
-        setShowPaystack(true);
+        const newOrderId = response.data.data._id;
+        orderIdRef.current = newOrderId;
+
+        initializePayment({
+          onSuccess: handlePaystackSuccess, // Success callback
+          onClose: handlePaystackCancel, // Cancel callback
+        });
       }
     } catch (error) {
-      console.error("Error handling Paystack payment:", error.response.data);
+      console.log("Error handling Paystack payment:", error);
       const errorMessage =
         error.response?.data?.message ||
         "Something went wrong, please try again.";
@@ -435,21 +477,28 @@ const Payment = () => {
   };
 
   const handlePaystackSuccess = async (reference) => {
-    setShowPaystack(false);
-
     const token = localStorage.getItem("token");
     if (!token) {
       return;
     }
 
     const accessToken = JSON.parse(token);
-
+    console.log(
+      "datas: ",
+      reference?.reference,
+      orderIdRef.current,
+      defaultAddress.userId,
+      storeId,
+      orderDetails?.referrerId,
+      storeType,
+      orderDetails?.walletAmountUsed
+    );
     try {
       const response = await axios.post(
         `${BaseUrl}/api/orders/verify-payment`,
         {
           reference: reference?.reference,
-          orderId: orderId,
+          orderId: orderIdRef.current,
           senderId: defaultAddress.userId,
           storeId: storeId,
           referredBy: orderDetails?.referrerId,
@@ -481,24 +530,10 @@ const Payment = () => {
           },
         });
 
-        // console.log(
-        //   "deduct wallet from partial wallet payment: ",
-        //   orderDetails?.walletAmountUsed
-        // );
-        // await axios.post(
-        //   `${BaseUrl}/api/orders/update-wallet`,
-        //   {
-        //     amountUsed: orderDetails?.walletAmountUsed,
-        //   },
-        //   {
-        //     headers: { Authorization: `Bearer ${accessToken}` },
-        //   }
-        // );
-
         socket?.emit("sendOrder", {
           senderId: defaultAddress.userId,
           storeId: storeId,
-          orderId,
+          orderId: orderIdRef.current,
         });
       } else {
         console.error(response.data.message);
@@ -510,51 +545,11 @@ const Payment = () => {
   };
 
   const handlePaystackCancel = () => {
-    setShowPaystack(false);
     toast.info("Payment was cancelled!", {
       position: "top-center",
       autoClose: 3000,
     });
   };
-
-  const config = {
-    reference: orderId,
-    email: profileDetails?.email,
-    amount: orderDetails?.grandTotal * 100, // Convert NGN to kobo
-    currency: "NGN",
-    publicKey: PAYSTACK_KEY,
-    // metadata: {
-    //   custom_fields: [
-    //     {
-    //       display_name: "Full Name",
-    //       variable_name: "full_name",
-    //       value: `${profileDetails?.firstName} ${profileDetails?.lastName}`,
-    //     },
-    //     {
-    //       display_name: "Mobile Number",
-    //       variable_name: "mobile",
-    //       value: profileDetails?.phoneNumber,
-    //     },
-    //     {
-    //       display_name: "Order Type",
-    //       variable_name: "order_type",
-    //       value: "Order Payment",
-    //     },
-    //   ],
-    //   orderId: orderId,
-    //   senderId: defaultAddress?.userId,
-    //   storeId: storeId,
-    //   referredBy: orderDetails?.referrerId || null,
-    //   storeType: storeType,
-    //   walletAmountUsed: orderDetails?.walletAmountUsed,
-    // },
-  };
-
-  useEffect(() => {
-    if (showPaystack && orderId) {
-      document.getElementById("paystack-btn")?.click();
-    }
-  }, [showPaystack, orderId]);
 
   if (isAddressLoading || isLoading) {
     return (
@@ -779,28 +774,6 @@ const Payment = () => {
           </button>
         </div>
       </div>
-
-      <>
-        {showPaystack && orderId && (
-          <PaystackConsumer
-            {...config}
-            onSuccess={handlePaystackSuccess}
-            onClose={handlePaystackCancel}
-          >
-            {({ initializePayment }) => (
-              <button
-                id="paystack-btn"
-                onClick={() =>
-                  initializePayment(handlePaystackSuccess, handlePaystackCancel)
-                }
-                hidden
-              >
-                Pay Now
-              </button>
-            )}
-          </PaystackConsumer>
-        )}
-      </>
     </div>
   );
 };

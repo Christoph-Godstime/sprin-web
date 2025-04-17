@@ -28,8 +28,6 @@ const FoodPage = () => {
     useContext(CartCountContext);
   const { item } = location.state || {};
 
-  console.log("item: ", item);
-
   const pageRef = useRef(null);
 
   const [loading, setLoading] = useState(false);
@@ -324,15 +322,15 @@ const FoodPage = () => {
               </p>
             </div>
             <div className="flex space-x-2 mt-2 overflow-x-auto no-scrollbar">
-  {item.foodTags.map((tag) => (
-    <span
-      key={tag}
-      className="bg-secondary text-white px-2 py-[2px] rounded-[10px] text-[10px] whitespace-nowrap"
-    >
-      {tag}
-    </span>
-  ))}
-</div>
+              {item.foodTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="bg-secondary text-white px-2 py-[2px] rounded-[10px] text-[10px] whitespace-nowrap"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             {item.additives.length > 0 && (
               <div>
