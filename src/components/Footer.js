@@ -72,12 +72,49 @@ const Footer = () => {
 
           <div>
             <h4 className=" text-[16px] text-gray-400 mb-[25px]">Follow Us</h4>
-            <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
-              Instagram
+
+            <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+              <a
+                href="https://www.instagram.com/sprin_app?igsh=dGtxaHQ2b3Nqam44"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary"
+              >
+                Instagram
+              </a>
             </h3>
 
-            <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
-              Twitter
+            <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+              <a
+                href="https://x.com/Sprin_app?t=yAtn632_dh6tnBGiD-PIDQ&s=09"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary"
+              >
+                X (Twitter)
+              </a>
+            </h3>
+
+            <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+              <a
+                href="https://www.tiktok.com/@sprin_app?_t=ZM-8xquPKR07Us&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary"
+              >
+                TikTok
+              </a>
+            </h3>
+
+            <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+              <a
+                href="https://www.facebook.com/profile.php?id=61578005706580&mibextid=ZbWKwL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary"
+              >
+                Facebook
+              </a>
             </h3>
           </div>
         </div>

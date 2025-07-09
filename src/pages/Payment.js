@@ -242,10 +242,10 @@ const Payment = () => {
       setTokenVal(null);
       return;
     } else {
-      setTokenVal(token);
+      const accessToken = JSON.parse(token);
+      setTokenVal(accessToken);
     }
 
-    const accessToken = JSON.parse(token);
     setIsLoading(true);
 
     try {

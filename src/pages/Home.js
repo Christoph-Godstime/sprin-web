@@ -35,7 +35,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import refer from "../assets/refer.png";
-import freedelivery from "../assets/freedelivery.png";
+import freedelivery from "../assets/freedelivery.jpg";
 import Logo from "../components/Logo";
 
 const Home = () => {
@@ -144,28 +144,29 @@ const Home = () => {
       content: (
         <div className="w-full px-5 py-5">
           <h2 className="text-[15px] font-semibold mt-2">
-            🎉 Free Delivery on First Order and Beyond 🚴‍♂️📦
+            🎉 Free Delivery on Every 10th Order Milestone! 🚴‍♂️📦
           </h2>
           <p className="mt-5 text-[13px]">
-            Get ready for amazing savings with our exclusive free delivery
-            offers!
+            Enjoy exclusive free delivery when you hit milestone orders — only
+            for orders of ₦5,000 and above.
           </p>
           <ul className="mt-5 space-y-2 text-[12px]">
             <li>
-              🥳 <strong>First two orders</strong>: Completely free delivery as
-              a welcome gift.
+              🥳 <strong>1st Order</strong>: Get your first delivery completely
+              free!
             </li>
             <li>
-              🔁 <strong>Your 11th and 12th order</strong>: Enjoy free delivery
-              as a loyalty reward.
+              🔁 <strong>11th, 21st, 31st orders, and so on</strong>: Enjoy free
+              delivery as a loyalty reward.
             </li>
             <li>
-              🚀 <strong>Cycle continues</strong>: Get free delivery on your
-              21st and 22nd order, 31st and 32nd order, and so on.
+              💰 <strong>Condition</strong>: Free delivery applies only to
+              orders above ₦5,000.
             </li>
           </ul>
           <p className="mt-5 text-[13px]">
-            🛒 Start ordering now and enjoy these incredible benefits! 🍔🍜🍕
+            🛒 Start ordering and hit those milestones for more free deliveries!
+            🍔🍜🍕
           </p>
         </div>
       ),
@@ -179,27 +180,27 @@ const Home = () => {
             🎁 Share the Joy, Earn Rewards! 💸
           </h2>
           <p className="mt-5 text-[13px]">
-            Share your referral code and unlock amazing rewards for both you and
-            your friends!
+            Invite your friends and earn rewards when they order — valid for
+            first orders above ₦5,000!
           </p>
           <ul className="mt-5 space-y-2 text-[12px]">
             <li>
               💵 <strong>Earn ₦500</strong>: Get ₦500 credited to your wallet
-              every time a friend uses your referral code on their{" "}
-              <strong>first order</strong>.
+              when a friend uses your referral code on their{" "}
+              <strong>first order of ₦5,000 or more</strong>.
             </li>
             <li>
-              🎉 <strong>Discount for your friends</strong>: Your friend enjoys
-              a <strong>₦500 discount</strong> on their first order too!
+              🎉 <strong>₦500 Discount for Friends</strong>: They also get ₦500
+              off their first qualifying order!
             </li>
             <li>
-              🔗 <strong>Unlimited referrals</strong>: Keep sharing your code
-              and keep earning!
+              🔗 <strong>Unlimited Referrals</strong>: Keep sharing and keep
+              earning, no limits!
             </li>
           </ul>
           <p className="mt-5 text-[13px]">
-            🌟 Spread the word, share the love, and watch your wallet grow!
-            Start referring today! 📲
+            🌟 Spread the word, share the love, and grow your wallet! Start
+            referring today! 📲
           </p>
           <button
             onClick={() => handleReferral()}
@@ -410,12 +411,49 @@ const Home = () => {
                       <h4 className=" text-[16px] text-gray-400 mb-[25px]">
                         Follow Us
                       </h4>
-                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
-                        Instagram
+
+                      <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <a
+                          href="https://www.instagram.com/sprin_app?igsh=dGtxaHQ2b3Nqam44"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary"
+                        >
+                          Instagram
+                        </a>
                       </h3>
 
-                      <h3 className=" text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
-                        Twitter
+                      <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <a
+                          href="https://x.com/Sprin_app?t=yAtn632_dh6tnBGiD-PIDQ&s=09"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary"
+                        >
+                          X (Twitter)
+                        </a>
+                      </h3>
+
+                      <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <a
+                          href="https://www.tiktok.com/@sprin_app?_t=ZM-8xquPKR07Us&_r=1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary"
+                        >
+                          TikTok
+                        </a>
+                      </h3>
+
+                      <h3 className="text-[10px] md:text-[12px] font-[300] text-white mb-[10px]">
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61578005706580&mibextid=ZbWKwL"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary"
+                        >
+                          Facebook
+                        </a>
                       </h3>
                     </div>
                   </div>
