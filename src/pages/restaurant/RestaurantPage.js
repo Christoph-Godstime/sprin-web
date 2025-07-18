@@ -45,7 +45,9 @@ const RestaurantPage = () => {
   };
 
   // Ensure finalPrice is never below 500
-  const originalDeliveryFee = Math.max(distanceTime.finalPrice || 0, 500);
+  // const originalDeliveryFee = Math.max(distanceTime.finalPrice || 0, 500);
+
+  const originalDeliveryFee = Math.max(1000 || 0, 500);
 
   // Calculate discounted fee (85% of originalDeliveryFee)
   const discountDeliveryFee = roundUpToNearestTen(originalDeliveryFee * 0.85);
@@ -116,9 +118,8 @@ const RestaurantPage = () => {
 
   // Multiply the duration by 3 and add "mins" text
   const totalMins = isNaN(durationInMinutes)
-  ? ""
-  : Math.ceil(durationInMinutes * 1.2) + " mins";
-
+    ? ""
+    : Math.ceil(durationInMinutes * 1.2) + " mins";
 
   const handleShare = async () => {
     try {
