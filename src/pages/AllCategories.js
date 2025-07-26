@@ -14,6 +14,8 @@ const AllCategories = () => {
   const [food, setFood] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  console.log("food: ", food);
+
   const fetchCategoryData = async () => {
     try {
       const response = await axios.get(
@@ -34,7 +36,7 @@ const AllCategories = () => {
   const renderCategoryFoodComp = (item) => (
     <CategoryFoodComp
       item={item}
-      onClick={() => navigate("/food-nav", { state: { data: item } })}
+      onClick={() => navigate("/food-nav", { state: { item } })}
     />
   );
 
