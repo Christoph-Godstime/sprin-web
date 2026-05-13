@@ -20,8 +20,39 @@ const COLORS = {
   transparent1: "#FFA50040",
 };
 
+const DEFAULT_BASE_URL = "https://sprin-server-1aw9.onrender.com";
+
+const normalizeBaseUrl = (value, fallback = DEFAULT_BASE_URL) => {
+  const candidate = (value || fallback || "").trim();
+
+  if (!candidate) {
+    return "";
+  }
+
+  let normalized = candidate.replace(/\/+$/, "");
+
+  if (/^(https?:\/\/){2,}/i.test(normalized)) {
+    normalized = normalized.replace(/^(https?:\/\/)+/i, "https://");
+  }
+
+  if (!/^https?:\/\//i.test(normalized)) {
+    normalized = `https://${normalized}`;
+  }
+
+  try {
+    return new URL(normalized).toString().replace(/\/$/, "");
+  } catch (error) {
+    if (candidate !== fallback) {
+      return normalizeBaseUrl(fallback, fallback);
+    }
+
+    console.error("Invalid REACT_APP_BASE_URL:", value);
+    return "";
+  }
+};
+
 // const BaseUrl = "http://10.0.2.2:6003";
-const BaseUrl = process.env.REACT_APP_BASE_URL;
+const BaseUrl = normalizeBaseUrl(process.env.REACT_APP_BASE_URL);
 const GoogleApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 const PlaceholderImage =
   "https://firebasestorage.googleapis.com/v0/b/sprinfare2024.appspot.com/o/images%2Fplaceholder.png?alt=media&token=5fe12d31-5a42-48f6-ae11-9f9f52458b10";

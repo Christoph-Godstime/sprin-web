@@ -1,7 +1,7 @@
 {
   "name": "sprin-web",
   "proxy": "http://localhost:5000",
-  "homepage": ".",
+  "homepage": "/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

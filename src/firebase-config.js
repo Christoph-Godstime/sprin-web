@@ -6,12 +6,27 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
+const getStorageBucket = () => {
+  const configuredBucket = process.env.REACT_APP_FIREBASE_STORAGE_BUCKET?.trim();
+
+  if (
+    configuredBucket &&
+    (configuredBucket.includes(".appspot.com") ||
+      configuredBucket.includes(".firebasestorage.app"))
+  ) {
+    return configuredBucket;
+  }
+
+  const projectId = process.env.REACT_APP_FIREBASE_PROJECT_ID?.trim();
+  return projectId ? `${projectId}.appspot.com` : undefined;
+};
+
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  storageBucket: getStorageBucket(),
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 

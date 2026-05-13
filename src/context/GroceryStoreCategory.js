@@ -22,7 +22,10 @@ export const GroceryStoreCategoryProvider = ({ children }) => {
       setGroceryStoreCategory(response.data || []);
       setGroceryStoreCategoryError(null); // Clear any previous errors
     } catch (error) {
-      console.log("error: ", error.response.data);
+      console.log(
+        "Error fetching grocery store categories:",
+        error.response?.data || error.message
+      );
       setGroceryStoreCategoryError("Error fetching grocery categories");
     } finally {
       setLoadGroceryStoreCategory(false);
