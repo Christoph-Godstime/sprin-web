@@ -4,15 +4,26 @@ import { BaseUrl } from "../constants/theme";
 
 const UserProfileContext = createContext();
 
+const getAccessToken = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : null;
+};
+
 const UserProfileProvider = ({ children }) => {
   const [profileDetails, setProfileDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const fetchData = async () => {
-    const token = localStorage.getItem("token");
-    const accessToken = JSON.parse(token);
+    const accessToken = getAccessToken();
     setIsLoading(true);
+
+    if (!accessToken) {
+      setProfileDetails({});
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const response = await axios.get(`${BaseUrl}/api/users`, {
         headers: {

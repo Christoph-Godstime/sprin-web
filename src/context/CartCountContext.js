@@ -4,6 +4,11 @@ import { BaseUrl } from "../constants/theme";
 
 export const CartCountContext = createContext();
 
+const getAccessToken = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : null;
+};
+
 export const CartCountProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [cartList, setCartList] = useState([]);
@@ -11,8 +16,13 @@ export const CartCountProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   const fetchCartData = async () => {
-    const token = localStorage.getItem("token");
-    const accessToken = JSON.parse(token);
+    const accessToken = getAccessToken();
+
+    if (!accessToken) {
+      setCartList([]);
+      setIsLoading(false);
+      return;
+    }
 
     setIsLoading(true);
 
@@ -32,8 +42,14 @@ export const CartCountProvider = ({ children }) => {
   };
 
   const fetchCartCount = async () => {
-    const token = localStorage.getItem("token");
-    const accessToken = JSON.parse(token);
+    const accessToken = getAccessToken();
+
+    if (!accessToken) {
+      setCartCount(0);
+      setIsLoading(false);
+      return;
+    }
+
     setIsLoading(true);
 
     try {

@@ -4,6 +4,11 @@ import { BaseUrl } from "../constants/theme";
 
 export const FetchCartDetailsContext = createContext();
 
+const getAccessToken = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : null;
+};
+
 export const FetchCartDetailsProvider = ({ children }) => {
   const [cart, setCart] = useState({});
   const [cartStatus, setCartStatus] = useState(false);
@@ -12,11 +17,16 @@ export const FetchCartDetailsProvider = ({ children }) => {
   const fetchCartDetails = async () => {
     const lat = localStorage.getItem("latitude");
     const lng = localStorage.getItem("longitude");
-
-    const token = localStorage.getItem("token");
-    const accessToken = JSON.parse(token);
+    const accessToken = getAccessToken();
 
     setLoadCartDetails(true);
+
+    if (!accessToken || !lat || !lng || lat === "null" || lng === "null") {
+      setCart({});
+      setCartStatus(false);
+      setLoadCartDetails(false);
+      return;
+    }
 
     try {
       const response = await axios.get(

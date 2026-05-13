@@ -4,14 +4,25 @@ import { BaseUrl } from "../constants/theme";
 
 export const DefaultAddressContext = createContext();
 
+const getAccessToken = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : null;
+};
+
 export const DefaultAddressProvider = ({ children }) => {
   const [defaultAddress, setDefaultAddress] = useState(null); // Initialize as null
   const [addressLoading, setAddressLoading] = useState(true); // Initialize as true
   const [addressError, setAddressError] = useState(null);
 
   const fetchDefaultAddress = async () => {
-    const token = localStorage.getItem("token");
-    const accessToken = JSON.parse(token);
+    const accessToken = getAccessToken();
+
+    if (!accessToken) {
+      setDefaultAddress(null);
+      setAddressLoading(false);
+      return;
+    }
+
     console.log("started from defaultaddresscontext");
     try {
       const response = await axios.get(`${BaseUrl}/api/address/default`, {

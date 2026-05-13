@@ -3,11 +3,12 @@ import axios from "axios";
 import { BaseUrl } from "../constants/theme";
 
 const useFetchCategories = () => {
-  const [categories, setCategories] = useState(null);
+  // Use empty arrays by default so consumers can safely `.map()` even if a request fails.
+  const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [allCategories, setAllCategories] = useState(null);
+  const [allCategories, setAllCategories] = useState([]);
   const [isLoadingAll, setIsLoadingAll] = useState(true);
   const [allCategoriesError, setAllCategoriesError] = useState(null);
 
@@ -18,9 +19,10 @@ const useFetchCategories = () => {
     try {
       const response = await axios.get(`${BaseUrl}/api/category/random`);
       // console.log("checkin random response: ", response.data);
-      setCategories(response.data);
+      setCategories(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       setError(error);
+      setCategories([]);
     } finally {
       setIsLoading(false);
     }
@@ -32,9 +34,10 @@ const useFetchCategories = () => {
 
     try {
       const response = await axios.get(`${BaseUrl}/api/category`);
-      setAllCategories(response.data);
+      setAllCategories(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       setAllCategoriesError(error);
+      setAllCategories([]);
     } finally {
       setIsLoadingAll(false);
     }

@@ -5,6 +5,11 @@ import { SocketContext } from "./SocketContext";
 
 const OrderContext = createContext();
 
+const getAccessToken = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : null;
+};
+
 export const OrderProvider = ({ children }) => {
   const { socket } = useContext(SocketContext);
   const [orderDetails, setOrderDetails] = useState([]);
@@ -31,10 +36,14 @@ export const OrderProvider = ({ children }) => {
   }, [socket]);
 
   const fetchData = async () => {
-    const token = localStorage.getItem("token");
-    const accessToken = JSON.parse(token);
+    const accessToken = getAccessToken();
     setLoadingOrder(true);
     setOrderDetails([]);
+
+    if (!accessToken) {
+      setLoadingOrder(false);
+      return;
+    }
 
     try {
       const response = await axios.get(`${BaseUrl}/api/orders/userOrders`, {
